@@ -1,3 +1,4 @@
+import re
 import sys
 
 import numpy as np
@@ -5,12 +6,41 @@ import pandas as pd
 import pythainlp
 import nltk
 
+nltk.download('punkt')
+nltk.download('stopwords')
+
 class TextClassifier:
 
     def __init__(self, csv_file_name):
         self.model_params = pd.read_csv(csv_file_name, index_col=0)
 
+    def _clean_text(self, text_string):
+        # Lowercase
+        text_string = text_string.lower()
+
+        # Remove quotes
+        text_string = text_string.replace('"', '')
+
+        # Remove links
+        text_string = re.sub(r'https?://\S+', '', text_string)
+
+        # Remove words that don't start with an alphabetic character
+        text_string = re.sub(r'\b[^a-z\s]\S*', '', text_string)
+
+        # Remove non-alphabetic characters
+        text_string = re.sub(r'[^a-z\s]', '', text_string)
+
+        # Normalize whitespace after removals
+        text_string = re.sub(r'\s+', ' ', text_string).strip()
+
+        # Remove stopwords
+        stopwords = set(nltk.corpus.stopwords.words('english'))
+        text_string = ' '.join(word for word in text_string.split() if word not in stopwords)
+
+        return text_string
+
     def compute_probability(self, text_string):
+        text_string = self._clean_text(text_string)
         tokens = nltk.tokenize.wordpunct_tokenize(text_string)
 
         labels = self.get_all_possible_labels()
