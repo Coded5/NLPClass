@@ -48,8 +48,6 @@ class TextClassifier:
 
         return result
 
-
-
 if __name__ == '__main__':
     if (len(sys.argv) != 2):
         print('usage:\tpython logistic_regression.py <model_file>')
