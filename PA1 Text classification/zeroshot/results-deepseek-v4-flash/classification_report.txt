@@ -1,0 +1,26 @@
+                             precision    recall  f1-score   support
+
+             Analyst Update     0.6947    0.9041    0.7857        73
+     Company | Product News     0.8439    0.7359    0.7862       852
+                 Currencies     0.7111    1.0000    0.8312        32
+                   Dividend     0.9604    1.0000    0.9798        97
+                   Earnings     0.4979    0.9628    0.6563       242
+               Energy | Oil     0.6596    0.8493    0.7425       146
+        Fed | Central Banks     0.9454    0.8084    0.8715       214
+                 Financials     0.0000    0.0000    0.0000       160
+     General News | Opinion     0.6740    0.3631    0.4720       336
+  Gold | Metals | Materials     0.3333    0.6154    0.4324        13
+                        IPO     0.3824    0.9286    0.5417        14
+         Legal | Regulation     0.4833    0.9748    0.6462       119
+          M&A | Investments     0.5189    0.9483    0.6707       116
+                      Macro     0.8223    0.6578    0.7309       415
+                    Markets     0.5959    0.9200    0.7233       125
+           Personnel Change     0.8538    0.9911    0.9174       112
+                   Politics     0.6346    0.7952    0.7059       249
+           Stock Commentary     0.8671    0.7538    0.8065       528
+             Stock Movement     0.6463    0.2690    0.3799       197
+Treasuries | Corporate Debt     0.8765    0.9221    0.8987        77
+
+                   accuracy                         0.7141      4117
+                  macro avg     0.6501    0.7700    0.6789      4117
+               weighted avg     0.7240    0.7141    0.6974      4117
