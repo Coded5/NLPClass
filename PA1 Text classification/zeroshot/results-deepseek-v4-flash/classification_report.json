@@ -1,135 +1,135 @@
 {
   "Analyst Update": {
-    "precision": 0.6947368421052632,
-    "recall": 0.9041095890410958,
-    "f1-score": 0.7857142857142857,
-    "support": 73.0
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 4.0
   },
   "Company | Product News": {
-    "precision": 0.8438761776581427,
-    "recall": 0.7359154929577465,
-    "f1-score": 0.7862068965517242,
-    "support": 852.0
+    "precision": 0.8214285714285714,
+    "recall": 0.6052631578947368,
+    "f1-score": 0.696969696969697,
+    "support": 38.0
   },
   "Currencies": {
-    "precision": 0.7111111111111111,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.8311688311688312,
-    "support": 32.0
+    "f1-score": 1.0,
+    "support": 2.0
   },
   "Dividend": {
-    "precision": 0.9603960396039604,
+    "precision": 0.8333333333333334,
     "recall": 1.0,
-    "f1-score": 0.9797979797979798,
-    "support": 97.0
+    "f1-score": 0.9090909090909091,
+    "support": 5.0
   },
   "Earnings": {
-    "precision": 0.49786324786324787,
-    "recall": 0.9628099173553719,
-    "f1-score": 0.6563380281690141,
-    "support": 242.0
+    "precision": 0.5263157894736842,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.6451612903225806,
+    "support": 12.0
   },
   "Energy | Oil": {
-    "precision": 0.6595744680851063,
-    "recall": 0.8493150684931506,
-    "f1-score": 0.7425149700598802,
-    "support": 146.0
+    "precision": 0.5,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.631578947368421,
+    "support": 7.0
   },
   "Fed | Central Banks": {
-    "precision": 0.9453551912568307,
-    "recall": 0.8084112149532711,
-    "f1-score": 0.871536523929471,
-    "support": 214.0
+    "precision": 0.8,
+    "recall": 0.4,
+    "f1-score": 0.5333333333333333,
+    "support": 10.0
   },
   "Financials": {
     "precision": 0.0,
     "recall": 0.0,
     "f1-score": 0.0,
-    "support": 160.0
+    "support": 8.0
   },
   "General News | Opinion": {
-    "precision": 0.6740331491712708,
-    "recall": 0.3630952380952381,
-    "f1-score": 0.47195357833655704,
-    "support": 336.0
+    "precision": 1.0,
+    "recall": 0.5625,
+    "f1-score": 0.72,
+    "support": 16.0
   },
   "Gold | Metals | Materials": {
-    "precision": 0.3333333333333333,
-    "recall": 0.6153846153846154,
-    "f1-score": 0.43243243243243246,
-    "support": 13.0
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 2.0
   },
   "IPO": {
-    "precision": 0.38235294117647056,
-    "recall": 0.9285714285714286,
-    "f1-score": 0.5416666666666666,
-    "support": 14.0
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2.0
   },
   "Legal | Regulation": {
-    "precision": 0.48333333333333334,
-    "recall": 0.9747899159663865,
-    "f1-score": 0.6462395543175488,
-    "support": 119.0
+    "precision": 0.46153846153846156,
+    "recall": 1.0,
+    "f1-score": 0.631578947368421,
+    "support": 6.0
   },
   "M&A | Investments": {
-    "precision": 0.5188679245283019,
-    "recall": 0.9482758620689655,
-    "f1-score": 0.6707317073170732,
-    "support": 116.0
+    "precision": 0.5454545454545454,
+    "recall": 1.0,
+    "f1-score": 0.7058823529411765,
+    "support": 6.0
   },
   "Macro": {
-    "precision": 0.822289156626506,
-    "recall": 0.6578313253012048,
-    "f1-score": 0.7309236947791165,
-    "support": 415.0
+    "precision": 0.7857142857142857,
+    "recall": 0.5789473684210527,
+    "f1-score": 0.6666666666666666,
+    "support": 19.0
   },
   "Markets": {
-    "precision": 0.5958549222797928,
-    "recall": 0.92,
-    "f1-score": 0.7232704402515723,
-    "support": 125.0
+    "precision": 0.7777777777777778,
+    "recall": 1.0,
+    "f1-score": 0.875,
+    "support": 7.0
   },
   "Personnel Change": {
-    "precision": 0.8538461538461538,
-    "recall": 0.9910714285714286,
-    "f1-score": 0.9173553719008265,
-    "support": 112.0
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 6.0
   },
   "Politics": {
-    "precision": 0.6346153846153846,
-    "recall": 0.7951807228915663,
-    "f1-score": 0.7058823529411765,
-    "support": 249.0
+    "precision": 0.5384615384615384,
+    "recall": 0.5833333333333334,
+    "f1-score": 0.56,
+    "support": 12.0
   },
   "Stock Commentary": {
-    "precision": 0.8671023965141612,
-    "recall": 0.7537878787878788,
-    "f1-score": 0.806484295845998,
-    "support": 528.0
+    "precision": 0.7857142857142857,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.8461538461538461,
+    "support": 24.0
   },
   "Stock Movement": {
-    "precision": 0.6463414634146342,
-    "recall": 0.26903553299492383,
-    "f1-score": 0.37992831541218636,
-    "support": 197.0
+    "precision": 0.75,
+    "recall": 0.3,
+    "f1-score": 0.42857142857142855,
+    "support": 10.0
   },
   "Treasuries | Corporate Debt": {
-    "precision": 0.8765432098765432,
-    "recall": 0.922077922077922,
-    "f1-score": 0.8987341772151899,
-    "support": 77.0
+    "precision": 0.6,
+    "recall": 0.75,
+    "f1-score": 0.6666666666666666,
+    "support": 4.0
   },
-  "accuracy": 0.7141122176341996,
+  "accuracy": 0.69,
   "macro avg": {
-    "precision": 0.6500713223199773,
-    "recall": 0.7699831576756097,
-    "f1-score": 0.6789440051403764,
-    "support": 4117.0
+    "precision": 0.6862869294448242,
+    "recall": 0.769359335839599,
+    "f1-score": 0.6958327042726574,
+    "support": 200.0
   },
   "weighted avg": {
-    "precision": 0.7239739708838434,
-    "recall": 0.7141122176341996,
-    "f1-score": 0.6974021219578963,
-    "support": 4117.0
+    "precision": 0.7141519854414591,
+    "recall": 0.69,
+    "f1-score": 0.6722156610384189,
+    "support": 200.0
   }
 }
