@@ -3,6 +3,7 @@ import csv
 import hashlib
 import json
 import os
+import random
 import sys
 import time
 import urllib.error
@@ -56,7 +57,13 @@ def parse_args():
     parser.add_argument(
         "--limit",
         type=int,
-        help="Classify only the first N rows. Intended for smoke testing.",
+        help="Classify a random stratified sample of N rows.",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Random seed used for stratified sampling (default: 42).",
     )
     parser.add_argument(
         "--restart",
@@ -79,7 +86,55 @@ def parse_args():
     return args
 
 
-def load_rows(path, limit=None):
+def stratified_sample(rows, limit, seed):
+    if limit >= len(rows):
+        return rows
+
+    rows_by_label = {label: [] for label in LABELS}
+    for row in rows:
+        rows_by_label[row["label"]].append(row)
+    rows_by_label = {
+        label: label_rows
+        for label, label_rows in rows_by_label.items()
+        if label_rows
+    }
+
+    allocations = {
+        label: 1 if limit >= len(rows_by_label) else 0 for label in rows_by_label
+    }
+    remaining = limit - sum(allocations.values())
+    available = {
+        label: len(label_rows) - allocations[label]
+        for label, label_rows in rows_by_label.items()
+    }
+    available_total = sum(available.values())
+    exact_allocations = {
+        label: remaining * count / available_total
+        for label, count in available.items()
+    }
+    for label, exact in exact_allocations.items():
+        allocations[label] += int(exact)
+
+    unallocated = limit - sum(allocations.values())
+    allocation_order = sorted(
+        rows_by_label,
+        key=lambda label: (
+            exact_allocations[label] - int(exact_allocations[label]),
+            available[label],
+        ),
+        reverse=True,
+    )
+    for label in allocation_order[:unallocated]:
+        allocations[label] += 1
+
+    rng = random.Random(seed)
+    sampled_rows = []
+    for label, label_rows in rows_by_label.items():
+        sampled_rows.extend(rng.sample(label_rows, allocations[label]))
+    return sorted(sampled_rows, key=lambda row: row["id"])
+
+
+def load_rows(path, limit=None, seed=42):
     with path.open(encoding="utf-8", newline="") as csv_file:
         reader = csv.DictReader(csv_file)
         if reader.fieldnames is None or not {"text", "label"}.issubset(reader.fieldnames):
@@ -87,9 +142,6 @@ def load_rows(path, limit=None):
 
         rows = []
         for row_id, row in enumerate(reader):
-            if limit is not None and len(rows) >= limit:
-                break
-
             text = row["text"].strip()
             label = row["label"].strip()
             if not text:
@@ -100,6 +152,8 @@ def load_rows(path, limit=None):
 
     if not rows:
         raise ValueError("Input CSV contains no data rows")
+    if limit is not None:
+        rows = stratified_sample(rows, limit, seed)
     return rows
 
 
@@ -171,6 +225,7 @@ class DeepSeekZeroShotClassifier:
 
     def _request(self, batch):
         items = [{"id": row["id"], "text": row["text"]} for row in batch]
+        # print(json.dumps(items, ensure_ascii=False))
         body = {
             "model": self.model,
             "messages": [
@@ -272,7 +327,13 @@ def checkpoint_metadata(args, rows, input_hash, prompt_hash):
         "input_sha256": input_hash,
         "prompt_sha256": prompt_hash,
         "row_count": len(rows),
+        "row_ids": [row["id"] for row in rows],
         "batch_size": args.batch_size,
+        "sampling": (
+            {"limit": args.limit, "seed": args.seed}
+            if args.limit is not None
+            else None
+        ),
         "inference": {
             "thinking": "disabled",
             "response_format": "json_object",
@@ -300,9 +361,10 @@ def load_checkpoint(path, metadata):
         raise ValueError(f"Checkpoint {path} has invalid predictions")
 
     restored = {}
+    expected_ids = set(metadata["row_ids"])
     for row_id, label in predictions.items():
         numeric_id = int(row_id)
-        if numeric_id < 0 or numeric_id >= metadata["row_count"]:
+        if numeric_id not in expected_ids:
             raise ValueError(f"Checkpoint contains invalid row id: {row_id}")
         if label not in LABELS:
             raise ValueError(f"Checkpoint contains invalid label: {label!r}")
@@ -398,7 +460,7 @@ def main():
         clear_previous_run(output_dir)
 
     prompt = PROMPT_PATH.read_text(encoding="utf-8").strip()
-    rows = load_rows(input_path, args.limit)
+    rows = load_rows(input_path, args.limit, args.seed)
     metadata = checkpoint_metadata(
         args,
         rows,
