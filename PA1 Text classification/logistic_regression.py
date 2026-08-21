@@ -3,7 +3,6 @@ import sys
 
 import numpy as np
 import pandas as pd
-import pythainlp
 import nltk
 
 nltk.download('punkt')
@@ -23,9 +22,6 @@ class TextClassifier:
 
         # Remove links
         text_string = re.sub(r'https?://\S+', '', text_string)
-
-        # Remove words that don't start with an alphabetic character
-        text_string = re.sub(r'\b[^a-z\s]\S*', '', text_string)
 
         # Remove non-alphabetic characters
         text_string = re.sub(r'[^a-z\s]', '', text_string)
@@ -53,18 +49,18 @@ class TextClassifier:
                 continue
 
             for label in labels:
-                scores[label] = self.model_params.loc[feature][label]
+                scores[label] += self.model_params.loc[feature][label]
 
         # Softmax scores to probabilities
         total = sum([np.exp(i) for i in scores.values()])
-        probabilities = {k: float(np.exp(v)) for k, v in scores.items()}
+        probabilities = {k: float(np.exp(v)) / total for k, v in scores.items()}
         return probabilities
 
     def get_all_possible_features(self):
-        return self.model_params.index
+        return self.model_params.index.tolist()
 
     def get_all_possible_labels(self):
-        return self.model_params.columns
+        return self.model_params.columns.tolist()
 
     def classify(self, text_string):
         probabilities = self.compute_probability(text_string)
