@@ -30,5 +30,3 @@ Apply these precedence rules:
 5. Use Fed | Central Banks for monetary-policy institutions and officials; use Macro for economic conditions and indicators.
 6. Use Legal | Regulation for rules, courts, investigations, and enforcement. Use Politics when political conflict, elections, diplomacy, or geopolitical action is central.
 7. Never invent, abbreviate, merge, or rename a label. Return one prediction for every supplied id and preserve each exact id.
-
-Return only the JSON object required by the response schema, with no explanation or Markdown.
