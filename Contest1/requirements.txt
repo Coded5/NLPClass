@@ -1,0 +1,10 @@
+# Python 3.11; CUDA-enabled wheels should be selected for the host separately.
+numpy>=2.4,<3
+pandas>=3,<4
+pyarrow>=25,<26
+torch>=2.1,<3
+scikit-learn>=1.3,<2
+transformers>=4.57,<5
+huggingface-hub>=0.36,<1
+matplotlib>=3.8,<4
+tqdm>=4.66,<5

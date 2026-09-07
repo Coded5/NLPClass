@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contest1-language-modeling"
+version = "0.1.0"
+description = "Hint-constrained language modeling and neural candidate reranking"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "huggingface-hub>=0.36,<1",
+  "matplotlib>=3.8,<4",
+  "numpy>=2.4,<3",
+  "pandas>=3,<4",
+  "pyarrow>=25,<26",
+  "scikit-learn>=1.3,<2",
+  "torch>=2.1,<3",
+  "tqdm>=4.66,<5",
+  "transformers>=4.57,<5",
+]
+
+[project.optional-dependencies]
+tracking = ["mlflow>=3,<4"]
+
+[project.scripts]
+contest1-train-gpt2 = "contest1.train_hint_masked:main"
+contest1-evaluate-gpt2 = "contest1.evaluate_hint_masked_checkpoint:main"
+contest1-rerank = "contest1.rerank_experiment:main"
+contest1-neural-rerank = "contest1.neural_rerank_experiment:main"
+contest1-comprehensive-eval = "contest1.comprehensive_checkpoint_evaluation:main"
+contest1-neural-lm = "contest1.neural_language_model:main"
+contest1-ngram = "contest1.n_gram_generator:main"
+contest1-pipeline = "contest1.contest_pipeline:main"
+contest1-consolidate-mlflow = "contest1.consolidate_mlflow:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
