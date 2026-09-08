@@ -12,6 +12,14 @@ dependencies = [
     "pandas>=2.2",
 ]
 
+[project.optional-dependencies]
+training = [
+    "mlflow>=2.15",
+    "torch>=2.2",
+    "tqdm>=4.66",
+    "transformers>=4.45",
+]
+
 [project.scripts]
 zeroshot-classifier = "zeroshot_classifier.cli:main"
 

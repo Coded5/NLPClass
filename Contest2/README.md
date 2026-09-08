@@ -144,6 +144,75 @@ zeroshot-classifier evaluate \
   --report-output artifacts/runs/your-model/official_evaluation.txt
 ```
 
+## Train two RoBERTa classifiers
+
+Install the optional training dependencies, then run the sequential trainer:
+
+```bash
+python -m pip install -e '.[training]'
+python scripts/train_roberta.py \
+  --train-ratio 0.8 \
+  --eval-ratio 0.1 \
+  --test-ratio 0.1 \
+  --epochs 4 \
+  --run-dir artifacts/training/roberta-two-model
+```
+
+Each global epoch trains the aspect model for one epoch, saves its state and
+releases its GPU memory, then does the same for the polarity model. The official
+`scripts/evaluate.py` evaluator runs on the evaluation split after both models
+finish the epoch. The best paired checkpoint is selected by overall micro-F1,
+and the held-out test split is evaluated once at the end.
+
+Training automatically resumes from a compatible run directory. Checkpoints
+include model, optimizer, scheduler, mixed-precision, random-number-generator,
+epoch, and batch progress. Use a different `--run-dir` after changing the data
+or training configuration. Metrics and reports are logged to the MLflow
+experiment `contest2-roberta-two-model`; the default tracking store is
+the SQLite database `artifacts/mlflow.db`.
+
+Run `python scripts/train_roberta.py --help` for model, batch size, gradient
+accumulation, checkpoint interval, mixed precision, and MLflow options.
+
+The multilabel ABSA experiment groups annotations by review, predicts all aspects,
+and then predicts polarity conditioned on each detected aspect. It uses the persisted
+80/10/10 split and writes an isolated comparison report and checkpoints:
+
+```bash
+uv run --extra training python scripts/train_multilabel_absa.py
+```
+
+Run the staged class-imbalance and candidate-conditioned joint ABSA experiment:
+
+```bash
+uv run --extra training python scripts/run_joint_absa_experiment.py
+```
+
+The resumable output is written to
+`artifacts/experiments/absa-imbalance-joint-v1/`. To train one controlled
+variant instead, use `scripts/train_absa_variant.py` with `--architecture`,
+`--polarity-loss`, and a distinct `--run-dir`; focal variants also accept
+`--focal-gamma` and `--class-balance-beta`.
+
+Outputs are stored in `artifacts/experiments/multilabel-conditioned-v1/`. The run
+is resumable and logs to the `contest2-roberta-multilabel-conditioned` MLflow
+experiment.
+
+To train the two classifiers in separate processes, give each task its own run
+directory:
+
+```bash
+python scripts/train_roberta.py --task aspect --epoch 100 \
+  --run-dir artifacts/training/roberta-aspect
+python scripts/train_roberta.py --task polarity --epoch 100 \
+  --run-dir artifacts/training/roberta-polarity
+```
+
+Single-task evaluation still runs the official evaluator. The untrained field
+is copied from the evaluation gold rows so checkpoint selection uses only the
+selected task's official micro-F1. Single-task contest output contains `id`,
+`text`, and only the selected prediction column.
+
 ## Tests
 
 ```bash
