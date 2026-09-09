@@ -258,11 +258,12 @@ def _predict_logits(torch: Any, transformers: Any, model: Any, dataset: Any, bat
         collate_fn=transformers.DataCollatorWithPadding(tokenizer=dataset.tokenizer),
     )
     logits = []
+    device = next(model.parameters()).device
     model.eval()
     with torch.no_grad():
         for batch in tqdm(loader, desc=label, unit='batch', dynamic_ncols=True):
             batch.pop('labels', None)
-            output = model(**{key: value.to('cpu') for key, value in batch.items()})
+            output = model(**{key: value.to(device) for key, value in batch.items()})
             logits.append(output.logits.cpu())
     return torch.cat(logits)
 

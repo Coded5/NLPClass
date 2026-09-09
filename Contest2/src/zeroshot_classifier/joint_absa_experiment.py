@@ -296,12 +296,13 @@ def _joint_predict(
         collate_fn=transformers.DataCollatorWithPadding(tokenizer=dataset.tokenizer),
     )
     aspect_logits, polarity_logits = [], []
+    device = next(model.parameters()).device
     model.eval()
     with torch.no_grad():
         for batch in tqdm(loader, desc=label, unit='batch', dynamic_ncols=True):
             for key in ('aspect_labels', 'polarity_labels', 'aspect_index', 'review_index'):
                 batch.pop(key)
-            aspect, polarity = model(**{key: value.to('cpu') for key, value in batch.items()})
+            aspect, polarity = model(**{key: value.to(device) for key, value in batch.items()})
             aspect_logits.append(aspect.cpu())
             polarity_logits.append(polarity.cpu())
     return torch.cat(aspect_logits), torch.cat(polarity_logits)
@@ -313,9 +314,10 @@ def _fixed_aspect_probabilities(
 ) -> list[list[float]]:
     reviews = group_aspect_targets(rows)
     checkpoint = torch.load(config.fixed_aspect_checkpoint, map_location='cpu', weights_only=False)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         config.model, num_labels=len(ASPECTS)
-    )
+    ).to(device)
     model.load_state_dict(checkpoint['model'])
     from .absa_training import AspectDataset
     dataset = _attach_tokenizer(AspectDataset(reviews, tokenizer, config.max_length), tokenizer)
@@ -541,12 +543,8 @@ def train_separate_polarity(
             mlflow.log_metric('train/epoch_loss', running / len(loader), step=epoch)
             evaluate_now = epoch % config.evaluation_interval == 0 or epoch == config.epochs
             if evaluate_now:
-                cpu_model = transformers.AutoModelForSequenceClassification.from_pretrained(
-                    config.model, num_labels=len(POLARITIES)
-                )
-                cpu_model.load_state_dict(_model_state_cpu(model))
                 score, thresholds, macro = _separate_validation(
-                    torch, transformers, tokenizer, cpu_model, config,
+                    torch, transformers, tokenizer, model, config,
                     validation_rows, validation_aspect_probabilities,
                     f'Validate separate {spec.slug} {epoch}',
                 )
@@ -562,8 +560,6 @@ def train_separate_polarity(
                     LOGGER.info('New best separate %s seed %d: %.6f', spec.slug, seed, score)
                 else:
                     stale += 1
-                del cpu_model
-                gc.collect()
             _save_epoch_checkpoint(
                 torch, latest, model, optimizer, scheduler, scaler, epoch,
                 best_score, stale, global_step,
@@ -697,10 +693,8 @@ def train_joint(
             }, step=epoch)
             evaluate_now = epoch % config.evaluation_interval == 0 or epoch == config.epochs
             if evaluate_now:
-                cpu_model = _build_joint_model(torch, transformers, config.model)
-                cpu_model.load_state_dict(_model_state_cpu(model))
                 score, thresholds, macro = _joint_validation(
-                    torch, transformers, tokenizer, cpu_model, config,
+                    torch, transformers, tokenizer, model, config,
                     validation_rows, f'Validate joint {spec.slug} {epoch}',
                 )
                 mlflow.log_metric('validation/pair_micro_f1', score, step=epoch)
@@ -715,8 +709,6 @@ def train_joint(
                     LOGGER.info('New best joint %s seed %d: %.6f', spec.slug, seed, score)
                 else:
                     stale += 1
-                del cpu_model
-                gc.collect()
             _save_epoch_checkpoint(
                 torch, latest, model, optimizer, scheduler, scaler, epoch,
                 best_score, stale, global_step,
@@ -744,9 +736,10 @@ def _separate_logits(
     checkpoint_path: Path, rows: list[LabeledRow], label: str,
 ) -> Any:
     reviews = group_aspect_targets(rows)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         config.model, num_labels=len(POLARITIES)
-    )
+    ).to(device)
     checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
     model.load_state_dict(checkpoint['model'])
     dataset = _attach_tokenizer(
@@ -755,6 +748,8 @@ def _separate_logits(
     logits = _predict_logits(torch, transformers, model, dataset, config.eval_batch_size, label)
     del model, checkpoint
     gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
     return logits
 
 
@@ -762,7 +757,8 @@ def _joint_logits(
     torch: Any, transformers: Any, tokenizer: Any, config: JointExperimentConfig,
     checkpoint_path: Path, rows: list[LabeledRow], label: str,
 ) -> tuple[Any, Any]:
-    model = _build_joint_model(torch, transformers, config.model)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = _build_joint_model(torch, transformers, config.model).to(device)
     checkpoint = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
     model.load_state_dict(checkpoint['model'])
     dataset = JointCandidateDataset(candidate_targets(rows), tokenizer, config.max_length)
@@ -772,6 +768,8 @@ def _joint_logits(
     )
     del model, checkpoint
     gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
     return logits
 
 
