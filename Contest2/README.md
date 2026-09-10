@@ -198,6 +198,57 @@ Outputs are stored in `artifacts/experiments/multilabel-conditioned-v1/`. The ru
 is resumable and logs to the `contest2-roberta-multilabel-conditioned` MLflow
 experiment.
 
+To run the standalone three-seed multi-label aspect experiment:
+
+```bash
+uv run --extra training python scripts/train_multilabel_aspect.py
+```
+
+It groups annotations by review ID, trains one five-label RoBERTa model for each
+seed, averages their probabilities, and tunes per-aspect thresholds on validation
+data. Outputs are written to `artifacts/experiments/multilabel-aspect-v1/`; the
+held-out test is evaluated only after checkpoints and thresholds are locked.
+Active optimizer checkpoints use `/tmp/contest2-multilabel-aspect-v1/` as
+scratch space, while completed best checkpoints are exported to the artifact
+directory in half precision.
+
+Compose the completed aspect ensemble with existing aspect-conditioned polarity
+models and evaluate the complete ABSA task:
+
+```bash
+uv run --extra training python scripts/evaluate_multilabel_absa.py
+```
+
+The runner compares the previous one-seed polarity model with the weighted-CE
+three-seed polarity ensemble on validation, locks the better complete pipeline,
+and then evaluates aspect, polarity, and `(aspect, polarity)` pairs on the
+held-out split. Outputs are isolated under
+`artifacts/experiments/multilabel-aspect-old-polarity-v1/`.
+
+Screen additional neutral and conflict weights for the aspect-conditioned
+polarity model, confirm the validation winner across three seeds, and compose it
+with the current aspect ensemble:
+
+```bash
+uv run --extra training python scripts/train_polarity_reweighting.py
+```
+
+The experiment writes durable FP16 best models under
+`artifacts/experiments/polarity-reweighting-v1/` and keeps active optimizer
+checkpoints under `/tmp/contest2-polarity-reweighting-v1/`. It selects for
+neutral/conflict F1 while limiting the validation pair-F1 drop to `0.005`.
+
+The validation-locked candidate multiplied the existing neutral weight by
+`1.5` and the conflict weight by `2.0`. Across three seeds, it improved
+validation pair F1 from `0.7659` to `0.7776` and neutral F1 from `0.7027` to
+`0.7532`, while conflict F1 fell from `0.4667` to `0.4375`. On the held-out
+test split, neutral F1 improved from `0.6400` to `0.7105`, but conflict F1 fell
+from `0.5000` to `0.3448` and pair F1 fell from `0.7544` to `0.7357`.
+Consequently, the original weighted-CE polarity ensemble remains part of the
+strongest observed complete test system. See
+`artifacts/experiments/polarity-reweighting-v1/report.md` for the full screen
+and validation-only selection protocol.
+
 To train the two classifiers in separate processes, give each task its own run
 directory:
 
