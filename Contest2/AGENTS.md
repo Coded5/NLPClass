@@ -50,8 +50,15 @@ For training, evaluation, benchmarking, or other long-running jobs:
 - Do NOT start another nested tmux session.
 - Prefer a detached tmux window for long ML experiments.
 - Redirect verbose stdout/stderr to a log file.
+- Keep the log visibly streaming in the tmux window or pane Codex creates.
+  Launch through `tee` with pipeline exit-status handling, or automatically run
+  `tail -F` in a dedicated pane; do not leave the created tmux view blank and
+  require the user to start log monitoring manually.
 - After launching, verify that the process started successfully.
 - Record the tmux window/pane, PID, command, and log path.
+- Make every tmux window or pane created for a job close automatically after
+  the command finishes and its exit status has been written. Do not append an
+  interactive shell such as `exec bash` merely to keep a completed pane open.
 - Do not repeatedly poll the job or read its logs.
 - Return control to me after the experiment is launched.
 - I will tell you when the experiment is finished.

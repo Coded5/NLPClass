@@ -249,6 +249,34 @@ strongest observed complete test system. See
 `artifacts/experiments/polarity-reweighting-v1/report.md` for the full screen
 and validation-only selection protocol.
 
+Train a polarity model with separate positive- and negative-evidence heads,
+then tune its decoding on validation:
+
+```bash
+uv run --extra training python scripts/train_polarity_evidence.py
+```
+
+The experiment screens evidence-loss weights, confirms the selected value over
+three seeds, and compares the raw and calibrated evidence ensemble with the
+original polarity ensemble. Temperature, evidence blending, and
+neutral/conflict biases are selected using validation only. A candidate must
+protect both minority-class F1 scores and remain within `0.005` pair F1 in at
+least 75% of 10,000 paired review-ID bootstrap samples. Durable FP16 models are
+written to `artifacts/experiments/polarity-evidence-v1/`; resumable optimizer
+state stays under `/tmp/contest2-polarity-evidence-v1/` while training.
+
+Run grouped five-fold polarity evaluation with controlled minority sampling:
+
+```bash
+uv run --extra training python scripts/train_polarity_cv.py
+```
+
+This experiment evaluates the existing weighted loss, an unweighted control,
+literal neutral/conflict oversampling, and oversampling with corrected loss
+weights. Checkpoint selection uses a grouped inner split, outer-fold evaluation
+uses gold aspects, and the historical test split is not read. Outputs are
+written under `artifacts/experiments/polarity-oversampling-cv-v1/`.
+
 To train the two classifiers in separate processes, give each task its own run
 directory:
 
