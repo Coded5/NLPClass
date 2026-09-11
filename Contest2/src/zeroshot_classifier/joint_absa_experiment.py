@@ -333,7 +333,7 @@ def _run_manifest(
 ) -> dict[str, Any]:
     return {
         'architecture': architecture,
-        'loss': asdict(spec),
+        'loss': spec.serialized(),
         'seed': seed,
         'model': config.model,
         'input': str(config.input),
@@ -412,6 +412,8 @@ def _start_or_resume_mlflow(
         mlflow.log_params({
             'architecture': manifest['architecture'], 'loss': manifest['loss']['name'],
             'gamma': manifest['loss']['gamma'], 'beta': manifest['loss']['beta'],
+            'neutral_multiplier': manifest['loss'].get('neutral_multiplier', 1.0),
+            'conflict_multiplier': manifest['loss'].get('conflict_multiplier', 1.0),
             'seed': manifest['seed'], 'model': manifest['model'],
         })
     return active
@@ -450,7 +452,7 @@ def _separate_validation(
     torch: Any, transformers: Any, tokenizer: Any, model: Any,
     config: JointExperimentConfig, validation_rows: list[LabeledRow],
     aspect_probabilities: list[list[float]], label: str,
-) -> tuple[float, list[float], float]:
+) -> tuple[float, list[float], float, dict[str, dict[str, float | int]]]:
     reviews = group_aspect_targets(validation_rows)
     dataset = _attach_tokenizer(
         PolarityDataset(all_candidate_rows(reviews), tokenizer, config.max_length), tokenizer
@@ -473,8 +475,16 @@ def _separate_validation(
         f'{label} gold aspects',
     )
     from .absa_training import _macro_f1
+    gold_predictions = [
+        (row.item_id, row.aspect, POLARITIES[prediction])
+        for row, prediction in zip(
+            validation_rows, gold_logits.argmax(dim=-1).tolist()
+        )
+    ]
     macro = _macro_f1(gold, gold_logits.argmax(dim=-1).tolist(), len(POLARITIES))
-    return score, thresholds, macro
+    return score, thresholds, macro, _pair_class_metrics(
+        validation_rows, gold_predictions
+    )
 
 
 def train_separate_polarity(
@@ -482,6 +492,8 @@ def train_separate_polarity(
     config: JointExperimentConfig, run_dir: Path, spec: LossSpec, seed: int,
     train_rows: list[LabeledRow], validation_rows: list[LabeledRow],
     validation_aspect_probabilities: list[list[float]],
+    minimum_pair_f1: float | None = None,
+    optimizer_checkpoint: Path | None = None,
 ) -> dict[str, Any]:
     manifest = _run_manifest(config, 'separate', spec, seed)
     completed = _prepare_run(run_dir, manifest)
@@ -494,14 +506,14 @@ def train_separate_polarity(
     )
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         config.model, num_labels=len(POLARITIES)
-    ).to(device)
+    ).float().to(device)
     optimizer, scheduler = _optimizer_and_schedule(
         torch, transformers, model, len(tokenizer_dataset), config
     )
     use_fp16, autocast_dtype = _precision_settings(torch, config.mixed_precision, device)
     scaler = torch.amp.GradScaler('cuda', enabled=use_fp16)
     weights = loss_weights(torch, train_rows, spec).to(device)
-    latest = run_dir / 'checkpoints/latest.pt'
+    latest = optimizer_checkpoint or run_dir / 'checkpoints/latest.pt'
     best = run_dir / 'best.pt'
     epoch_start, best_score, stale, global_step = _load_training_checkpoint(
         torch, latest, model, optimizer, scheduler, scaler
@@ -509,6 +521,10 @@ def train_separate_polarity(
     with _start_or_resume_mlflow(
         mlflow, config, run_dir, manifest, f'separate-{spec.slug}-seed-{seed}'
     ):
+        mlflow.log_params({
+            f'effective_weight_{label}': float(weights[index].detach().cpu())
+            for index, label in enumerate(POLARITIES)
+        })
         for epoch in range(epoch_start + 1, config.epochs + 1):
             generator = torch.Generator().manual_seed(seed + epoch)
             loader = torch.utils.data.DataLoader(
@@ -543,21 +559,49 @@ def train_separate_polarity(
             mlflow.log_metric('train/epoch_loss', running / len(loader), step=epoch)
             evaluate_now = epoch % config.evaluation_interval == 0 or epoch == config.epochs
             if evaluate_now:
-                score, thresholds, macro = _separate_validation(
+                score, thresholds, macro, class_metrics = _separate_validation(
                     torch, transformers, tokenizer, model, config,
                     validation_rows, validation_aspect_probabilities,
                     f'Validate separate {spec.slug} {epoch}',
                 )
                 mlflow.log_metric('validation/pair_micro_f1', score, step=epoch)
                 mlflow.log_metric('validation/polarity_macro_f1', macro, step=epoch)
-                if score > best_score + config.early_stopping_min_delta:
-                    best_score, stale = score, 0
+                minority_score = (
+                    float(class_metrics['neutral']['f1'])
+                    + float(class_metrics['conflict']['f1'])
+                ) / 2
+                eligible = minimum_pair_f1 is None or score >= minimum_pair_f1
+                selection_score = (
+                    score if minimum_pair_f1 is None
+                    else (2.0 + minority_score + score * 1e-6 if eligible else score)
+                )
+                mlflow.log_metric('validation/minority_f1', minority_score, step=epoch)
+                mlflow.log_metric('validation/eligible', float(eligible), step=epoch)
+                if selection_score > best_score + config.early_stopping_min_delta:
+                    best_score, stale = selection_score, 0
+                    compact = (
+                        spec.neutral_multiplier != 1
+                        or spec.conflict_multiplier != 1
+                    )
+                    model_state = {
+                        name: value.detach().cpu().half()
+                        if compact and value.is_floating_point() else value.detach().cpu()
+                        for name, value in model.state_dict().items()
+                    }
                     _atomic_torch_save(torch, {
-                        'model': _model_state_cpu(model), 'epoch': epoch,
+                        'model': model_state, 'epoch': epoch,
                         'score': score, 'thresholds': thresholds,
-                        'architecture': 'separate', 'loss': asdict(spec), 'seed': seed,
+                        'selection_score': selection_score,
+                        'eligible': eligible,
+                        'minimum_pair_f1': minimum_pair_f1,
+                        'minority_f1': minority_score,
+                        'polarity_classes': class_metrics,
+                        'architecture': 'separate', 'loss': spec.serialized(), 'seed': seed,
                     }, best)
-                    LOGGER.info('New best separate %s seed %d: %.6f', spec.slug, seed, score)
+                    LOGGER.info(
+                        'New best separate %s seed %d: pair=%.6f minority=%.6f eligible=%s',
+                        spec.slug, seed, score, minority_score, eligible,
+                    )
                 else:
                     stale += 1
             _save_epoch_checkpoint(
@@ -568,9 +612,13 @@ def train_separate_polarity(
                 break
         checkpoint = torch.load(best, map_location='cpu', weights_only=False)
         result = {
-            'finished': True, 'architecture': 'separate', 'loss': asdict(spec),
+            'finished': True, 'architecture': 'separate', 'loss': spec.serialized(),
             'seed': seed, 'epoch': int(checkpoint['epoch']),
             'validation_pair_micro_f1': float(checkpoint['score']),
+            'validation_minority_f1': float(checkpoint.get('minority_f1', 0.0)),
+            'validation_polarity_classes': checkpoint.get('polarity_classes', {}),
+            'eligible': bool(checkpoint.get('eligible', True)),
+            'minimum_pair_f1': checkpoint.get('minimum_pair_f1'),
             'thresholds': checkpoint['thresholds'],
         }
         atomic_write_json(run_dir / 'result.json', result)
@@ -704,7 +752,7 @@ def train_joint(
                     _atomic_torch_save(torch, {
                         'model': _model_state_cpu(model), 'epoch': epoch,
                         'score': score, 'thresholds': thresholds,
-                        'architecture': 'joint', 'loss': asdict(spec), 'seed': seed,
+                        'architecture': 'joint', 'loss': spec.serialized(), 'seed': seed,
                     }, best)
                     LOGGER.info('New best joint %s seed %d: %.6f', spec.slug, seed, score)
                 else:
@@ -717,7 +765,7 @@ def train_joint(
                 break
         checkpoint = torch.load(best, map_location='cpu', weights_only=False)
         result = {
-            'finished': True, 'architecture': 'joint', 'loss': asdict(spec),
+            'finished': True, 'architecture': 'joint', 'loss': spec.serialized(),
             'seed': seed, 'epoch': int(checkpoint['epoch']),
             'validation_pair_micro_f1': float(checkpoint['score']),
             'thresholds': checkpoint['thresholds'],
@@ -1258,6 +1306,8 @@ def build_variant_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument('--focal-gamma', type=float, default=2.0)
     parser.add_argument('--class-balance-beta', type=float, default=0.999)
+    parser.add_argument('--neutral-multiplier', type=float, default=1.0)
+    parser.add_argument('--conflict-multiplier', type=float, default=1.0)
     parser.add_argument('--seed', type=int, default=42)
     return parser
 
@@ -1273,9 +1323,15 @@ def variant_main(argv: list[str] | None = None) -> int:
         loss_name = values.pop('polarity_loss')
         gamma = values.pop('focal_gamma')
         beta = values.pop('class_balance_beta')
+        neutral_multiplier = values.pop('neutral_multiplier')
+        conflict_multiplier = values.pop('conflict_multiplier')
         seed = values.pop('seed')
         config = JointExperimentConfig(**values)
-        spec = LossSpec(loss_name, gamma=gamma, beta=beta)
+        spec = LossSpec(
+            loss_name, gamma=gamma, beta=beta,
+            neutral_multiplier=neutral_multiplier,
+            conflict_multiplier=conflict_multiplier,
+        )
         spec.validate()
         import mlflow
         import torch

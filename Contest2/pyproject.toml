@@ -15,6 +15,7 @@ dependencies = [
 [project.optional-dependencies]
 training = [
     "mlflow>=2.15",
+    "sentencepiece>=0.2",
     "torch>=2.2",
     "tqdm>=4.66",
     "transformers>=4.45",

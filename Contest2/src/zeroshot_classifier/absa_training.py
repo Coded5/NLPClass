@@ -336,7 +336,7 @@ def train_stage(
     id2label = {index: label for label, index in label2id.items()}
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
         config.model, num_labels=len(labels), label2id=label2id, id2label=id2label
-    ).to(device)
+    ).float().to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate, weight_decay=config.weight_decay)
     batches_per_epoch = math.ceil(len(train_dataset) / config.train_batch_size)
     updates_per_epoch = math.ceil(batches_per_epoch / config.gradient_accumulation_steps)
@@ -432,12 +432,8 @@ def train_stage(
         thresholds = None
         score = None
         if evaluate_now:
-            cpu_model = transformers.AutoModelForSequenceClassification.from_pretrained(
-                config.model, num_labels=len(labels), label2id=label2id, id2label=id2label
-            )
-            cpu_model.load_state_dict(_model_state_cpu(model))
             logits = _predict_logits(
-                torch, transformers, cpu_model, validation_dataset,
+                torch, transformers, model, validation_dataset,
                 config.eval_batch_size, f'Validate {stage} {epoch}',
             )
             if stage == 'aspect':
@@ -464,7 +460,7 @@ def train_stage(
                 LOGGER.info('New best %s checkpoint: epoch=%d score=%.6f', stage, epoch, score)
             else:
                 stale_checks += 1
-            del cpu_model, logits
+            del logits
             gc.collect()
         finished = epoch == config.epochs or (
             evaluate_now and stale_checks >= config.early_stopping_patience

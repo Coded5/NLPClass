@@ -13,6 +13,8 @@ class LossSpec:
     name: str
     gamma: float = 0.0
     beta: float = 0.999
+    neutral_multiplier: float = 1.0
+    conflict_multiplier: float = 1.0
 
     def validate(self) -> None:
         if self.name not in {'weighted-ce', 'weighted-focal', 'class-balanced-focal'}:
@@ -21,14 +23,33 @@ class LossSpec:
             raise ValueError('Focal gamma must be nonnegative')
         if not 0 < self.beta < 1:
             raise ValueError('Class-balance beta must be in (0, 1)')
+        if self.neutral_multiplier < 1 or self.conflict_multiplier < 1:
+            raise ValueError('Neutral and conflict multipliers must be at least 1')
 
     @property
     def slug(self) -> str:
+        suffix = ''
+        if self.neutral_multiplier != 1 or self.conflict_multiplier != 1:
+            suffix = (
+                f'-n{self.neutral_multiplier:g}'
+                f'-c{self.conflict_multiplier:g}'
+            )
         if self.name == 'weighted-ce':
-            return self.name
+            return f'{self.name}{suffix}'
         if self.name == 'weighted-focal':
-            return f'{self.name}-g{self.gamma:g}'
-        return f'{self.name}-b{self.beta:g}-g{self.gamma:g}'
+            return f'{self.name}-g{self.gamma:g}{suffix}'
+        return f'{self.name}-b{self.beta:g}-g{self.gamma:g}{suffix}'
+
+    def serialized(self) -> dict[str, float | str]:
+        value: dict[str, float | str] = {
+            'name': self.name, 'gamma': self.gamma, 'beta': self.beta,
+        }
+        if self.neutral_multiplier != 1 or self.conflict_multiplier != 1:
+            value.update({
+                'neutral_multiplier': self.neutral_multiplier,
+                'conflict_multiplier': self.conflict_multiplier,
+            })
+        return value
 
 
 SCREENING_LOSSES = (
@@ -69,8 +90,14 @@ def loss_weights(torch: Any, rows: Sequence[LabeledRow], spec: LossSpec) -> Any:
     spec.validate()
     counts = polarity_counts(rows)
     if spec.name == 'class-balanced-focal':
-        return class_balanced_weights(torch, counts, spec.beta)
-    return inverse_frequency_weights(torch, counts)
+        weights = class_balanced_weights(torch, counts, spec.beta)
+    else:
+        weights = inverse_frequency_weights(torch, counts)
+    multipliers = torch.tensor(
+        [1.0, 1.0, spec.neutral_multiplier, spec.conflict_multiplier],
+        dtype=weights.dtype,
+    )
+    return weights * multipliers
 
 
 def polarity_loss(

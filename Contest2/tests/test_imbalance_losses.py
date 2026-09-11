@@ -3,11 +3,56 @@ import unittest
 from zeroshot_classifier.imbalance_losses import (
     LossSpec,
     class_balanced_weights,
+    loss_weights,
     polarity_loss,
 )
+from zeroshot_classifier.data import LabeledRow
 
 
 class ImbalanceLossTests(unittest.TestCase):
+    def test_extra_multipliers_only_change_neutral_and_conflict(self):
+        torch = self._torch()
+        rows = [
+            LabeledRow(str(index), 'Text', 'food', polarity, index)
+            for index, polarity in enumerate(
+                ['positive'] * 8 + ['negative'] * 4
+                + ['neutral'] * 2 + ['conflict']
+            )
+        ]
+        baseline = loss_weights(torch, rows, LossSpec('weighted-ce'))
+        adjusted = loss_weights(
+            torch, rows,
+            LossSpec(
+                'weighted-ce', neutral_multiplier=1.5,
+                conflict_multiplier=3.0,
+            ),
+        )
+
+        self.assertAlmostEqual(float(adjusted[0]), float(baseline[0]))
+        self.assertAlmostEqual(float(adjusted[1]), float(baseline[1]))
+        self.assertAlmostEqual(float(adjusted[2]), float(baseline[2]) * 1.5)
+        self.assertAlmostEqual(float(adjusted[3]), float(baseline[3]) * 3.0)
+
+    def test_multiplier_validation_rejects_downweighting(self):
+        with self.assertRaisesRegex(ValueError, 'must be at least 1'):
+            LossSpec('weighted-ce', neutral_multiplier=0.9).validate()
+
+    def test_serialization_preserves_legacy_manifest_shape(self):
+        self.assertEqual(
+            LossSpec('weighted-ce').serialized(),
+            {'name': 'weighted-ce', 'gamma': 0.0, 'beta': 0.999},
+        )
+        self.assertEqual(
+            LossSpec(
+                'weighted-ce', neutral_multiplier=1.5,
+                conflict_multiplier=2.0,
+            ).serialized(),
+            {
+                'name': 'weighted-ce', 'gamma': 0.0, 'beta': 0.999,
+                'neutral_multiplier': 1.5, 'conflict_multiplier': 2.0,
+            },
+        )
+
     def test_class_balanced_weights_are_normalized_and_favor_rare_classes(self):
         torch = self._torch()
         weights = class_balanced_weights(torch, [100, 20, 5], 0.999)
