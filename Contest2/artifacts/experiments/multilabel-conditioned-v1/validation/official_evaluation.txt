@@ -1,0 +1,23 @@
+=== CLASSIFICATION : ASPECT ===
+                class name  precision  recall  F1-score  support
+0                     food      0.892   0.943     0.917      105
+1                    price      0.897   0.963     0.929       27
+2                  service      0.836   0.902     0.868       51
+3                 ambience      0.889   0.865     0.877       37
+4  anecdotes/miscellaneous      0.840   0.884     0.862       95
+5                MACRO AVG      0.871   0.911     0.890      315
+6                MICRO AVG      0.867   0.911     0.889      315 
+
+=== CLASSIFICATION : SENTIMENT ===
+  class name  precision  recall  F1-score  support
+0   positive      0.920   0.896     0.908      154
+1   negative      0.855   0.803     0.828       66
+2    neutral      0.659   0.744     0.699       39
+3   conflict      0.533   0.533     0.533       15
+4  MACRO AVG      0.742   0.744     0.742      274
+5  MICRO AVG      0.841   0.832     0.837      274 
+
+=== CLASSIFICATION : OVERALL ===
+              precision  recall  F1-score  support
+0  MICRO AVG      0.734   0.771     0.752      315 
+

@@ -1,0 +1,4037 @@
+{
+  "best_epoch": 5,
+  "configuration": "sampling-corrected",
+  "finished": true,
+  "fold": 3,
+  "heldout": {
+    "accuracy": 0.8024691358024691,
+    "classes": {
+      "conflict": {
+        "f1": 0.40366972477064217,
+        "precision": 0.27848101265822783,
+        "recall": 0.7333333333333333,
+        "support": 30
+      },
+      "negative": {
+        "f1": 0.7836734693877552,
+        "precision": 0.8205128205128205,
+        "recall": 0.75,
+        "support": 128
+      },
+      "neutral": {
+        "f1": 0.6875000000000001,
+        "precision": 0.7857142857142857,
+        "recall": 0.6111111111111112,
+        "support": 72
+      },
+      "positive": {
+        "f1": 0.8987730061349694,
+        "precision": 0.9301587301587302,
+        "recall": 0.8694362017804155,
+        "support": 337
+      }
+    },
+    "macro_f1": 0.6934040500733417
+  },
+  "predictions": [
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2559",
+      "predicted": "positive",
+      "text": "Obviously run by folks who know a pie."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "716",
+      "predicted": "negative",
+      "text": "We were very disappointed."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "385",
+      "predicted": "positive",
+      "text": "I really liked this place."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1314",
+      "predicted": "negative",
+      "text": "Will not be back."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1108",
+      "predicted": "neutral",
+      "text": "The only other steakhouse that seems to hold a candle to Roth's is the Strip House."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3373",
+      "predicted": "positive",
+      "text": "Two words: Free wine."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "430",
+      "predicted": "positive",
+      "text": "Ive been to many Thai restaurants in Manhattan before, and Toons is by far the best Thai food Ive had (except for my mom's of course)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "627",
+      "predicted": "positive",
+      "text": "After really enjoying ourselves at the bar we sat down at a table and had dinner."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2787",
+      "predicted": "positive",
+      "text": "Try the lasagnette appetizer."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "825",
+      "predicted": "conflict",
+      "text": "Pricey, but worth a try, at least once."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "825",
+      "predicted": "conflict",
+      "text": "Pricey, but worth a try, at least once."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2911",
+      "predicted": "positive",
+      "text": "Great food, good size menu, great service and an unpretensious setting."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2911",
+      "predicted": "positive",
+      "text": "Great food, good size menu, great service and an unpretensious setting."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2911",
+      "predicted": "positive",
+      "text": "Great food, good size menu, great service and an unpretensious setting."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "912",
+      "predicted": "positive",
+      "text": "Wine list selection is good and wine-by-the-glass was generously filled to the top."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2925",
+      "predicted": "conflict",
+      "text": "The menu is very limited - i think we counted 4 or 5 entrees."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "282",
+      "predicted": "positive",
+      "text": "One thing I liked about this place is that I never felt rushed or pressured to give up my table ot incoming guests."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3207",
+      "predicted": "positive",
+      "text": "We always have a delicious meal and always leave feeling satisfied."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2308",
+      "predicted": "positive",
+      "text": "I heartily recommend."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2926",
+      "predicted": "negative",
+      "text": "We ordered the special, grilled branzino, that was so infused with bone, it was difficult to eat."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "322",
+      "predicted": "positive",
+      "text": "Went inside and I started to get excited."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2274",
+      "predicted": "conflict",
+      "text": "Though the Spider Roll may look like a challenge to eat, with soft shell crab hanging out of the roll, it is well worth the price you pay for them."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2274",
+      "predicted": "conflict",
+      "text": "Though the Spider Roll may look like a challenge to eat, with soft shell crab hanging out of the roll, it is well worth the price you pay for them."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2845",
+      "predicted": "positive",
+      "text": "This was one of the BEST restaurants I've ever been to."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2033",
+      "predicted": "positive",
+      "text": "If you love wine and cheese and delicious french fare, you'll love Artisanal!"
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "439",
+      "predicted": "negative",
+      "text": "Some baby pizzas get their wish."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "362",
+      "predicted": "positive",
+      "text": "Nice restaurant overall, with classic upscale Italian decor."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3564",
+      "predicted": "negative",
+      "text": "Wondering who had the best deals we noticed a line had formed to wait for this one particular establishment."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1144",
+      "predicted": "negative",
+      "text": "I've never felt more unwelcome than last month at Jimmy's Bronx Cafe."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2385",
+      "predicted": "positive",
+      "text": "I've been coming here as a child and always come back for the taste."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "567",
+      "predicted": "negative",
+      "text": "Food was average and creme brulee was awful - the sugar was charred, not caramelized and smelled of kerosene."
+    },
+    {
+      "aspect": "service",
+      "gold": "neutral",
+      "id": "3175",
+      "predicted": "negative",
+      "text": "But who says Murray's is anything about service."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2907",
+      "predicted": "positive",
+      "text": "service is friendly, and never had a problem walking in and getting a table."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2234",
+      "predicted": "negative",
+      "text": "Don't go."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "678",
+      "predicted": "positive",
+      "text": "The other night we had the $30 three course meal and everything was delicious - if I could of licked the plate clean I would of."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2930",
+      "predicted": "positive",
+      "text": "I had very high expectations for this place and made a reservation a couple of months in advance for a special occasion."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2166",
+      "predicted": "positive",
+      "text": "They were served warm and had a soft fluffy interior."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3244",
+      "predicted": "neutral",
+      "text": "So I've never actually been to M proper, but I've had it delivered a few times."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1413",
+      "predicted": "negative",
+      "text": "Frankly, when you compare what you can have here for lunch, versus McDs or so many other sandwich shops in the city, there is no comparison."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3129",
+      "predicted": "negative",
+      "text": "The hostess is rude to the point of being offensive."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2377",
+      "predicted": "negative",
+      "text": "The food was just awful, ATROCIOUS actually."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3408",
+      "predicted": "neutral",
+      "text": "I've eaten at many different Indian restaurants."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1535",
+      "predicted": "conflict",
+      "text": "They might be all business at the counter when you give your order, but their food says I love you."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "1535",
+      "predicted": "conflict",
+      "text": "They might be all business at the counter when you give your order, but their food says I love you."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1367",
+      "predicted": "neutral",
+      "text": "Don't look down your nose at me like that..."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3194",
+      "predicted": "neutral",
+      "text": "I am not the most experienced person when it comes to Thai food, but my friend who took me there is."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3252",
+      "predicted": "neutral",
+      "text": "Walk-ins are risky too."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2126",
+      "predicted": "positive",
+      "text": "Very good service and very good prices."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2126",
+      "predicted": "positive",
+      "text": "Very good service and very good prices."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1175",
+      "predicted": "positive",
+      "text": "Get your food to go, find a bench, and kick back with a plate of dumplings."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1115",
+      "predicted": "positive",
+      "text": "Please try the Filet Mignon, its just the most tender piece ever."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1472",
+      "predicted": "negative",
+      "text": "This has got to be one of the most overrated restaurants in Brooklyn."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "987",
+      "predicted": "positive",
+      "text": "Gigino's in Wagner Park is so enjoyable."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "442",
+      "predicted": "negative",
+      "text": "If that's a problem, go to McDonald's and destroy your insides."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2563",
+      "predicted": "positive",
+      "text": "I work near-by, and they have the BEST oatmeal in the neighborhood- not a packaged or quick-cooked item."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2790",
+      "predicted": "negative",
+      "text": "Too bad the food wasn't of the same heritage."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1492",
+      "predicted": "positive",
+      "text": "Even with John's and Joe's around the corner, this place will make a name for itself."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1461",
+      "predicted": "positive",
+      "text": "This is as good as neighborhood restaurants come."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "128",
+      "predicted": "positive",
+      "text": "If you want some roast duck, pork or chicken on rice with ginger, try them out!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1008",
+      "predicted": "negative",
+      "text": "You order from a menu, so you leave feeling like you missed the full experience."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1815",
+      "predicted": "positive",
+      "text": "we love th pink pony."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1950",
+      "predicted": "neutral",
+      "text": "I went to Del Frisco's Friday night with my boyfriend for an 8:00 reservation."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2801",
+      "predicted": "positive",
+      "text": "Very popular style Izakaya (Sake and small portion of sake-friendly dishes )."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2447",
+      "predicted": "positive",
+      "text": "Not pretentious and very economical."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2447",
+      "predicted": "positive",
+      "text": "Not pretentious and very economical."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3062",
+      "predicted": "positive",
+      "text": "Authentic bistro!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "496",
+      "predicted": "neutral",
+      "text": "Being from the south, there aren't any good delis in my area and while watching Foods across America on PBS I found out about Katz's Deli."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "318",
+      "predicted": "positive",
+      "text": "The atmosphere is great if your looking for a laid back scene and an inexpensive way to spend a weekend afternoon."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "318",
+      "predicted": "positive",
+      "text": "The atmosphere is great if your looking for a laid back scene and an inexpensive way to spend a weekend afternoon."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "504",
+      "predicted": "positive",
+      "text": "Decor is nice and minimalist, food simple yet very well presented and cooked, and the wine list matches the food very well."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "504",
+      "predicted": "positive",
+      "text": "Decor is nice and minimalist, food simple yet very well presented and cooked, and the wine list matches the food very well."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "3281",
+      "predicted": "negative",
+      "text": "We generally like good restaurants and eat out often but Kai was way to expensive for what we got."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1188",
+      "predicted": "positive",
+      "text": "The food is great, service is ok."
+    },
+    {
+      "aspect": "service",
+      "gold": "neutral",
+      "id": "1188",
+      "predicted": "positive",
+      "text": "The food is great, service is ok."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2392",
+      "predicted": "positive",
+      "text": "Spice is great Thai food, love the inexpensive appetizers."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2392",
+      "predicted": "positive",
+      "text": "Spice is great Thai food, love the inexpensive appetizers."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "1044",
+      "predicted": "negative",
+      "text": "Even after they overcharged me the last time I was there."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2831",
+      "predicted": "positive",
+      "text": "When you're sitting in their main dining room (which has a spectacular, hand-painted high ceiling) you'd never know there was a world outside."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2149",
+      "predicted": "positive",
+      "text": "Good food."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "748",
+      "predicted": "neutral",
+      "text": "Surprisingly nothing could be further from the truth."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "766",
+      "predicted": "positive",
+      "text": "The dim sum however was very good."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2786",
+      "predicted": "positive",
+      "text": "Its a great place for a casual date or to entertain clients for lunch."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "366",
+      "predicted": "negative",
+      "text": "We could not catch our waiter's eye, and he ignored us."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3085",
+      "predicted": "positive",
+      "text": "The place is larger than most and features adequate seating unlike most joints, and has a bar which deserves a mention."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1661",
+      "predicted": "neutral",
+      "text": "You can do it here."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1817",
+      "predicted": "positive",
+      "text": "Food-awesome."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "1749",
+      "predicted": "conflict",
+      "text": "There was a small wait, but shorter than I expected."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3295",
+      "predicted": "positive",
+      "text": "I must say the view of NYC is so beautiful!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2896",
+      "predicted": "positive",
+      "text": "When going out for a nice dinner, I like a nice ambiance as well as very good food."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "2835",
+      "predicted": "negative",
+      "text": "This place would be so much better served by being run by a group that actually understands customer service."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3029",
+      "predicted": "negative",
+      "text": "This is my fourth try over a two year period, and I'm done."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "1250",
+      "predicted": "neutral",
+      "text": "I ordered the chu chu curry and my friend ordered the pad thai chicken."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1784",
+      "predicted": "positive",
+      "text": "This is some really good, inexpensive sushi."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1784",
+      "predicted": "positive",
+      "text": "This is some really good, inexpensive sushi."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3370",
+      "predicted": "positive",
+      "text": "The pizza is delicious and the proprietor is one of the nicest in NYC."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3370",
+      "predicted": "positive",
+      "text": "The pizza is delicious and the proprietor is one of the nicest in NYC."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2709",
+      "predicted": "positive",
+      "text": "The desserts are more appealing then stuffy overpriced French restaurants."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2734",
+      "predicted": "conflict",
+      "text": "The Italian food has flavor (that can be sort of surprising on the UES), and the service turns from a nightmare to attentive,they sort of remind me of the NY Yankees of the late 90's, no matter how bad it look, you knew that there was a rally just around the corner..."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "2734",
+      "predicted": "conflict",
+      "text": "The Italian food has flavor (that can be sort of surprising on the UES), and the service turns from a nightmare to attentive,they sort of remind me of the NY Yankees of the late 90's, no matter how bad it look, you knew that there was a rally just around the corner..."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3654",
+      "predicted": "positive",
+      "text": "I found the food to be outstanding, particulary the salmon dish I had."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1049",
+      "predicted": "positive",
+      "text": "Mizu is home to creative and unique rolls not to found anywhere else."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "511",
+      "predicted": "positive",
+      "text": "Moules were excellent, lobster ravioli was VERY salty!"
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "2905",
+      "predicted": "neutral",
+      "text": "i don't usually order wine with indian so i can't comment on their wine list or their wines."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "178",
+      "predicted": "positive",
+      "text": "The waitress was very patient with us and the food is phenomenal!"
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "178",
+      "predicted": "positive",
+      "text": "The waitress was very patient with us and the food is phenomenal!"
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1022",
+      "predicted": "positive",
+      "text": "The waitress remembers me and is very friendly, she knows what my regular is and that's the fried mini buns with the condensed milk and the assorted fruits on beancurd."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1022",
+      "predicted": "positive",
+      "text": "The waitress remembers me and is very friendly, she knows what my regular is and that's the fried mini buns with the condensed milk and the assorted fruits on beancurd."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2947",
+      "predicted": "negative",
+      "text": "This place was not ALL THAT!"
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "1331",
+      "predicted": "negative",
+      "text": "Why make a reservation if you aren't going to keep it?"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "2705",
+      "predicted": "negative",
+      "text": "Big and gawky on the outside."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2450",
+      "predicted": "positive",
+      "text": "We had the pot-stickers which were great and a tempura dish that was great."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2901",
+      "predicted": "conflict",
+      "text": "While the $20 entree range is not overly expensive, in New York City, there is definitely better food in that range, and so Sapphire, despite it's lovely atmosphere, will most likely not be a restaurant to which I will return."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2901",
+      "predicted": "conflict",
+      "text": "While the $20 entree range is not overly expensive, in New York City, there is definitely better food in that range, and so Sapphire, despite it's lovely atmosphere, will most likely not be a restaurant to which I will return."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2901",
+      "predicted": "conflict",
+      "text": "While the $20 entree range is not overly expensive, in New York City, there is definitely better food in that range, and so Sapphire, despite it's lovely atmosphere, will most likely not be a restaurant to which I will return."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2901",
+      "predicted": "conflict",
+      "text": "While the $20 entree range is not overly expensive, in New York City, there is definitely better food in that range, and so Sapphire, despite it's lovely atmosphere, will most likely not be a restaurant to which I will return."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3142",
+      "predicted": "positive",
+      "text": "To give you an idea of how good we thought it was, we ended up going to Ping's three weekends in a row!!!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3100",
+      "predicted": "neutral",
+      "text": "during happy hour!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1769",
+      "predicted": "positive",
+      "text": "Love YUKA."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "901",
+      "predicted": "positive",
+      "text": "The photos of the restaurant in its web site are way better than the real look."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1105",
+      "predicted": "neutral",
+      "text": "I have been coming to this neighborhood spot for years."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2830",
+      "predicted": "neutral",
+      "text": "When I'm feeling stressed by the noise and congestion around my office, I head for Cafe St. Bart's."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1435",
+      "predicted": "positive",
+      "text": "Quality of food is excellent and price is cheap, stick to pork, fish, chicken, lamb and vegetables."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1435",
+      "predicted": "positive",
+      "text": "Quality of food is excellent and price is cheap, stick to pork, fish, chicken, lamb and vegetables."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2171",
+      "predicted": "neutral",
+      "text": "The food options rule."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3462",
+      "predicted": "positive",
+      "text": "A great choice at any cost and a great deal."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3462",
+      "predicted": "positive",
+      "text": "A great choice at any cost and a great deal."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2817",
+      "predicted": "positive",
+      "text": "It's also attached to Angel's Share, which is a cool, more romantic bar..."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1569",
+      "predicted": "positive",
+      "text": "The characters really make for an enjoyable experience."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "78",
+      "predicted": "positive",
+      "text": "Over the years the host, Vittorio, and his crew, have always treated me as family--although with all the business this not-so-little gem does, it amazing he's even able to remember a consistent but not-so-frequent visitor."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1550",
+      "predicted": "positive",
+      "text": "It's constantly open, catering to the Pakistani cabbies lined up on Crosby St., so there's more turnover with the food than you'd expect (i.e., surprisingly fresh)."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1550",
+      "predicted": "positive",
+      "text": "It's constantly open, catering to the Pakistani cabbies lined up on Crosby St., so there's more turnover with the food than you'd expect (i.e., surprisingly fresh)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2630",
+      "predicted": "positive",
+      "text": "I loving bringing friends here - and I do so every chance I get."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "533",
+      "predicted": "positive",
+      "text": "The large selection of bruschettas, paninis, tramezzinis keep the palate from stagnating."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2673",
+      "predicted": "positive",
+      "text": "I would go back tho."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2276",
+      "predicted": "positive",
+      "text": "The photobook menu was a cute touch, certainly helped my group and I pick the fried chicken, pork chop, and noodle dishes that we all ordered."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "3297",
+      "predicted": "conflict",
+      "text": "If you don't mind all that noise then go to the Chart House."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2439",
+      "predicted": "positive",
+      "text": "This is a wonderful place on all stand points especially value ofr money."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "3079",
+      "predicted": "positive",
+      "text": "This place started off a little iffy, but is now one of my favorite indian restaurants in NYC (and I'm indian, so I should know)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "746",
+      "predicted": "neutral",
+      "text": "I went to this restaurant with a woman that I met recently."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "628",
+      "predicted": "positive",
+      "text": "The server was really cool and served us our food and drinks with a smile."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "770",
+      "predicted": "neutral",
+      "text": "We were told that the wait was about twenty minutes and there would be no problem for our 8:00 pm curtain call."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "911",
+      "predicted": "positive",
+      "text": "Food was very good as well, considering that we tried the budget selection (though I wish the pork belly that I ordered was roasted a bit longer, so that fat was more of a melt-in-your-mouth experience)."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1273",
+      "predicted": "positive",
+      "text": "I love the fact that the pizza tastes so good and is so cheap."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1273",
+      "predicted": "positive",
+      "text": "I love the fact that the pizza tastes so good and is so cheap."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "590",
+      "predicted": "positive",
+      "text": "Nicky the Nose at the bar is a treat."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3374",
+      "predicted": "negative",
+      "text": "I'm amazed we haven't been kicked out of this place yet."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "109",
+      "predicted": "positive",
+      "text": "I haven't eat a lamb chop as delicious as that,the salads are really nice dressed with lemon and extra virgnin olive oil."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "489",
+      "predicted": "positive",
+      "text": "Katz's has been a NYC original for over 100 years."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3050",
+      "predicted": "negative",
+      "text": "After all that, they complained to me about the small tip."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "1555",
+      "predicted": "negative",
+      "text": "Behind this counter, two men are squeezed in."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1112",
+      "predicted": "positive",
+      "text": "Great find!!!"
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "1780",
+      "predicted": "conflict",
+      "text": "Despite a slightly limited menu, everything prepared is done to perfection, ultra fresh and a work of food art."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "3343",
+      "predicted": "negative",
+      "text": "The food now is inconsistent."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "3178",
+      "predicted": "negative",
+      "text": "We thought that this place is using too much of MSG cooking in the foods."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "586",
+      "predicted": "neutral",
+      "text": "I was at Rao's last Wed."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2706",
+      "predicted": "negative",
+      "text": "Tends to turn people away."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3188",
+      "predicted": "neutral",
+      "text": "Went there for an office lunch."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "288",
+      "predicted": "negative",
+      "text": "If you live outside the neighborhood, don't bother!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3012",
+      "predicted": "positive",
+      "text": "if you're looking for perfect traditional sushi, go here - if you're looking for interesting combinations, try sushi of gari's (east side)."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3383",
+      "predicted": "positive",
+      "text": "Plus, on Wednesday nights the house wine is unlimited!"
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2522",
+      "predicted": "negative",
+      "text": "like saying her bread comes from a special bakery when we have seen her buying it dowtown manhathan."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "2522",
+      "predicted": "positive",
+      "text": "like saying her bread comes from a special bakery when we have seen her buying it dowtown manhathan."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3013",
+      "predicted": "negative",
+      "text": "We were treated with attitude ever since the moment we stepped into the restaurant!"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1159",
+      "predicted": "positive",
+      "text": "After dinner, take your date to the HUGE dance floor, probably one of the biggest you'll see in NY."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "443",
+      "predicted": "positive",
+      "text": "Pizza - the only pizza in NYC that should not have additional toppings - the crust tastes like the best, freshly baked bread!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2741",
+      "predicted": "positive",
+      "text": "Service was warm and attentive, beef carpaachio was exellent (huge portion) and pasta was fresh and well-prepared."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2741",
+      "predicted": "positive",
+      "text": "Service was warm and attentive, beef carpaachio was exellent (huge portion) and pasta was fresh and well-prepared."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "599",
+      "predicted": "positive",
+      "text": "Best Italian food I ever had (and being Italian, that means alot)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3576",
+      "predicted": "negative",
+      "text": "Our friends have not arrived yet."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2984",
+      "predicted": "negative",
+      "text": "Wouldn't recomend it for dinner!"
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1429",
+      "predicted": "negative",
+      "text": "Sauce was watery and the food didn't have much flavor."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "685",
+      "predicted": "positive",
+      "text": "Not sure where the previous reviewer, lonk, dined, but Saul is in a great neighborhood and has great food!"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "685",
+      "predicted": "positive",
+      "text": "Not sure where the previous reviewer, lonk, dined, but Saul is in a great neighborhood and has great food!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "428",
+      "predicted": "positive",
+      "text": "In an area sadly lacking in decent Thai food, this is one of the best spots."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "779",
+      "predicted": "negative",
+      "text": "Make reservations but expect to be delayed 15-20 minutes as the hosting staff was having difficulty seating guests who arrived with a reservation because they probably had a lot of walk ins being so close to Time Square."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2298",
+      "predicted": "positive",
+      "text": "The crust is thin, the ingredients are fresh and the staff is friendly."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2298",
+      "predicted": "positive",
+      "text": "The crust is thin, the ingredients are fresh and the staff is friendly."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "720",
+      "predicted": "positive",
+      "text": "I absolutely love this place!!!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "228",
+      "predicted": "positive",
+      "text": "We had champagne and caviar and felt like princesses!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "651",
+      "predicted": "positive",
+      "text": "The shrimp scampi was excellent and the antipasti were plentiful."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "977",
+      "predicted": "neutral",
+      "text": "There are other Vietnamese restaurants in the chinatown area and you can forget about those."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1211",
+      "predicted": "positive",
+      "text": "While they keep the capex to a minimum, they do put some cash into the bagels, because they among the best in the city."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1211",
+      "predicted": "positive",
+      "text": "While they keep the capex to a minimum, they do put some cash into the bagels, because they among the best in the city."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "839",
+      "predicted": "negative",
+      "text": "Given the incredible architecture surrounding it, this place has no character."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2606",
+      "predicted": "negative",
+      "text": "My friend got the mushroom pizza which tasted better."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "309",
+      "predicted": "positive",
+      "text": "Friendly and informative staff, very attentive and prompt raw bar service."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3601",
+      "predicted": "negative",
+      "text": "I have eaten at many pizza places around NYC and this is hands down the worst."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "736",
+      "predicted": "positive",
+      "text": "This place is a great stop for great food."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "84",
+      "predicted": "positive",
+      "text": "HIGHLY RECOMMENDED for a first date."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "2743",
+      "predicted": "positive",
+      "text": "Skip Baroanda down the street (Eurotrashy, snooty and expensive) and check this place out!"
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "166",
+      "predicted": "negative",
+      "text": "Yet paired with such rude service, would never recommend for anyone interested in carrying any kind of conversation while there."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1679",
+      "predicted": "positive",
+      "text": "I went to Areo on a Sunday afternoon with four of my girlfriends, and spent three enjoyable hours there."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2288",
+      "predicted": "positive",
+      "text": "Beef noodle soup is good as well."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2764",
+      "predicted": "positive",
+      "text": "Molto bene!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2579",
+      "predicted": "positive",
+      "text": "A must try!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "981",
+      "predicted": "conflict",
+      "text": "Nha Trang, while being notorious for utter lack of comfort and decor, horribly slow wait staff and horribly quick meals, is one of the best vietnamese restaurants i've ever been to. the pho is delicious and comes with very fresh vegtables."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "981",
+      "predicted": "conflict",
+      "text": "Nha Trang, while being notorious for utter lack of comfort and decor, horribly slow wait staff and horribly quick meals, is one of the best vietnamese restaurants i've ever been to. the pho is delicious and comes with very fresh vegtables."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "981",
+      "predicted": "conflict",
+      "text": "Nha Trang, while being notorious for utter lack of comfort and decor, horribly slow wait staff and horribly quick meals, is one of the best vietnamese restaurants i've ever been to. the pho is delicious and comes with very fresh vegtables."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "953",
+      "predicted": "negative",
+      "text": "With so many good restaurants on the UWS, I don't need overpriced food, absurdly arrogant wait-staff who don't recognize they work at a glorified diner, clumsy service, and management that doesn't care."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "953",
+      "predicted": "negative",
+      "text": "With so many good restaurants on the UWS, I don't need overpriced food, absurdly arrogant wait-staff who don't recognize they work at a glorified diner, clumsy service, and management that doesn't care."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "953",
+      "predicted": "negative",
+      "text": "With so many good restaurants on the UWS, I don't need overpriced food, absurdly arrogant wait-staff who don't recognize they work at a glorified diner, clumsy service, and management that doesn't care."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2767",
+      "predicted": "positive",
+      "text": "Whether it's the parmesean porcini souffle or the lamb glazed with balsamic vinegar, you will surely be transported to Northern Italy with one bite."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2429",
+      "predicted": "positive",
+      "text": "However, it just so happens that there's an even more amazing place just down the street."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "483",
+      "predicted": "positive",
+      "text": "While there are plenty of places to go for a good corned beef sandwich, Katz's has a charm about it."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "359",
+      "predicted": "positive",
+      "text": "However, looking at the table next to ours, we both sort of wished we had ordered pizza, which looked PERRRRRRRRRFECT."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2795",
+      "predicted": "negative",
+      "text": "Priced at upper intermediate range."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "342",
+      "predicted": "conflict",
+      "text": "The fish was adequate, but inexpertly sliced."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1677",
+      "predicted": "positive",
+      "text": "The only positive was the wait staff, which was prompt, knowledgable, and likeable."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2554",
+      "predicted": "positive",
+      "text": "I couldn't reccommend their Godmother pizza any higher."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "486",
+      "predicted": "positive",
+      "text": "The corned beef was tender and melted in my mouth."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1290",
+      "predicted": "positive",
+      "text": "GO HERE."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1662",
+      "predicted": "positive",
+      "text": "$20 for all you can eat sushi cannot be beaten."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2640",
+      "predicted": "neutral",
+      "text": "We got a little tipsy from the sake but isn't that what Saturday nights with the girlfriends are all about?"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3454",
+      "predicted": "positive",
+      "text": "We started with lox and mussels (the best ive ever had, ever) and had the cod and trout for dinner."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2058",
+      "predicted": "positive",
+      "text": "JUST AWSOME."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "3127",
+      "predicted": "negative",
+      "text": "This place is incredibly tiny."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "454",
+      "predicted": "positive",
+      "text": "This is one of our all-time favorite."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3460",
+      "predicted": "positive",
+      "text": "The freshest, best variety, and the fastest delivery."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3460",
+      "predicted": "positive",
+      "text": "The freshest, best variety, and the fastest delivery."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3710",
+      "predicted": "negative",
+      "text": "Price no more than a Jersey deli but way better."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2260",
+      "predicted": "neutral",
+      "text": "What's the difference between the two?"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2885",
+      "predicted": "conflict",
+      "text": "Will go back but only sate those homesick stomach cravings!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2967",
+      "predicted": "positive",
+      "text": "Good French restaurant in an area devoid of decent restaurants unless you're into eating 4 pound pastrami sandwiches at Katz' Deli, or Mexican food which is supplied by capable restaurants."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "221",
+      "predicted": "neutral",
+      "text": "My wife and I were in NYC celebrating our 30th anniversary."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "297",
+      "predicted": "negative",
+      "text": "And at the conclusion of this culinary nightmare the check was given to our table by knocking over a glass of water."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "297",
+      "predicted": "negative",
+      "text": "And at the conclusion of this culinary nightmare the check was given to our table by knocking over a glass of water."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "2502",
+      "predicted": "negative",
+      "text": "The space is a bit too small for live music, so on  jazz nights, it can be loud and cramped."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "3033",
+      "predicted": "negative",
+      "text": "The Singapore Mai Fun had NO curry flavor whatsoever."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3340",
+      "predicted": "neutral",
+      "text": "This restaurant used to be our regular Thursday night dinner location."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3334",
+      "predicted": "positive",
+      "text": "Definite go if you're used to good Indian restaurant food from abroad."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "765",
+      "predicted": "negative",
+      "text": "Sushi wasn't anything spectacular for the price."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "765",
+      "predicted": "negative",
+      "text": "Sushi wasn't anything spectacular for the price."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1040",
+      "predicted": "conflict",
+      "text": "So, for good food i'd recommend it, but not for a fun night out."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "1040",
+      "predicted": "conflict",
+      "text": "So, for good food i'd recommend it, but not for a fun night out."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1477",
+      "predicted": "positive",
+      "text": "The portions are HUGE, so it might be good to order three things to split (rather than one appetizer and entree per person) for two people."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2365",
+      "predicted": "neutral",
+      "text": "Someone else recommended the dessert - we also left that."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "264",
+      "predicted": "positive",
+      "text": "The exotic food is beautifully presented and is a delight in delicious combinations."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "239",
+      "predicted": "conflict",
+      "text": "Of course, it is crowded but who cares."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2765",
+      "predicted": "positive",
+      "text": "This quaint and romantic trattoria is at the top of my Manhattan restaurant list."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "686",
+      "predicted": "positive",
+      "text": "I've been there three times and have always had wonderful experiences."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2064",
+      "predicted": "positive",
+      "text": "we split a tasty vegetable samosa and the malai tikka wrap."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1673",
+      "predicted": "positive",
+      "text": "Decent wine selection too."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3660",
+      "predicted": "positive",
+      "text": "This lovely French-Asian fusion restaurant stands out amongst other great restaurants on Smith Street."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "514",
+      "predicted": "negative",
+      "text": "Stepped on my foot on the SECOND time he reached over me to adjust lighting."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2453",
+      "predicted": "conflict",
+      "text": "My husband said the portions were very small, but if my main course was good to eat the portion would've been fine for me."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "240",
+      "predicted": "positive",
+      "text": "Authentic Shanghai style and I cannot recommend a better Shanghai place in New York."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "2774",
+      "predicted": "negative",
+      "text": "Service is not what one would expect from a joint in this price category."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "835",
+      "predicted": "conflict",
+      "text": "The food was very expensive (we spent $160 for lunch for two) but extremely tasty."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "835",
+      "predicted": "conflict",
+      "text": "The food was very expensive (we spent $160 for lunch for two) but extremely tasty."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2208",
+      "predicted": "negative",
+      "text": "Needless to say, I'm never going back and you should be wary too."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "664",
+      "predicted": "positive",
+      "text": "The staff is also attentive and friendly."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3572",
+      "predicted": "negative",
+      "text": "Immediately after we paid, the waiter took the money and said, okay, you guys are outta here."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2441",
+      "predicted": "positive",
+      "text": "I am a die hard peep lover."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1615",
+      "predicted": "positive",
+      "text": "Everyone treats you like you were part of the family."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2727",
+      "predicted": "positive",
+      "text": "Oh yeah ever on the west side try there sister resturant Arties Cafe."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2119",
+      "predicted": "positive",
+      "text": "My roommate and I LOVE this place."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3397",
+      "predicted": "negative",
+      "text": "Its also a bit of a hassle to get to without a car (I happen to live in Inwood)."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "757",
+      "predicted": "positive",
+      "text": "It's a place for people who pay a lot for mediocre food, noise and a chance to be with their fellow bridge and tunnel folks."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "757",
+      "predicted": "conflict",
+      "text": "It's a place for people who pay a lot for mediocre food, noise and a chance to be with their fellow bridge and tunnel folks."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "757",
+      "predicted": "negative",
+      "text": "It's a place for people who pay a lot for mediocre food, noise and a chance to be with their fellow bridge and tunnel folks."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3131",
+      "predicted": "negative",
+      "text": "I just don't understand all the hype..."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "162",
+      "predicted": "neutral",
+      "text": "Went on a double date with friend and his girlfriend for a few drinks and appetizers."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1005",
+      "predicted": "positive",
+      "text": "One of my favorite places in Manhattan."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1856",
+      "predicted": "positive",
+      "text": "We were looking forward to nice glass of Sangria when we arrived."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1344",
+      "predicted": "positive",
+      "text": "A touch more jalapeno heat for contrast and it would have been very good indeed."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3536",
+      "predicted": "positive",
+      "text": "The lunch special is an asbolute steal."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1065",
+      "predicted": "conflict",
+      "text": "Nothing fancy but really good food with pretty reasonable price."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1065",
+      "predicted": "conflict",
+      "text": "Nothing fancy but really good food with pretty reasonable price."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "2884",
+      "predicted": "conflict",
+      "text": "While I quite liked the food and the ambience, I'm not quite sure if it they really deserve it the Michelin rating they have displayed so prooudly in the window."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "2884",
+      "predicted": "conflict",
+      "text": "While I quite liked the food and the ambience, I'm not quite sure if it they really deserve it the Michelin rating they have displayed so prooudly in the window."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "558",
+      "predicted": "conflict",
+      "text": "There are a few Italian employees who may not speak the best English but for me that adds to the experience."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "169",
+      "predicted": "positive",
+      "text": "I've been to at Cafe Spice probably 5-8 times, it is probably still the best Indian restaurant around Union Square."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2042",
+      "predicted": "negative",
+      "text": "Not worth the prices."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "2477",
+      "predicted": "negative",
+      "text": "And I say snacking because it really is not set up to be a proper dinner."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "696",
+      "predicted": "positive",
+      "text": "I have eaten at Saul, many times, the food is always consistently, outrageously good."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "696",
+      "predicted": "positive",
+      "text": "I have eaten at Saul, many times, the food is always consistently, outrageously good."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3636",
+      "predicted": "neutral",
+      "text": "We were on our way back to NJ, and since I am in NY, we figured why not grab some food?"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "524",
+      "predicted": "positive",
+      "text": "LOVE the atmosphere - felt like I was in Paris."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "801",
+      "predicted": "positive",
+      "text": "Every course was better than the next."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3002",
+      "predicted": "positive",
+      "text": "More important, the sushi rivals the best in Tokyo."
+    },
+    {
+      "aspect": "price",
+      "gold": "conflict",
+      "id": "2969",
+      "predicted": "conflict",
+      "text": "Bill a little high, but worth it."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2039",
+      "predicted": "negative",
+      "text": "They charge $6.00 for rice."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1004",
+      "predicted": "positive",
+      "text": "Definitely worth the trip to Battery Park City!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1606",
+      "predicted": "positive",
+      "text": "Both are delicious, the cooks are friendly and are willing to take a moment and speak to you and shake your hand."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1606",
+      "predicted": "positive",
+      "text": "Both are delicious, the cooks are friendly and are willing to take a moment and speak to you and shake your hand."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2079",
+      "predicted": "positive",
+      "text": "The staff was accomodating, the food was absolutely delicious and the place is lovely."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2079",
+      "predicted": "positive",
+      "text": "The staff was accomodating, the food was absolutely delicious and the place is lovely."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2079",
+      "predicted": "positive",
+      "text": "The staff was accomodating, the food was absolutely delicious and the place is lovely."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "316",
+      "predicted": "positive",
+      "text": "There was a great deal for 6 Blue Point oysters and a beer or glass of wine for $8!"
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3456",
+      "predicted": "positive",
+      "text": "The staff was knowledgeable and full of personality."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "1607",
+      "predicted": "conflict",
+      "text": "The service is a bit slow, but harkens back to my years growing up in Napoli, Italy where things are not rushed and when you sit down for dinner the table is yours all night."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "869",
+      "predicted": "positive",
+      "text": "The ambience is authentic and relaxing and we have always received attentive and prompt service."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "869",
+      "predicted": "positive",
+      "text": "The ambience is authentic and relaxing and we have always received attentive and prompt service."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2457",
+      "predicted": "positive",
+      "text": "And the staff is also young, energeic and hot!!!!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2010",
+      "predicted": "neutral",
+      "text": "We had a girls' night dinner here for restaurant week."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3064",
+      "predicted": "positive",
+      "text": "Romantic if you want it to be (brightly lit)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1719",
+      "predicted": "positive",
+      "text": "I recommend it!"
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3553",
+      "predicted": "negative",
+      "text": "we did notice however, that some tables had what looked like pita instead of naan."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "315",
+      "predicted": "positive",
+      "text": "I didn't take a look at the rest menu, but the oysters were fantastic."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "2219",
+      "predicted": "conflict",
+      "text": "The red sliding doors may be unique but they do not block off the cold air from the outside."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2282",
+      "predicted": "positive",
+      "text": "You fellas above says its the best Taiwanese restaurant in town."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3293",
+      "predicted": "positive",
+      "text": "I have been going back again and again."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3659",
+      "predicted": "positive",
+      "text": "Overall, excellent restaurant!"
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "492",
+      "predicted": "positive",
+      "text": "The servers give you some sample slices of your order while you wait (shortly I might add)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "538",
+      "predicted": "positive",
+      "text": "I ate here for the first time and absolutely loved it!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1929",
+      "predicted": "positive",
+      "text": "The food was delicious (I had a halibut special, my husband had steak), and the service was top-notch."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1929",
+      "predicted": "positive",
+      "text": "The food was delicious (I had a halibut special, my husband had steak), and the service was top-notch."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3186",
+      "predicted": "positive",
+      "text": "The staff are attentive, and have smiles on their faces."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "753",
+      "predicted": "positive",
+      "text": "After my 3rd time the manager remembered me and treated me like an usual customer."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "968",
+      "predicted": "positive",
+      "text": "Top spot in town for Vietnamese classics, better than places that cost a lot more."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "968",
+      "predicted": "positive",
+      "text": "Top spot in town for Vietnamese classics, better than places that cost a lot more."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2136",
+      "predicted": "positive",
+      "text": "This was the perfect quiet, relaxing, and delicious accompaniment to our afternoon of theater."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2136",
+      "predicted": "positive",
+      "text": "This was the perfect quiet, relaxing, and delicious accompaniment to our afternoon of theater."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1547",
+      "predicted": "neutral",
+      "text": "It appears to be the owner's first venture and it shows."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "939",
+      "predicted": "positive",
+      "text": "The food was authentic."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "595",
+      "predicted": "conflict",
+      "text": "If celebrities make you sweat, then your in for a ride, but if your like most around these parts then you'll just yawn and wonder whats with all the hype."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "613",
+      "predicted": "neutral",
+      "text": "If you want something really different than try Jekyll and Hyde."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "831",
+      "predicted": "negative",
+      "text": "I must say it's a little pricey for the food because it was not as spectacular as the view."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "386",
+      "predicted": "positive",
+      "text": "Everything I had was good, and I'm a eater."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "1196",
+      "predicted": "negative",
+      "text": "The service is awful--the last time I was there (and I do mean the last time) we were told that they needed our table so we would have to leave."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2253",
+      "predicted": "positive",
+      "text": "Try the green curry!!!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3425",
+      "predicted": "positive",
+      "text": "We had the scallops as an appetizer and they were delicious and the sauce was wonderful."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "267",
+      "predicted": "positive",
+      "text": "The bar is very well stocked with interesting beers and well priced wines."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2976",
+      "predicted": "positive",
+      "text": "Great wine selection, Gigondas is worth the price, and the house champagne is a great value."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "921",
+      "predicted": "positive",
+      "text": "The place was nice and calm."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1681",
+      "predicted": "positive",
+      "text": "Most of the servers are very attentive, friendly and quite attractive."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2558",
+      "predicted": "positive",
+      "text": "But they've done a really nice job of offering all the typical pizzeria faves plus some terrific specials like the Godmother pizza (a sort of traditional flat pizza with an olive oil-brushed crust and less tomato sauce than usual)."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3513",
+      "predicted": "negative",
+      "text": "The service was poor, restaurant poorly lit, staff not very attentive and I would have rather eaten at a Mcdonald's than this joint."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "3513",
+      "predicted": "negative",
+      "text": "The service was poor, restaurant poorly lit, staff not very attentive and I would have rather eaten at a Mcdonald's than this joint."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "neutral",
+      "id": "3052",
+      "predicted": "positive",
+      "text": "Once you step into Cosette, you're miraculously in a small, off-the-beaten path Parisian bistro."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3690",
+      "predicted": "positive",
+      "text": "Will have to return to try the chocolate!"
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1274",
+      "predicted": "positive",
+      "text": "It's only $1.95 for a regular slice and $4.00 for a slice with a mushroom, not mushrooms."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1585",
+      "predicted": "positive",
+      "text": "I REALLY ENJOYED THE SHOWS PUT ON BY THE ACTORS."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "3452",
+      "predicted": "neutral",
+      "text": "I have been urged by friends for months to check out the mermaid inn."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1667",
+      "predicted": "neutral",
+      "text": "I've read some of the previews reviews - people are either not New Yorkers or have more appreciation for ambience then food."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "426",
+      "predicted": "positive",
+      "text": "Toons has recently been redone, so it's now a very attractive space."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2697",
+      "predicted": "positive",
+      "text": "The quail was fantastic and unique and the pastas were full of flavor."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1650",
+      "predicted": "positive",
+      "text": "This big draw is the all you can sushi here for $19.95!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1926",
+      "predicted": "neutral",
+      "text": "Went to Village last night for my birthday."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "909",
+      "predicted": "neutral",
+      "text": "We visited Orsay during NY Restaurant Week and tried their $35 menu."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "488",
+      "predicted": "negative",
+      "text": "I would have gotten some cole slaw and a knish if my stomach had more space."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "804",
+      "predicted": "conflict",
+      "text": "came here for restaurant week, didn't save much, but it was still great."
+    },
+    {
+      "aspect": "price",
+      "gold": "conflict",
+      "id": "804",
+      "predicted": "conflict",
+      "text": "came here for restaurant week, didn't save much, but it was still great."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1953",
+      "predicted": "neutral",
+      "text": "Bring your appetites."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2676",
+      "predicted": "positive",
+      "text": "Cornelia Street looks like a Broadway set for West Side Story and the inside of Po is so cool quaint you really can't top the setting for a romantic dinner in NYC."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "597",
+      "predicted": "positive",
+      "text": "Seriously, this place kicks ass."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3317",
+      "predicted": "positive",
+      "text": "Food was good and the view of the new york city skiline was terrific even on a foggy rainy day like that of when I went."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3317",
+      "predicted": "positive",
+      "text": "Food was good and the view of the new york city skiline was terrific even on a foggy rainy day like that of when I went."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1745",
+      "predicted": "negative",
+      "text": "Also, because it is so thin, it gets cold very quickly and its not that filling."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3106",
+      "predicted": "negative",
+      "text": "However, I do not understand the extraordinary hype about this restaurant."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "606",
+      "predicted": "positive",
+      "text": "I will be returning."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "1648",
+      "predicted": "conflict",
+      "text": "It is a small restuarant so go early and it will be nice and quiet- go late and it will be packed!"
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "1655",
+      "predicted": "conflict",
+      "text": "Not the greatest sushi place, but excellent for a $19.95 all you can eat."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1655",
+      "predicted": "conflict",
+      "text": "Not the greatest sushi place, but excellent for a $19.95 all you can eat."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1254",
+      "predicted": "positive",
+      "text": "The Thai ice tea was amazingly smooth and yummy!"
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2230",
+      "predicted": "negative",
+      "text": "What I didn't like was how the food came right after it was ordered."
+    },
+    {
+      "aspect": "price",
+      "gold": "neutral",
+      "id": "574",
+      "predicted": "negative",
+      "text": "Moderate prices."
+    },
+    {
+      "aspect": "service",
+      "gold": "neutral",
+      "id": "1845",
+      "predicted": "positive",
+      "text": "However, service was as plain as sesame crusted Salmon I had."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "1845",
+      "predicted": "positive",
+      "text": "However, service was as plain as sesame crusted Salmon I had."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "258",
+      "predicted": "positive",
+      "text": "I go and eat out at many different restaurants and this is one place you have go and try."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "258",
+      "predicted": "positive",
+      "text": "I go and eat out at many different restaurants and this is one place you have go and try."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "946",
+      "predicted": "negative",
+      "text": "We only ordered desserts and drinks, but no refills were offered."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "697",
+      "predicted": "positive",
+      "text": "Saul is the best restaurant on Smith Street and in Brooklyn."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1602",
+      "predicted": "positive",
+      "text": "Service is great, takeout is good too."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1602",
+      "predicted": "positive",
+      "text": "Service is great, takeout is good too."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "873",
+      "predicted": "negative",
+      "text": "Based on the reviews on here, it appears that the restaurant is overwhelmed after the 7 PM."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3556",
+      "predicted": "neutral",
+      "text": "and never strayed."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "519",
+      "predicted": "positive",
+      "text": "Great selection of wine, and seafood."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1126",
+      "predicted": "neutral",
+      "text": "but I wouldn't wanna live there."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "1670",
+      "predicted": "negative",
+      "text": "Yes, there might be a wait if you have no reservations."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "122",
+      "predicted": "positive",
+      "text": "Thank You Emilio."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1941",
+      "predicted": "positive",
+      "text": "- i asked for them spicy and they were delicious)."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2190",
+      "predicted": "positive",
+      "text": "Downstairs lounge is always a good attraction"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3392",
+      "predicted": "positive",
+      "text": "i recommend the thai popcorn :)"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1844",
+      "predicted": "positive",
+      "text": "Everything looks great, the drinks, the decor, the food, even the people."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1844",
+      "predicted": "positive",
+      "text": "Everything looks great, the drinks, the decor, the food, even the people."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2431",
+      "predicted": "positive",
+      "text": "The parathas and kebabs are made when ordered ensuring a level of freshness that is unsurpassed."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "741",
+      "predicted": "positive",
+      "text": "The tuna and wasabe potatoes are excellent."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "775",
+      "predicted": "negative",
+      "text": "The only disappointment was the coat check girls who didn't seem to know what a customer is on a realtively non-busy night (for the coat check girls)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "800",
+      "predicted": "positive",
+      "text": "My fiance took me to Scopa last week for my birthday and I couldn't believe the food."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "800",
+      "predicted": "positive",
+      "text": "My fiance took me to Scopa last week for my birthday and I couldn't believe the food."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1618",
+      "predicted": "positive",
+      "text": "We had great desserts (including the best cannoli I've ever had) and then they offered an after dinner drink, on the house."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1618",
+      "predicted": "positive",
+      "text": "We had great desserts (including the best cannoli I've ever had) and then they offered an after dinner drink, on the house."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2638",
+      "predicted": "positive",
+      "text": "We could have made a meal of the yummy dumplings from the dumpling menu."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1691",
+      "predicted": "positive",
+      "text": "Good food."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3056",
+      "predicted": "conflict",
+      "text": "However, go for the ambience, and consider the food just a companion for a trip across the world!"
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "3056",
+      "predicted": "conflict",
+      "text": "However, go for the ambience, and consider the food just a companion for a trip across the world!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1384",
+      "predicted": "positive",
+      "text": "Incredible food at a very agreable price brings me back just about every other day to this authentic Thai restaurant."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1384",
+      "predicted": "positive",
+      "text": "Incredible food at a very agreable price brings me back just about every other day to this authentic Thai restaurant."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3",
+      "predicted": "conflict",
+      "text": "The staff isn't the friendliest or most competent, and I am stickler for service, but everything else about this place makes up for it."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3",
+      "predicted": "conflict",
+      "text": "The staff isn't the friendliest or most competent, and I am stickler for service, but everything else about this place makes up for it."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "254",
+      "predicted": "negative",
+      "text": "This restaurant was way overhyped."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2997",
+      "predicted": "positive",
+      "text": "Delicious crab cakes too."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1958",
+      "predicted": "positive",
+      "text": "Now at the top of our list, Del Frisco's Steakhouse."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "77",
+      "predicted": "positive",
+      "text": "I have been coming here for years and have nothing but good things to say about the service and the great staff at La Lanterna."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "3150",
+      "predicted": "conflict",
+      "text": "Food was okay, nothing great."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1799",
+      "predicted": "negative",
+      "text": "Every waitress and customer who passed by me bumped into my chair."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2238",
+      "predicted": "positive",
+      "text": "I recently tried Suan and I thought that it was great."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3627",
+      "predicted": "positive",
+      "text": "Again, if you are in this neighborhood - by all means, come here."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "1867",
+      "predicted": "conflict",
+      "text": "The first 2 courses were very good, but the chocolate sampler was too rich for me and the dessert wine far too sweet."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "273",
+      "predicted": "positive",
+      "text": "We had a party in their private room and they made it truly memorable and were very helpful in the planning."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "2016",
+      "predicted": "neutral",
+      "text": "We began with the cheese fondue (the artisanal blend) and added apples and kielbasa to dip."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1305",
+      "predicted": "negative",
+      "text": "In fact, while leaving the place we saw two people looking at the menu, and I couldn't help telling them that the food was horrible."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1305",
+      "predicted": "negative",
+      "text": "In fact, while leaving the place we saw two people looking at the menu, and I couldn't help telling them that the food was horrible."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1951",
+      "predicted": "conflict",
+      "text": "Even though the restaurant was packed, we were seated promptly and even asked for a table upstairs with no problems."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "2555",
+      "predicted": "conflict",
+      "text": "Service is friendly, prices are good - delivery time was a little slow, but for the way this pizza tastes, I'm willing to overlook it."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2555",
+      "predicted": "conflict",
+      "text": "Service is friendly, prices are good - delivery time was a little slow, but for the way this pizza tastes, I'm willing to overlook it."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2555",
+      "predicted": "conflict",
+      "text": "Service is friendly, prices are good - delivery time was a little slow, but for the way this pizza tastes, I'm willing to overlook it."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2244",
+      "predicted": "positive",
+      "text": "I LOVE their Thai noodles with shrimp and chicken and coconut juice is the MUST!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1454",
+      "predicted": "neutral",
+      "text": "The only possible drawback to this last point is that as of the date of this posting, the additional menu items are only written in Chinese."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1070",
+      "predicted": "conflict",
+      "text": "A little crowded but they move that line really fast!"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "1070",
+      "predicted": "conflict",
+      "text": "A little crowded but they move that line really fast!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "493",
+      "predicted": "positive",
+      "text": "Kosher dills are the perfect compliment for your unforgetable sandwich and they give you plenty of them."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2273",
+      "predicted": "positive",
+      "text": "Their sushi, Kamikaze and other Rolls are fresh and well presented."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "289",
+      "predicted": "neutral",
+      "text": "I read the other review and have to say I had the opposite experience here last Sunday."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1846",
+      "predicted": "negative",
+      "text": "The highlight of the night was the mayonaisse for my side of fries I received from one of the food runners, which is not good considering the bill was nearly $100."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "1846",
+      "predicted": "negative",
+      "text": "The highlight of the night was the mayonaisse for my side of fries I received from one of the food runners, which is not good considering the bill was nearly $100."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3514",
+      "predicted": "negative",
+      "text": "Never again!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1612",
+      "predicted": "positive",
+      "text": "Have the iced tea."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3544",
+      "predicted": "positive",
+      "text": "The ambience is very romantic and definitely a good place to bring a date."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1313",
+      "predicted": "negative",
+      "text": "I ate here a week ago and found most dishes average at best and too expensive."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "1313",
+      "predicted": "negative",
+      "text": "I ate here a week ago and found most dishes average at best and too expensive."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2902",
+      "predicted": "positive",
+      "text": "Still, try it once, since if you end up loving the food, it could be one of your best dining experiences."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1942",
+      "predicted": "positive",
+      "text": "Our waiter and all of the people helping him were attentive and genuine."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "conflict",
+      "id": "204",
+      "predicted": "conflict",
+      "text": "Though you will undoubtedly be seated at a table with what seems like barely enough room (no matter what the size of your party), the warm atomosphere is worth the cramped quarters- you'll have fun and forgot about the tight spot you're in."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "713",
+      "predicted": "negative",
+      "text": "Besides, when you have bad service, that's less money you have to tip."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "601",
+      "predicted": "positive",
+      "text": "We went to eat at the Jekyll and Hyde restaurant on Friday night and really enjoyed the fun atmosphere and good food."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "601",
+      "predicted": "positive",
+      "text": "We went to eat at the Jekyll and Hyde restaurant on Friday night and really enjoyed the fun atmosphere and good food."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "601",
+      "predicted": "positive",
+      "text": "We went to eat at the Jekyll and Hyde restaurant on Friday night and really enjoyed the fun atmosphere and good food."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2778",
+      "predicted": "conflict",
+      "text": "Found service above average, but that could be because we were 13 of us."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2778",
+      "predicted": "conflict",
+      "text": "Found service above average, but that could be because we were 13 of us."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "903",
+      "predicted": "positive",
+      "text": "When I arrived at Orsay I was thrown back, in a veyr good sense."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1237",
+      "predicted": "neutral",
+      "text": "But, hey, there is anything better with a decent vegetarian selection in Astoria."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1598",
+      "predicted": "positive",
+      "text": "Would definitely go back again."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "3432",
+      "predicted": "negative",
+      "text": "Had 1 appetizer, 2 entrees and 2 cokes and the bill was ~$55.00, not including tip."
+    },
+    {
+      "aspect": "price",
+      "gold": "neutral",
+      "id": "3432",
+      "predicted": "negative",
+      "text": "Had 1 appetizer, 2 entrees and 2 cokes and the bill was ~$55.00, not including tip."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1212",
+      "predicted": "positive",
+      "text": "It's really a takeaway place, I wouldn't sit if I could take it home."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1582",
+      "predicted": "positive",
+      "text": "THE MOST FUN RESTAURANT I HAVE EVER BEEN TOO!"
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2773",
+      "predicted": "negative",
+      "text": "Slightly above average wines start at $70+ with only one selection listed at $30+."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2773",
+      "predicted": "negative",
+      "text": "Slightly above average wines start at $70+ with only one selection listed at $30+."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1456",
+      "predicted": "conflict",
+      "text": "You can certainly find restaurants that offer a superior fine dining experience, but for superb food at reasonable prices, La Villa can't be beat."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1456",
+      "predicted": "conflict",
+      "text": "You can certainly find restaurants that offer a superior fine dining experience, but for superb food at reasonable prices, La Villa can't be beat."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1456",
+      "predicted": "conflict",
+      "text": "You can certainly find restaurants that offer a superior fine dining experience, but for superb food at reasonable prices, La Villa can't be beat."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "424",
+      "predicted": "positive",
+      "text": "Their pad penang is delicious and everything else is fantastic."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "676",
+      "predicted": "positive",
+      "text": "The flavors are very fresh and pretty inobtrusive, nothing flashy."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1371",
+      "predicted": "negative",
+      "text": "The hanger steak was like rubber and the tuna was flavorless not to mention it tasted like it had just been thawed."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2242",
+      "predicted": "positive",
+      "text": "Suan is a great place that I often take my friends (classmates) too."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2650",
+      "predicted": "negative",
+      "text": "Not a great place for family or general dining."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1149",
+      "predicted": "neutral",
+      "text": "I thought going to Jimmys would give me a real Domincan exprience."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "2167",
+      "predicted": "negative",
+      "text": "The workers there also absolutely load the bagel with cream cheese (gets a little messy)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "795",
+      "predicted": "negative",
+      "text": "I was wrong."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3507",
+      "predicted": "positive",
+      "text": "His wife Tanya, the hostess, completes the comforting atmosphere by being delightfully warm and gracious."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3507",
+      "predicted": "positive",
+      "text": "His wife Tanya, the hostess, completes the comforting atmosphere by being delightfully warm and gracious."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "2249",
+      "predicted": "conflict",
+      "text": "I have been a longtime fan of Holy Basil in the East Village, and while I do believe their food has slightly slipped in quality, I have been hesitant to be disloyal."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2249",
+      "predicted": "conflict",
+      "text": "I have been a longtime fan of Holy Basil in the East Village, and while I do believe their food has slightly slipped in quality, I have been hesitant to be disloyal."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1724",
+      "predicted": "positive",
+      "text": "But the best part about LS is the late night atmosphere, delightfully free of the BTs."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "761",
+      "predicted": "positive",
+      "text": "For an untrendy rip-off- eat here."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3226",
+      "predicted": "positive",
+      "text": "Monday nights are a bargain at the $28 prix fix - this includes a three course meal plus *three* glasses of wine paired with each course."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3093",
+      "predicted": "positive",
+      "text": "Wonderful!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2849",
+      "predicted": "positive",
+      "text": "All I can say is WOW!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "1544",
+      "predicted": "negative",
+      "text": "This is a cute place and could be good but they need to get their act together."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1544",
+      "predicted": "negative",
+      "text": "This is a cute place and could be good but they need to get their act together."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "3302",
+      "predicted": "positive",
+      "text": "The staff offers impeccable service."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2008",
+      "predicted": "positive",
+      "text": "The brioche and lollies as party favors is a cute and sweet touch to a most memorable meal."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "89",
+      "predicted": "positive",
+      "text": "The service was attentive, yet unimposing, the food was far better than many notorious restaurants in Midtown and the wine list is extensive and well priced."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "89",
+      "predicted": "positive",
+      "text": "The service was attentive, yet unimposing, the food was far better than many notorious restaurants in Midtown and the wine list is extensive and well priced."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "89",
+      "predicted": "positive",
+      "text": "The service was attentive, yet unimposing, the food was far better than many notorious restaurants in Midtown and the wine list is extensive and well priced."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3491",
+      "predicted": "positive",
+      "text": "The food is authentic Italian - delicious!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2656",
+      "predicted": "negative",
+      "text": "We spent $200 in this place and left hungry and very disappointed."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2656",
+      "predicted": "negative",
+      "text": "We spent $200 in this place and left hungry and very disappointed."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1870",
+      "predicted": "positive",
+      "text": "Fast service."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2594",
+      "predicted": "positive",
+      "text": "Conveniently located too, being right on Bedford ave."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "850",
+      "predicted": "neutral",
+      "text": "At 6:30, we were the third party there."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "3108",
+      "predicted": "conflict",
+      "text": "The food is good, but very expensive for the casualness of it."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "3108",
+      "predicted": "conflict",
+      "text": "The food is good, but very expensive for the casualness of it."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2963",
+      "predicted": "positive",
+      "text": "Their wines by the glass are a great accompaniment and you can eat like a king with wine for under $30."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2963",
+      "predicted": "positive",
+      "text": "Their wines by the glass are a great accompaniment and you can eat like a king with wine for under $30."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1061",
+      "predicted": "positive",
+      "text": "Service is fast and friendly."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "15",
+      "predicted": "neutral",
+      "text": "My friends and I showed up on a Sat."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2942",
+      "predicted": "positive",
+      "text": "great experience overall."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2898",
+      "predicted": "conflict",
+      "text": "The main course had an average portion, and was decent overall."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3022",
+      "predicted": "conflict",
+      "text": "In any event, even though its a bit on the pricey side, we still love this restaurant and will definitely go back."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "3022",
+      "predicted": "conflict",
+      "text": "In any event, even though its a bit on the pricey side, we still love this restaurant and will definitely go back."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "2409",
+      "predicted": "negative",
+      "text": "And I would have to agree with the masses in terms of service - delivery is their Achilles' heel."
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "2359",
+      "predicted": "conflict",
+      "text": "The $300 bill was a bit steep, but the experience was great."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "611",
+      "predicted": "positive",
+      "text": "Simple comfort food and what hot and lage portions."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "649",
+      "predicted": "conflict",
+      "text": "When my husband and go there, we spend $60.00 (have LOBSTER TAILS UMMMMM need I say more) I can't say any more, it a place you'll never forget If you never go, you'll miss A Meal of your life time"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "649",
+      "predicted": "conflict",
+      "text": "When my husband and go there, we spend $60.00 (have LOBSTER TAILS UMMMMM need I say more) I can't say any more, it a place you'll never forget If you never go, you'll miss A Meal of your life time"
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "649",
+      "predicted": "conflict",
+      "text": "When my husband and go there, we spend $60.00 (have LOBSTER TAILS UMMMMM need I say more) I can't say any more, it a place you'll never forget If you never go, you'll miss A Meal of your life time"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "647",
+      "predicted": "positive",
+      "text": "The food is spectacular, from the appitizers to the main course, and then of course the desserts, (WOW) you'll need no more."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1480",
+      "predicted": "neutral",
+      "text": "Joe's Pizza used to have the best slice until this pizzeria opened up."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "1717",
+      "predicted": "neutral",
+      "text": "Yeah the crowd can take it a bit seriously, but it shouldn't."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3250",
+      "predicted": "negative",
+      "text": "They are still living in the dark ages and do not have an answering machine, so if you want to make a reservation you are limited."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2692",
+      "predicted": "positive",
+      "text": "The staff was very attentive, the ambience lovely, and the food superb."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2692",
+      "predicted": "positive",
+      "text": "The staff was very attentive, the ambience lovely, and the food superb."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2692",
+      "predicted": "positive",
+      "text": "The staff was very attentive, the ambience lovely, and the food superb."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "71",
+      "predicted": "positive",
+      "text": "THe Pizza and wine were excellent-the service too--but what really MADE this place was the backyard dining area."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "71",
+      "predicted": "positive",
+      "text": "THe Pizza and wine were excellent-the service too--but what really MADE this place was the backyard dining area."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "71",
+      "predicted": "positive",
+      "text": "THe Pizza and wine were excellent-the service too--but what really MADE this place was the backyard dining area."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1186",
+      "predicted": "conflict",
+      "text": "It only took about five or so minutes to get an empty table, but standing up wasn't too bad."
+    },
+    {
+      "aspect": "food",
+      "gold": "conflict",
+      "id": "3224",
+      "predicted": "conflict",
+      "text": "The menu may be small, but everything on it is delicious."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3652",
+      "predicted": "negative",
+      "text": "Avoid at all costs."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2853",
+      "predicted": "positive",
+      "text": "I would highly recommend this place to everyone for any occasion!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1109",
+      "predicted": "positive",
+      "text": "The garlic mashed potatoes are hands down the best in the city!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3423",
+      "predicted": "positive",
+      "text": "We had the lobster sandwich and it was FANTASTIC."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "856",
+      "predicted": "positive",
+      "text": "An oasis of refinement:  Food, though somewhat uneven, often reaches the pinnacles of new American fine cuisine - chef's passion (and kitchen's precise execution) is most evident in the fish dishes and soups."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "709",
+      "predicted": "positive",
+      "text": "What is even better, is that the prices are very affordable as well, and the food is really good."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "709",
+      "predicted": "positive",
+      "text": "What is even better, is that the prices are very affordable as well, and the food is really good."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "231",
+      "predicted": "neutral",
+      "text": "I went there in late afternoon for some bite size food and refleshment with my date."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3686",
+      "predicted": "conflict",
+      "text": "Eating in, the atmosphere saves it, but at your desk, it's a very disappointing experience."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "3686",
+      "predicted": "conflict",
+      "text": "Eating in, the atmosphere saves it, but at your desk, it's a very disappointing experience."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "1408",
+      "predicted": "negative",
+      "text": "It's a rather cramped and busy restaurant and it closes early."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1278",
+      "predicted": "positive",
+      "text": "The pizza is good though."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1674",
+      "predicted": "negative",
+      "text": "Went there last night for 2 year anniversery, and wasn't all that impressed."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "332",
+      "predicted": "neutral",
+      "text": "At first I was slightly skeptical because it was a sushi restaurant in the middle of NYC."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3451",
+      "predicted": "positive",
+      "text": "overall, a solid restaurant and at less than $40pp (including wine), a solid deal as well."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "3451",
+      "predicted": "positive",
+      "text": "overall, a solid restaurant and at less than $40pp (including wine), a solid deal as well."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "1551",
+      "predicted": "conflict",
+      "text": "Since it literally is a complete hole in the wall, it's a bit intimidating at first, but you get over that very quickly as soon as the friendly staff welcomes you - don't hesitate to ask for help with what to get."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "1551",
+      "predicted": "conflict",
+      "text": "Since it literally is a complete hole in the wall, it's a bit intimidating at first, but you get over that very quickly as soon as the friendly staff welcomes you - don't hesitate to ask for help with what to get."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "55",
+      "predicted": "neutral",
+      "text": "David, Daytona Beach, FL"
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "229",
+      "predicted": "positive",
+      "text": "Great people watching as others do the same to you."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "3049",
+      "predicted": "negative",
+      "text": "The food was lousy - too sweet or too salty and the portions tiny."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3208",
+      "predicted": "positive",
+      "text": "Don't leave without trying One Night in Tokyo."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "191",
+      "predicted": "negative",
+      "text": "Oh yes, and they lie on the phone, claiming they have seating in the garden, then of course the seats are not available."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "370",
+      "predicted": "neutral",
+      "text": "kalbi and nebbiolo do work together."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "1866",
+      "predicted": "positive",
+      "text": "I had the tuna tartare with sake, mushroom ravioli with pinot noir, and the chocolate sampler with a dessert wine for $49."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "610",
+      "predicted": "positive",
+      "text": "We had a great tiem watching the shows and characters and ar food was just what we were looking for."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "610",
+      "predicted": "positive",
+      "text": "We had a great tiem watching the shows and characters and ar food was just what we were looking for."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "916",
+      "predicted": "positive",
+      "text": "The food was average or above including some surprising tasty dishes."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "2194",
+      "predicted": "negative",
+      "text": "They don't seem to place an emphasis on specials or fresh ingredients which to me is necessary for good thai."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "340",
+      "predicted": "negative",
+      "text": "The rice was poor quality and was cooked so badly it was hard."
+    },
+    {
+      "aspect": "service",
+      "gold": "conflict",
+      "id": "301",
+      "predicted": "conflict",
+      "text": "There was a long wait for a table outside, but it was a little too hot in the sun anyway so our insde table was very nice."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "2473",
+      "predicted": "positive",
+      "text": "They are amazing!"
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "662",
+      "predicted": "positive",
+      "text": "I always get the Shabu-Shabu dinner and the beef is always fresh."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "1991",
+      "predicted": "positive",
+      "text": "The production is a symphony, alot of fun to experience.The food sublime for the most part."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1991",
+      "predicted": "positive",
+      "text": "The production is a symphony, alot of fun to experience.The food sublime for the most part."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "469",
+      "predicted": "neutral",
+      "text": "My husband and I ate here after reading reviews here as well as hobokeni.com,"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1568",
+      "predicted": "positive",
+      "text": "My six year old loved it."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3084",
+      "predicted": "positive",
+      "text": "The food inludes famous scrumptious bombay style chaat such as bhelpuri, sevpuri and samosa chaats, as well as other great indian appetizers."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "negative",
+      "id": "3274",
+      "predicted": "neutral",
+      "text": "Most people eat there seem to be typical Upper East Side snobs, so be aware."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "3223",
+      "predicted": "positive",
+      "text": "My mouth starts to water merely thinking about the delight that is this restaurant."
+    },
+    {
+      "aspect": "food",
+      "gold": "neutral",
+      "id": "1660",
+      "predicted": "neutral",
+      "text": "Stuffing yourself with Japanese food is a rare thing."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3342",
+      "predicted": "negative",
+      "text": "I wish they would change back to what it was before."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "163",
+      "predicted": "negative",
+      "text": "We couldn't carry our conversation as we were routinely interrupted by waitress and servants asking us to order and hinting that we're taking too much time -- amazing, we just sat down."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2863",
+      "predicted": "negative",
+      "text": "Please save yourself the frustration."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2443",
+      "predicted": "positive",
+      "text": "Great food (spinach and corn dumplings and massamman curry), very friendly and no nonsense service and a clean and funky bathroom."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2443",
+      "predicted": "positive",
+      "text": "Great food (spinach and corn dumplings and massamman curry), very friendly and no nonsense service and a clean and funky bathroom."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "2443",
+      "predicted": "positive",
+      "text": "Great food (spinach and corn dumplings and massamman curry), very friendly and no nonsense service and a clean and funky bathroom."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "2651",
+      "predicted": "positive",
+      "text": "We arrived for dinner expecting to be impressed by a place that has an impressive past - but, that's just it -- the PAST!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "1432",
+      "predicted": "positive",
+      "text": "I consider the best Grand Sichuan restaurant in NYC."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "609",
+      "predicted": "positive",
+      "text": "Really cool stauff inside."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "conflict",
+      "id": "661",
+      "predicted": "conflict",
+      "text": "There is usually a wait but it is well worth it."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "neutral",
+      "id": "3053",
+      "predicted": "positive",
+      "text": "This tiny restaurant is as cozy as it gets, with that certain Parisian flair."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "3645",
+      "predicted": "positive",
+      "text": "Good for dates or with friends."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "1096",
+      "predicted": "positive",
+      "text": "This is definitely an  excellent date spot because of the ambiance and on the weekends the  night scene is more than alive."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "2859",
+      "predicted": "negative",
+      "text": "As soon as my father lifted his pen from the check a chef appeared to usher us out."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "positive",
+      "id": "467",
+      "predicted": "positive",
+      "text": "A word to the wise - the Hoboken health inspector clued me to his findings that this is THE cleanest restaurant in town."
+    },
+    {
+      "aspect": "ambience",
+      "gold": "positive",
+      "id": "467",
+      "predicted": "positive",
+      "text": "A word to the wise - the Hoboken health inspector clued me to his findings that this is THE cleanest restaurant in town."
+    },
+    {
+      "aspect": "food",
+      "gold": "negative",
+      "id": "1268",
+      "predicted": "negative",
+      "text": "The mussaman curry that I ordered was as thin as water and aside from the poorly fried tofu that I ordered in it, they graciously provided me with ONE piece of poorly cooked potato."
+    },
+    {
+      "aspect": "food",
+      "gold": "positive",
+      "id": "2567",
+      "predicted": "positive",
+      "text": "Great value for the quality ingredients."
+    },
+    {
+      "aspect": "price",
+      "gold": "positive",
+      "id": "2567",
+      "predicted": "positive",
+      "text": "Great value for the quality ingredients."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "1651",
+      "predicted": "neutral",
+      "text": "The catch is that you are charged extra for ANYTHING that you leave on your plate so don't be a greedy pig!"
+    },
+    {
+      "aspect": "price",
+      "gold": "negative",
+      "id": "1651",
+      "predicted": "negative",
+      "text": "The catch is that you are charged extra for ANYTHING that you leave on your plate so don't be a greedy pig!"
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "negative",
+      "id": "3510",
+      "predicted": "negative",
+      "text": "I was here a few weeks back and we had the worst customer service experience at a restaurant ever."
+    },
+    {
+      "aspect": "service",
+      "gold": "negative",
+      "id": "3510",
+      "predicted": "negative",
+      "text": "I was here a few weeks back and we had the worst customer service experience at a restaurant ever."
+    },
+    {
+      "aspect": "service",
+      "gold": "positive",
+      "id": "2153",
+      "predicted": "negative",
+      "text": "We live in New Jersey and whenever we go into New York City we buy bagels to eat hot and then to freeze (they told me that if I call in the order, they'd bring it out to the car so I wouldn't have to look for parking)."
+    },
+    {
+      "aspect": "anecdotes/miscellaneous",
+      "gold": "neutral",
+      "id": "331",
+      "predicted": "neutral",
+      "text": "When I visited my friend who lives in the Upper Eastside, she recommended that we go to this restaurant."
+    }
+  ],
+  "selection": {
+    "accuracy": 0.7841409691629956,
+    "classes": {
+      "conflict": {
+        "f1": 0.5263157894736842,
+        "precision": 0.38461538461538464,
+        "recall": 0.8333333333333334,
+        "support": 12
+      },
+      "negative": {
+        "f1": 0.7358490566037735,
+        "precision": 0.7222222222222222,
+        "recall": 0.75,
+        "support": 52
+      },
+      "neutral": {
+        "f1": 0.5818181818181819,
+        "precision": 0.6153846153846154,
+        "recall": 0.5517241379310345,
+        "support": 29
+      },
+      "positive": {
+        "f1": 0.8862745098039215,
+        "precision": 0.9338842975206612,
+        "recall": 0.8432835820895522,
+        "support": 134
+      }
+    },
+    "macro_f1": 0.6825643844248903
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "aspect": {
+    "classes": {
+      "ambience": {
+        "f1": 0.8648648648648649,
+        "precision": 0.8648648648648649,
+        "recall": 0.8648648648648649,
+        "support": 37
+      },
+      "anecdotes/miscellaneous": {
+        "f1": 0.8617021276595744,
+        "precision": 0.8709677419354839,
+        "recall": 0.8526315789473684,
+        "support": 95
+      },
+      "food": {
+        "f1": 0.9252336448598131,
+        "precision": 0.908256880733945,
+        "recall": 0.9428571428571428,
+        "support": 105
+      },
+      "price": {
+        "f1": 0.912280701754386,
+        "precision": 0.8666666666666667,
+        "recall": 0.9629629629629629,
+        "support": 27
+      },
+      "service": {
+        "f1": 0.9019607843137255,
+        "precision": 0.9019607843137255,
+        "recall": 0.9019607843137255,
+        "support": 51
+      }
+    },
+    "macro": {
+      "f1": 0.8932084246904728,
+      "precision": 0.8825433877029372,
+      "recall": 0.9050554667892129,
+      "support": 315
+    },
+    "micro": {
+      "f1": 0.8944881889763779,
+      "precision": 0.8875,
+      "recall": 0.9015873015873016,
+      "support": 315
+    }
+  },
+  "cardinality": {
+    "gold_mean": 1.2209302325581395,
+    "predicted_mean": 1.2403100775193798
+  },
+  "coverage": {
+    "covered_expected_ids": 258,
+    "expected_ids": 258,
+    "missing_ids": 0,
+    "predicted_ids": 258,
+    "ratio": 1.0,
+    "unexpected_ids": 0
+  },
+  "exact_set_accuracy": 0.8333333333333334,
+  "subsets": {
+    "multi_aspect": {
+      "exact_set_accuracy": 0.7755102040816326,
+      "ids": 49
+    },
+    "single_aspect": {
+      "exact_set_accuracy": 0.84688995215311,
+      "ids": 209
+    }
+  }
+}

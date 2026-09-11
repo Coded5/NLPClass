@@ -1,0 +1,236 @@
+{
+  "0.25": {
+    "calibration": {
+      "alpha": 0.0,
+      "conflict_bias": 0.0,
+      "neutral_bias": 0.0,
+      "temperature": 1.0
+    },
+    "checkpoint": "artifacts/experiments/polarity-evidence-v1/runs/lambda-0.25/seed-42/best.pt",
+    "metrics": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": 0.0,
+        "neutral_bias": 0.0,
+        "temperature": 1.0
+      },
+      "exact_set_accuracy": 0.6937984496124031,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.5555555555555556,
+          "precision": 0.5,
+          "recall": 0.625,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.7837837837837838,
+          "precision": 0.7631578947368421,
+          "recall": 0.8055555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7466666666666666,
+          "precision": 0.8,
+          "recall": 0.7,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9164420485175202,
+          "precision": 0.9239130434782609,
+          "recall": 0.9090909090909091,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.6511111111111111,
+      "pair_micro_f1": 0.7565891472868217,
+      "polarity_micro_f1": 0.843462246777164,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.6334648836279939,
+          "negative": 0.1666266146394264,
+          "neutral": 0.06225096760584847,
+          "positive": 0.13765751483788335
+        },
+        "negative": {
+          "conflict": 0.041066514591098745,
+          "negative": 0.8118963113616297,
+          "neutral": 0.04838634997654228,
+          "positive": 0.09865082331993512
+        },
+        "neutral": {
+          "conflict": 0.009195067113705591,
+          "negative": 0.17437946968543655,
+          "neutral": 0.6942574870315183,
+          "positive": 0.12216797173218766
+        },
+        "positive": {
+          "conflict": 0.04309154565071075,
+          "negative": 0.039264007840863674,
+          "neutral": 0.016972428261927134,
+          "positive": 0.9006720245683524
+        }
+      }
+    },
+    "search": {
+      "candidates": 0,
+      "stable": false,
+      "tried": []
+    }
+  },
+  "0.5": {
+    "calibration": {
+      "alpha": 0.0,
+      "conflict_bias": 0.0,
+      "neutral_bias": 0.0,
+      "temperature": 1.0
+    },
+    "checkpoint": "artifacts/experiments/polarity-evidence-v1/runs/lambda-0.5/seed-42/best.pt",
+    "metrics": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": 0.0,
+        "neutral_bias": 0.0,
+        "temperature": 1.0
+      },
+      "exact_set_accuracy": 0.6744186046511628,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.45,
+          "precision": 0.375,
+          "recall": 0.5625,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8345323741007193,
+          "precision": 0.8656716417910447,
+          "recall": 0.8055555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.6904761904761905,
+          "precision": 0.6590909090909091,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8937329700272479,
+          "precision": 0.9111111111111111,
+          "recall": 0.8770053475935828,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5702380952380952,
+      "pair_micro_f1": 0.7441860465116279,
+      "polarity_micro_f1": 0.8145454545454547,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.5667670280232642,
+          "negative": 0.12533283335005763,
+          "neutral": 0.06278913338701386,
+          "positive": 0.2451110323854664
+        },
+        "negative": {
+          "conflict": 0.052335387739023846,
+          "negative": 0.7887495681983031,
+          "neutral": 0.08619144783258686,
+          "positive": 0.07272361070621021
+        },
+        "neutral": {
+          "conflict": 0.026210772600416023,
+          "negative": 0.0808924239472617,
+          "neutral": 0.7340809776646893,
+          "positive": 0.15881584243015823
+        },
+        "positive": {
+          "conflict": 0.05662230557068069,
+          "negative": 0.019838396406123653,
+          "neutral": 0.043035387022987356,
+          "positive": 0.8805038975299595
+        }
+      }
+    },
+    "search": {
+      "candidates": 0,
+      "stable": false,
+      "tried": []
+    }
+  },
+  "1.0": {
+    "calibration": {
+      "alpha": 0.0,
+      "conflict_bias": 0.0,
+      "neutral_bias": 0.0,
+      "temperature": 1.0
+    },
+    "checkpoint": "artifacts/experiments/polarity-evidence-v1/runs/lambda-1/seed-42/best.pt",
+    "metrics": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": 0.0,
+        "neutral_bias": 0.0,
+        "temperature": 1.0
+      },
+      "exact_set_accuracy": 0.686046511627907,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4666666666666667,
+          "precision": 0.5,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8194444444444444,
+          "precision": 0.8194444444444444,
+          "recall": 0.8194444444444444,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.6976744186046512,
+          "precision": 0.6521739130434783,
+          "recall": 0.75,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.908108108108108,
+          "precision": 0.9180327868852459,
+          "recall": 0.8983957219251337,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5821705426356589,
+      "pair_micro_f1": 0.7596899224806201,
+      "polarity_micro_f1": 0.8318264014466547,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.4625252051246207,
+          "negative": 0.09204161697880409,
+          "neutral": 0.06822910389541903,
+          "positive": 0.37720407566666836
+        },
+        "negative": {
+          "conflict": 0.04043459308170188,
+          "negative": 0.8151250257376685,
+          "neutral": 0.06335603556605444,
+          "positive": 0.08108432870075274
+        },
+        "neutral": {
+          "conflict": 0.024559093591597046,
+          "negative": 0.15089951816698885,
+          "neutral": 0.7257971036528034,
+          "positive": 0.09874428053208248
+        },
+        "positive": {
+          "conflict": 0.023267193302312333,
+          "negative": 0.023545683753596718,
+          "neutral": 0.0627700645420512,
+          "positive": 0.890417058436299
+        }
+      }
+    },
+    "search": {
+      "candidates": 0,
+      "stable": false,
+      "tried": []
+    }
+  }
+}

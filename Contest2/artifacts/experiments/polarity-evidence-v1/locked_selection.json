@@ -1,0 +1,297 @@
+{
+  "aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "aspect_thresholds": [
+    0.55,
+    0.8,
+    0.9,
+    0.7,
+    0.45
+  ],
+  "baseline_calibration": {
+    "alpha": 0.0,
+    "conflict_bias": -0.75,
+    "neutral_bias": 1.5,
+    "temperature": 1.5
+  },
+  "baseline_checkpoints": [
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+  ],
+  "evidence_calibration": {
+    "alpha": 0.0,
+    "conflict_bias": -0.25,
+    "neutral_bias": 0.25,
+    "temperature": 0.75
+  },
+  "evidence_checkpoints": [
+    "artifacts/experiments/polarity-evidence-v1/runs/lambda-0.25/seed-17/best.pt",
+    "artifacts/experiments/polarity-evidence-v1/runs/lambda-0.25/seed-42/best.pt",
+    "artifacts/experiments/polarity-evidence-v1/runs/lambda-0.25/seed-73/best.pt"
+  ],
+  "selected_lambda": 0.25,
+  "test_accessed": true,
+  "validation": {
+    "calibrated_original": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": -0.75,
+        "neutral_bias": 1.5,
+        "temperature": 1.5
+      },
+      "exact_set_accuracy": 0.7054263565891473,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.5,
+          "precision": 0.5833333333333334,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8226950354609929,
+          "precision": 0.8405797101449275,
+          "recall": 0.8055555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7469879518072289,
+          "precision": 0.7209302325581395,
+          "recall": 0.775,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9259259259259258,
+          "precision": 0.9162303664921466,
+          "recall": 0.9358288770053476,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.6234939759036144,
+      "pair_micro_f1": 0.7782945736434109,
+      "polarity_micro_f1": 0.8451730418943533,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.3866470872235368,
+          "negative": 0.15229601018654648,
+          "neutral": 0.09560748894000426,
+          "positive": 0.36544940661406144
+        },
+        "negative": {
+          "conflict": 0.016727879497921094,
+          "negative": 0.7887967775685765,
+          "neutral": 0.11023483913029647,
+          "positive": 0.08424050969026414
+        },
+        "neutral": {
+          "conflict": 0.002341084300132934,
+          "negative": 0.11817824117097189,
+          "neutral": 0.7582463478203862,
+          "positive": 0.1212343365252309
+        },
+        "positive": {
+          "conflict": 0.023628362574702362,
+          "negative": 0.025552707622798886,
+          "neutral": 0.046163200368397536,
+          "positive": 0.9046557355251282
+        }
+      }
+    },
+    "evidence_calibrated": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": -0.25,
+        "neutral_bias": 0.25,
+        "temperature": 0.75
+      },
+      "exact_set_accuracy": 0.7054263565891473,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4827586206896552,
+          "precision": 0.5384615384615384,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8194444444444444,
+          "precision": 0.8194444444444444,
+          "recall": 0.8194444444444444,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7532467532467533,
+          "precision": 0.7837837837837838,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9210526315789473,
+          "precision": 0.9067357512953368,
+          "recall": 0.9358288770053476,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.6180026869682043,
+      "pair_micro_f1": 0.772093023255814,
+      "polarity_micro_f1": 0.8566243194192378,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.45131667471495973,
+          "negative": 0.1825699692524836,
+          "neutral": 0.01727675321896527,
+          "positive": 0.34883658765261316
+        },
+        "negative": {
+          "conflict": 0.028716757692543463,
+          "negative": 0.8198026234240261,
+          "neutral": 0.06744405546437093,
+          "positive": 0.08403655802939941
+        },
+        "neutral": {
+          "conflict": 0.0004890513654320471,
+          "negative": 0.13503228863778247,
+          "neutral": 0.715694430338408,
+          "positive": 0.14878422697439078
+        },
+        "positive": {
+          "conflict": 0.025221593100139553,
+          "negative": 0.027394302066471678,
+          "neutral": 0.02360316593573721,
+          "positive": 0.9237809396020464
+        }
+      }
+    },
+    "evidence_raw": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": 0.0,
+        "neutral_bias": 0.0,
+        "temperature": 1.0
+      },
+      "exact_set_accuracy": 0.6976744186046512,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4666666666666667,
+          "precision": 0.5,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8137931034482759,
+          "precision": 0.8082191780821918,
+          "recall": 0.8194444444444444,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7368421052631577,
+          "precision": 0.7777777777777778,
+          "recall": 0.7,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9182058047493403,
+          "precision": 0.90625,
+          "recall": 0.93048128342246,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.6017543859649122,
+      "pair_micro_f1": 0.7658914728682171,
+      "polarity_micro_f1": 0.850909090909091,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.46246595899992826,
+          "negative": 0.18203015552626312,
+          "neutral": 0.017948458460296024,
+          "positive": 0.3375554461217689
+        },
+        "negative": {
+          "conflict": 0.030027157601302354,
+          "negative": 0.8191906079316849,
+          "neutral": 0.0643748148768787,
+          "positive": 0.08640741899277297
+        },
+        "neutral": {
+          "conflict": 0.0018407510241331693,
+          "negative": 0.141836471640363,
+          "neutral": 0.7075879171025008,
+          "positive": 0.14873487444838246
+        },
+        "positive": {
+          "conflict": 0.027103922206015582,
+          "negative": 0.02891578278832703,
+          "neutral": 0.02215874137505976,
+          "positive": 0.9218215487267384
+        }
+      }
+    },
+    "original": {
+      "calibration": {
+        "alpha": 0.0,
+        "conflict_bias": 0.0,
+        "neutral_bias": 0.0,
+        "temperature": 1.0
+      },
+      "exact_set_accuracy": 0.686046511627907,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4666666666666667,
+          "precision": 0.5,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8219178082191781,
+          "precision": 0.8108108108108109,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7027027027027027,
+          "precision": 0.7647058823529411,
+          "recall": 0.65,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9157894736842106,
+          "precision": 0.9015544041450777,
+          "recall": 0.93048128342246,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5846846846846847,
+      "pair_micro_f1": 0.7658914728682171,
+      "polarity_micro_f1": 0.8308823529411764,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.43388847187543433,
+          "negative": 0.16392928078403202,
+          "neutral": 0.05903551389542372,
+          "positive": 0.3431467347545549
+        },
+        "negative": {
+          "conflict": 0.016602703349690273,
+          "negative": 0.8394492736319484,
+          "neutral": 0.05154619222472926,
+          "positive": 0.09240183175309842
+        },
+        "neutral": {
+          "conflict": 0.0018505652794374328,
+          "negative": 0.16495553739223395,
+          "neutral": 0.669159496256907,
+          "positive": 0.1640344092498708
+        },
+        "positive": {
+          "conflict": 0.031600236317374276,
+          "negative": 0.021101110071649016,
+          "neutral": 0.01999514419379833,
+          "positive": 0.9273035044962867
+        }
+      }
+    }
+  },
+  "winner": "calibrated_original"
+}

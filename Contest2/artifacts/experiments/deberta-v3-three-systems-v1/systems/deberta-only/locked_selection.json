@@ -1,0 +1,26 @@
+{
+  "aspect_backbone": "deberta",
+  "deberta_aspect_checkpoints": [
+    "artifacts/experiments/deberta-v3-current-best-v1/aspect/best/aspect.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/aspect/seed-43/best/aspect.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/aspect/seed-44/best/aspect.pt"
+  ],
+  "deberta_polarity_checkpoints": [
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-17/best.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-42/best.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-73/best.pt"
+  ],
+  "polarity_backbone": "deberta",
+  "roberta_aspect_checkpoints": [],
+  "roberta_polarity_checkpoints": [],
+  "system": "deberta-only",
+  "test_accessed": true,
+  "thresholds": [
+    0.8,
+    0.45,
+    0.9,
+    0.7,
+    0.4
+  ],
+  "validation_pair_micro_f1": 0.7748031496062993
+}

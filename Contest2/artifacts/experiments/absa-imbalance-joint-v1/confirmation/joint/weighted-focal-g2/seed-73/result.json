@@ -1,0 +1,19 @@
+{
+  "architecture": "joint",
+  "epoch": 35,
+  "finished": true,
+  "loss": {
+    "beta": 0.999,
+    "gamma": 2.0,
+    "name": "weighted-focal"
+  },
+  "seed": 73,
+  "thresholds": [
+    0.15,
+    0.5,
+    0.55,
+    0.85,
+    0.8
+  ],
+  "validation_pair_micro_f1": 0.7606973058637084
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "gold-conflict pairs from the held-out test split, using gold aspects",
+  "model": "three-seed weighted-CE aspect-conditioned polarity ensemble",
+  "examples": 17,
+  "correct_conflict": 6,
+  "accuracy_conflict_recall": 0.35294117647058826,
+  "average_probability_by_label": {
+    "positive": 0.26080867648124695,
+    "negative": 0.3333856761455536,
+    "neutral": 0.06790732592344284,
+    "conflict": 0.337898313999176
+  },
+  "argmax_count_by_label": {
+    "positive": 4,
+    "negative": 6,
+    "neutral": 1,
+    "conflict": 6
+  }
+}

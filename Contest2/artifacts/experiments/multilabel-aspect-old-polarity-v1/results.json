@@ -1,0 +1,681 @@
+{
+  "bootstrap": {
+    "samples": 10000,
+    "winner_vs_legacy": {
+      "lower_95": 0.040456220468880755,
+      "mean": 0.08163972671247158,
+      "upper_95": 0.1246829020801623
+    },
+    "winner_vs_one_seed": {
+      "lower_95": 0.0016691370919639237,
+      "mean": 0.032052793925127734,
+      "upper_95": 0.06362768355464554
+    }
+  },
+  "oracle_aspect_polarity_metrics": {
+    "coverage": {
+      "covered_expected_ids": 258,
+      "expected_ids": 258,
+      "missing_ids": 0,
+      "predicted_ids": 258,
+      "ratio": 1.0,
+      "unexpected_ids": 0
+    },
+    "official_evaluator": {
+      "report": "artifacts/experiments/multilabel-aspect-old-polarity-v1/test/oracle-aspects/official_evaluation.txt",
+      "script": "scripts/evaluate.py",
+      "source_of_truth": true
+    },
+    "source_of_truth_metrics": {
+      "aspect": {
+        "classes": {
+          "ambience": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 37
+          },
+          "anecdotes/miscellaneous": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 96
+          },
+          "food": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 105
+          },
+          "price": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 28
+          },
+          "service": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 50
+          }
+        },
+        "macro": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 316
+        },
+        "micro": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 316
+        }
+      },
+      "overall": {
+        "micro": {
+          "f1": 0.8354430379746836,
+          "precision": 0.8354430379746836,
+          "recall": 0.8354430379746836
+        }
+      },
+      "polarity": {
+        "classes": {
+          "conflict": {
+            "f1": 0.5833333333333334,
+            "precision": 1.0,
+            "recall": 0.4117647058823529,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.7846153846153845,
+            "precision": 0.75,
+            "recall": 0.8225806451612904,
+            "support": 62
+          },
+          "neutral": {
+            "f1": 0.6486486486486486,
+            "precision": 0.6857142857142857,
+            "recall": 0.6153846153846154,
+            "support": 39
+          },
+          "positive": {
+            "f1": 0.9166666666666666,
+            "precision": 0.89937106918239,
+            "recall": 0.934640522875817,
+            "support": 153
+          }
+        },
+        "macro": {
+          "f1": 0.7333160083160083,
+          "precision": 0.833771338724169,
+          "recall": 0.6960926223260189,
+          "support": 271
+        },
+        "micro": {
+          "f1": 0.8333333333333333,
+          "precision": 0.8364312267657993,
+          "recall": 0.8302583025830258,
+          "support": 271
+        }
+      }
+    },
+    "supplemental_exact_match_accuracy": {
+      "aspect": 1.0,
+      "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+      "overall": 0.8062015503875969,
+      "polarity": 0.8062015503875969
+    }
+  },
+  "runtime_seconds": 46.86612822299503,
+  "test_systems": {
+    "Legacy single-label": {
+      "aspect_micro_f1": 0.8153310104529616,
+      "exact_set_accuracy": 0.5813953488372093,
+      "multi_exact_accuracy": 0.0,
+      "overall_pair_micro_f1": 0.6724738675958187,
+      "pair_polarity_classes": {
+        "conflict": {
+          "f1": 0.30769230769230765,
+          "precision": 0.4444444444444444,
+          "recall": 0.23529411764705882,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.5826771653543307,
+          "precision": 0.6727272727272727,
+          "recall": 0.5138888888888888,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.4935064935064935,
+          "precision": 0.5135135135135135,
+          "recall": 0.475,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.7732558139534883,
+          "precision": 0.8471337579617835,
+          "recall": 0.7112299465240641,
+          "support": 187
+        }
+      },
+      "polarity_micro_f1": 0.8052930056710775,
+      "single_exact_accuracy": 0.7246376811594203
+    },
+    "New composed winner": {
+      "aspect_micro_f1": 0.8748019017432646,
+      "exact_set_accuracy": 0.6627906976744186,
+      "multi_exact_accuracy": 0.43137254901960786,
+      "overall_pair_micro_f1": 0.7543581616481775,
+      "pair_polarity_classes": {
+        "conflict": {
+          "f1": 0.4444444444444445,
+          "precision": 0.6,
+          "recall": 0.35294117647058826,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.6887417218543045,
+          "precision": 0.6582278481012658,
+          "recall": 0.7222222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.5405405405405405,
+          "precision": 0.5882352941176471,
+          "recall": 0.5,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8443271767810027,
+          "precision": 0.8333333333333334,
+          "recall": 0.8556149732620321,
+          "support": 187
+        }
+      },
+      "polarity_micro_f1": 0.8111111111111111,
+      "single_exact_accuracy": 0.7198067632850241
+    },
+    "Previous joint ensemble": {
+      "aspect_micro_f1": 0.8566929133858268,
+      "exact_set_accuracy": 0.627906976744186,
+      "multi_exact_accuracy": 0.3333333333333333,
+      "overall_pair_micro_f1": 0.7244094488188977,
+      "pair_polarity_classes": {
+        "conflict": {
+          "f1": 0.4827586206896552,
+          "precision": 0.5833333333333334,
+          "recall": 0.4117647058823529,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.6202531645569621,
+          "precision": 0.5697674418604651,
+          "recall": 0.6805555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.5333333333333333,
+          "precision": 0.5714285714285714,
+          "recall": 0.5,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8257372654155497,
+          "precision": 0.8279569892473119,
+          "recall": 0.8235294117647058,
+          "support": 187
+        }
+      },
+      "polarity_micro_f1": 0.7948243992606284,
+      "single_exact_accuracy": 0.7004830917874396
+    },
+    "Previous one-seed pipeline": {
+      "aspect_micro_f1": 0.869983948635634,
+      "exact_set_accuracy": 0.6395348837209303,
+      "multi_exact_accuracy": 0.35294117647058826,
+      "overall_pair_micro_f1": 0.7223113964686998,
+      "pair_polarity_classes": {
+        "conflict": {
+          "f1": 0.45161290322580644,
+          "precision": 0.5,
+          "recall": 0.4117647058823529,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.6569343065693432,
+          "precision": 0.6923076923076923,
+          "recall": 0.625,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.5,
+          "precision": 0.4772727272727273,
+          "recall": 0.525,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8194070080862534,
+          "precision": 0.8260869565217391,
+          "recall": 0.8128342245989305,
+          "support": 187
+        }
+      },
+      "polarity_micro_f1": 0.808193668528864,
+      "single_exact_accuracy": 0.7101449275362319
+    },
+    "Previous separate ensemble": {
+      "aspect_micro_f1": 0.869983948635634,
+      "exact_set_accuracy": 0.6550387596899225,
+      "multi_exact_accuracy": 0.4117647058823529,
+      "overall_pair_micro_f1": 0.7447833065810594,
+      "pair_polarity_classes": {
+        "conflict": {
+          "f1": 0.4,
+          "precision": 0.625,
+          "recall": 0.29411764705882354,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.6938775510204083,
+          "precision": 0.68,
+          "recall": 0.7083333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.5277777777777778,
+          "precision": 0.59375,
+          "recall": 0.475,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8284960422163589,
+          "precision": 0.8177083333333334,
+          "recall": 0.839572192513369,
+          "support": 187
+        }
+      },
+      "polarity_micro_f1": 0.8163265306122448,
+      "single_exact_accuracy": 0.714975845410628
+    }
+  },
+  "test_winner_metrics": {
+    "coverage": {
+      "covered_expected_ids": 258,
+      "expected_ids": 258,
+      "missing_ids": 0,
+      "predicted_ids": 258,
+      "ratio": 1.0,
+      "unexpected_ids": 0
+    },
+    "official_evaluator": {
+      "report": "artifacts/experiments/multilabel-aspect-old-polarity-v1/test/winner/official_evaluation.txt",
+      "script": "scripts/evaluate.py",
+      "source_of_truth": true
+    },
+    "source_of_truth_metrics": {
+      "aspect": {
+        "classes": {
+          "ambience": {
+            "f1": 0.8421052631578947,
+            "precision": 0.8205128205128205,
+            "recall": 0.8648648648648649,
+            "support": 37
+          },
+          "anecdotes/miscellaneous": {
+            "f1": 0.8333333333333334,
+            "precision": 0.8333333333333334,
+            "recall": 0.8333333333333334,
+            "support": 96
+          },
+          "food": {
+            "f1": 0.9289099526066351,
+            "precision": 0.9245283018867925,
+            "recall": 0.9333333333333333,
+            "support": 105
+          },
+          "price": {
+            "f1": 0.8928571428571429,
+            "precision": 0.8928571428571429,
+            "recall": 0.8928571428571429,
+            "support": 28
+          },
+          "service": {
+            "f1": 0.8541666666666666,
+            "precision": 0.8913043478260869,
+            "recall": 0.82,
+            "support": 50
+          }
+        },
+        "macro": {
+          "f1": 0.8702744717243345,
+          "precision": 0.8725071892832352,
+          "recall": 0.8688777348777348,
+          "support": 316
+        },
+        "micro": {
+          "f1": 0.8748019017432646,
+          "precision": 0.8761904761904762,
+          "recall": 0.8734177215189873,
+          "support": 316
+        }
+      },
+      "overall": {
+        "micro": {
+          "f1": 0.7543581616481775,
+          "precision": 0.7555555555555555,
+          "recall": 0.7531645569620253
+        }
+      },
+      "polarity": {
+        "classes": {
+          "conflict": {
+            "f1": 0.56,
+            "precision": 0.875,
+            "recall": 0.4117647058823529,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.7575757575757576,
+            "precision": 0.7142857142857143,
+            "recall": 0.8064516129032258,
+            "support": 62
+          },
+          "neutral": {
+            "f1": 0.5555555555555556,
+            "precision": 0.6060606060606061,
+            "recall": 0.5128205128205128,
+            "support": 39
+          },
+          "positive": {
+            "f1": 0.9131832797427653,
+            "precision": 0.8987341772151899,
+            "recall": 0.9281045751633987,
+            "support": 153
+          }
+        },
+        "macro": {
+          "f1": 0.6965786482185197,
+          "precision": 0.7735201243903775,
+          "recall": 0.6647853516923725,
+          "support": 271
+        },
+        "micro": {
+          "f1": 0.8111111111111111,
+          "precision": 0.8141263940520446,
+          "recall": 0.8081180811808119,
+          "support": 271
+        }
+      }
+    },
+    "supplemental_exact_match_accuracy": {
+      "aspect": 0.7751937984496124,
+      "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+      "overall": 0.6627906976744186,
+      "polarity": 0.7790697674418605
+    }
+  },
+  "validation_candidates": {
+    "one_seed": {
+      "checkpoints": [
+        "artifacts/experiments/multilabel-conditioned-v1/best/polarity.pt"
+      ],
+      "metrics": {
+        "coverage": {
+          "covered_expected_ids": 258,
+          "expected_ids": 258,
+          "missing_ids": 0,
+          "predicted_ids": 258,
+          "ratio": 1.0,
+          "unexpected_ids": 0
+        },
+        "official_evaluator": {
+          "report": "artifacts/experiments/multilabel-aspect-old-polarity-v1/validation/one_seed/official_evaluation.txt",
+          "script": "scripts/evaluate.py",
+          "source_of_truth": true
+        },
+        "source_of_truth_metrics": {
+          "aspect": {
+            "classes": {
+              "ambience": {
+                "f1": 0.8648648648648649,
+                "precision": 0.8648648648648649,
+                "recall": 0.8648648648648649,
+                "support": 37
+              },
+              "anecdotes/miscellaneous": {
+                "f1": 0.8617021276595744,
+                "precision": 0.8709677419354839,
+                "recall": 0.8526315789473684,
+                "support": 95
+              },
+              "food": {
+                "f1": 0.9252336448598131,
+                "precision": 0.908256880733945,
+                "recall": 0.9428571428571428,
+                "support": 105
+              },
+              "price": {
+                "f1": 0.8928571428571429,
+                "precision": 0.8620689655172413,
+                "recall": 0.9259259259259259,
+                "support": 27
+              },
+              "service": {
+                "f1": 0.9019607843137255,
+                "precision": 0.9019607843137255,
+                "recall": 0.9019607843137255,
+                "support": 51
+              }
+            },
+            "macro": {
+              "f1": 0.8893237129110242,
+              "precision": 0.8816238474730522,
+              "recall": 0.8976480593818055,
+              "support": 315
+            },
+            "micro": {
+              "f1": 0.8927444794952681,
+              "precision": 0.8871473354231975,
+              "recall": 0.8984126984126984,
+              "support": 315
+            }
+          },
+          "overall": {
+            "micro": {
+              "f1": 0.7570977917981072,
+              "precision": 0.7523510971786834,
+              "recall": 0.7619047619047619
+            }
+          },
+          "polarity": {
+            "classes": {
+              "conflict": {
+                "f1": 0.4827586206896552,
+                "precision": 0.5,
+                "recall": 0.4666666666666667,
+                "support": 15
+              },
+              "negative": {
+                "f1": 0.8217054263565892,
+                "precision": 0.8412698412698413,
+                "recall": 0.803030303030303,
+                "support": 66
+              },
+              "neutral": {
+                "f1": 0.7073170731707318,
+                "precision": 0.6744186046511628,
+                "recall": 0.7435897435897436,
+                "support": 39
+              },
+              "positive": {
+                "f1": 0.9042904290429042,
+                "precision": 0.9194630872483222,
+                "recall": 0.8896103896103896,
+                "support": 154
+              }
+            },
+            "macro": {
+              "f1": 0.7290178873149701,
+              "precision": 0.7337878832923316,
+              "recall": 0.7257242757242757,
+              "support": 274
+            },
+            "micro": {
+              "f1": 0.8324125230202578,
+              "precision": 0.8401486988847584,
+              "recall": 0.8248175182481752,
+              "support": 274
+            }
+          }
+        },
+        "supplemental_exact_match_accuracy": {
+          "aspect": 0.8294573643410853,
+          "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+          "overall": 0.7054263565891473,
+          "polarity": 0.8023255813953488
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.7,
+        0.75
+      ]
+    },
+    "three_seed": {
+      "checkpoints": [
+        "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+        "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+        "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+      ],
+      "metrics": {
+        "coverage": {
+          "covered_expected_ids": 258,
+          "expected_ids": 258,
+          "missing_ids": 0,
+          "predicted_ids": 258,
+          "ratio": 1.0,
+          "unexpected_ids": 0
+        },
+        "official_evaluator": {
+          "report": "artifacts/experiments/multilabel-aspect-old-polarity-v1/validation/three_seed/official_evaluation.txt",
+          "script": "scripts/evaluate.py",
+          "source_of_truth": true
+        },
+        "source_of_truth_metrics": {
+          "aspect": {
+            "classes": {
+              "ambience": {
+                "f1": 0.8648648648648649,
+                "precision": 0.8648648648648649,
+                "recall": 0.8648648648648649,
+                "support": 37
+              },
+              "anecdotes/miscellaneous": {
+                "f1": 0.8543689320388349,
+                "precision": 0.7927927927927928,
+                "recall": 0.9263157894736842,
+                "support": 95
+              },
+              "food": {
+                "f1": 0.9252336448598131,
+                "precision": 0.908256880733945,
+                "recall": 0.9428571428571428,
+                "support": 105
+              },
+              "price": {
+                "f1": 0.9090909090909091,
+                "precision": 0.8928571428571429,
+                "recall": 0.9259259259259259,
+                "support": 27
+              },
+              "service": {
+                "f1": 0.9166666666666665,
+                "precision": 0.9777777777777777,
+                "recall": 0.8627450980392157,
+                "support": 51
+              }
+            },
+            "macro": {
+              "f1": 0.8940450035042178,
+              "precision": 0.8873098918053046,
+              "recall": 0.9045417642321667,
+              "support": 315
+            },
+            "micro": {
+              "f1": 0.8930232558139534,
+              "precision": 0.8727272727272727,
+              "recall": 0.9142857142857143,
+              "support": 315
+            }
+          },
+          "overall": {
+            "micro": {
+              "f1": 0.7658914728682171,
+              "precision": 0.7484848484848485,
+              "recall": 0.7841269841269841
+            }
+          },
+          "polarity": {
+            "classes": {
+              "conflict": {
+                "f1": 0.5,
+                "precision": 0.5384615384615384,
+                "recall": 0.4666666666666667,
+                "support": 15
+              },
+              "negative": {
+                "f1": 0.8062015503875969,
+                "precision": 0.8253968253968254,
+                "recall": 0.7878787878787878,
+                "support": 66
+              },
+              "neutral": {
+                "f1": 0.6923076923076923,
+                "precision": 0.6923076923076923,
+                "recall": 0.6923076923076923,
+                "support": 39
+              },
+              "positive": {
+                "f1": 0.9061488673139159,
+                "precision": 0.9032258064516129,
+                "recall": 0.9090909090909091,
+                "support": 154
+              }
+            },
+            "macro": {
+              "f1": 0.7261645275023012,
+              "precision": 0.7398479656544172,
+              "recall": 0.7139860139860139,
+              "support": 274
+            },
+            "micro": {
+              "f1": 0.8308823529411764,
+              "precision": 0.837037037037037,
+              "recall": 0.8248175182481752,
+              "support": 274
+            }
+          }
+        },
+        "supplemental_exact_match_accuracy": {
+          "aspect": 0.810077519379845,
+          "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+          "overall": 0.686046511627907,
+          "polarity": 0.7945736434108527
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.7,
+        0.45
+      ]
+    }
+  },
+  "winner": "three_seed"
+}

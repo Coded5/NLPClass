@@ -1,0 +1,116 @@
+{
+  "coverage": {
+    "covered_expected_ids": 258,
+    "expected_ids": 258,
+    "missing_ids": 0,
+    "predicted_ids": 258,
+    "ratio": 1.0,
+    "unexpected_ids": 0
+  },
+  "official_evaluator": {
+    "report": "artifacts/training/roberta-polarity-exp5/evaluations/epoch-060/official_evaluation.txt",
+    "script": "scripts/evaluate.py",
+    "source_of_truth": true
+  },
+  "source_of_truth_metrics": {
+    "aspect": {
+      "classes": {
+        "ambience": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 37
+        },
+        "anecdotes/miscellaneous": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 95
+        },
+        "food": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 105
+        },
+        "price": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 27
+        },
+        "service": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 51
+        }
+      },
+      "macro": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 315
+      },
+      "micro": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 315
+      }
+    },
+    "overall": {
+      "micro": {
+        "f1": 0.7873015873015873,
+        "precision": 0.7873015873015873,
+        "recall": 0.7873015873015873
+      }
+    },
+    "polarity": {
+      "classes": {
+        "conflict": {
+          "f1": 0.3846153846153846,
+          "precision": 0.45454545454545453,
+          "recall": 0.3333333333333333,
+          "support": 15
+        },
+        "negative": {
+          "f1": 0.8153846153846153,
+          "precision": 0.828125,
+          "recall": 0.803030303030303,
+          "support": 66
+        },
+        "neutral": {
+          "f1": 0.6153846153846154,
+          "precision": 0.6153846153846154,
+          "recall": 0.6153846153846154,
+          "support": 39
+        },
+        "positive": {
+          "f1": 0.865771812080537,
+          "precision": 0.8958333333333334,
+          "recall": 0.8376623376623377,
+          "support": 154
+        }
+      },
+      "macro": {
+        "f1": 0.6702891068662881,
+        "precision": 0.6984721008158509,
+        "recall": 0.6473526473526473,
+        "support": 274
+      },
+      "micro": {
+        "f1": 0.793233082706767,
+        "precision": 0.8178294573643411,
+        "recall": 0.7700729927007299,
+        "support": 274
+      }
+    }
+  },
+  "supplemental_exact_match_accuracy": {
+    "aspect": 1.0,
+    "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+    "overall": 0.7674418604651163,
+    "polarity": 0.7674418604651163
+  }
+}

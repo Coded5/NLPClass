@@ -1,0 +1,61 @@
+{
+  "aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "aspect_run_dir": "artifacts/experiments/multilabel-aspect-v1",
+  "aspect_seeds": [
+    42,
+    43,
+    44
+  ],
+  "bootstrap_samples": 10000,
+  "conditioned_run_dir": "artifacts/experiments/multilabel-conditioned-v1",
+  "eval_batch_size": 32,
+  "evaluator": "scripts/evaluate.py",
+  "input": "data/contest2_train.csv",
+  "input_sha256": "60d2ed8e9daaab6551352fc95066d46e653e4062b18fcf55d548b2061f3161d9",
+  "joint_run_dir": "artifacts/experiments/absa-imbalance-joint-v1",
+  "labels": {
+    "aspect": [
+      "food",
+      "price",
+      "service",
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "polarity": [
+      "positive",
+      "negative",
+      "neutral",
+      "conflict"
+    ]
+  },
+  "max_length": 256,
+  "mlflow_experiment": "contest2-multilabel-aspect-old-polarity-v1",
+  "mlflow_tracking_uri": "sqlite:///artifacts/mlflow.db",
+  "model": "FacebookAI/roberta-base",
+  "polarity_candidates": {
+    "one_seed": [
+      "artifacts/experiments/multilabel-conditioned-v1/best/polarity.pt"
+    ],
+    "three_seed": [
+      "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+      "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+      "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+    ]
+  },
+  "polarity_ensemble_seeds": [
+    17,
+    42,
+    73
+  ],
+  "run_dir": "artifacts/experiments/multilabel-aspect-old-polarity-v1",
+  "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+  "split_sha256": {
+    "eval": "daac2cf0eec81d7b56482caaa24a4843b24ba09f536b93f48344024b2561cab4",
+    "test": "b2490770b816aa0d2e8470d4d64f03ea330032e62e7c592b518cd2e1ac60d29f",
+    "train": "97a4e600b3be55d4b3813c1558494ea6e17133711c4158377c6c6d2aeeb7ff11"
+  }
+}

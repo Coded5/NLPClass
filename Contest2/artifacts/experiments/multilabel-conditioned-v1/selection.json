@@ -1,0 +1,18 @@
+{
+  "aspect": {
+    "epoch": 10,
+    "score": 0.8885448916408668,
+    "thresholds": [
+      0.65,
+      0.85,
+      0.9,
+      0.9,
+      0.5
+    ]
+  },
+  "polarity": {
+    "epoch": 45,
+    "score": 0.736755378759335,
+    "thresholds": null
+  }
+}

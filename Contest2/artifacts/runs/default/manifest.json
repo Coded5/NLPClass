@@ -1,0 +1,11 @@
+{
+  "backend": "ollama",
+  "base_url": "http://localhost:11434",
+  "format_version": 1,
+  "input_items": 258,
+  "input_sha256": "e8028527057de22778c0bdc71565e7e8f3d28a6ab111cedab60668e9f3ac9b3d",
+  "model": "qwen2.5:7b",
+  "prompt_sha256": "ef9df8fa477817ddf62f5f49d52c6fa80878b64b54e83961911b43bce2f5e452",
+  "prompt_version": "1",
+  "temperature": 0.0
+}

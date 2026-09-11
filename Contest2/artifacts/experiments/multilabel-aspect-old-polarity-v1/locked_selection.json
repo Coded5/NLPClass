@@ -1,0 +1,22 @@
+{
+  "aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "polarity_checkpoints": [
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+  ],
+  "test_accessed": true,
+  "thresholds": [
+    0.55,
+    0.8,
+    0.9,
+    0.7,
+    0.45
+  ],
+  "validation_pair_micro_f1": 0.7658914728682171,
+  "winner": "three_seed"
+}

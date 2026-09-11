@@ -1,0 +1,66 @@
+{
+  "test": {
+    "exact_set_accuracy": 0.6472868217054264,
+    "gold_aspect_polarity_classes": {
+      "conflict": {
+        "f1": 0.29629629629629634,
+        "precision": 0.4,
+        "recall": 0.23529411764705882,
+        "support": 17
+      },
+      "negative": {
+        "f1": 0.7412587412587414,
+        "precision": 0.7464788732394366,
+        "recall": 0.7361111111111112,
+        "support": 72
+      },
+      "neutral": {
+        "f1": 0.6172839506172839,
+        "precision": 0.6097560975609756,
+        "recall": 0.625,
+        "support": 40
+      },
+      "positive": {
+        "f1": 0.9186351706036745,
+        "precision": 0.9020618556701031,
+        "recall": 0.9358288770053476,
+        "support": 187
+      }
+    },
+    "minority_f1": 0.45679012345679015,
+    "pair_micro_f1": 0.7321711568938193,
+    "polarity_micro_f1": 0.7895716945996275
+  },
+  "validation": {
+    "exact_set_accuracy": 0.6976744186046512,
+    "gold_aspect_polarity_classes": {
+      "conflict": {
+        "f1": 0.5,
+        "precision": 0.5,
+        "recall": 0.5,
+        "support": 16
+      },
+      "negative": {
+        "f1": 0.8391608391608393,
+        "precision": 0.8450704225352113,
+        "recall": 0.8333333333333334,
+        "support": 72
+      },
+      "neutral": {
+        "f1": 0.7012987012987014,
+        "precision": 0.7297297297297297,
+        "recall": 0.675,
+        "support": 40
+      },
+      "positive": {
+        "f1": 0.9206349206349207,
+        "precision": 0.9109947643979057,
+        "recall": 0.93048128342246,
+        "support": 187
+      }
+    },
+    "minority_f1": 0.6006493506493507,
+    "pair_micro_f1": 0.7658914728682171,
+    "polarity_micro_f1": 0.8488160291438981
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "epochs": 50,
+  "eval_batch_size": 32,
+  "format_version": 1,
+  "gradient_accumulation_steps": 2,
+  "ids": {
+    "eval": 258,
+    "test": 258,
+    "train": 2068
+  },
+  "input": "/home/kami/Projects/NLP/Contest2/data/contest2_train.csv",
+  "input_sha256": "60d2ed8e9daaab6551352fc95066d46e653e4062b18fcf55d548b2061f3161d9",
+  "labels": {
+    "aspect": [
+      "food",
+      "price",
+      "service",
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "polarity": [
+      "positive",
+      "negative",
+      "neutral",
+      "conflict"
+    ]
+  },
+  "learning_rate": 2e-05,
+  "max_length": 256,
+  "mixed_precision": "auto",
+  "model": "FacebookAI/roberta-base",
+  "ratios": {
+    "eval": 0.1,
+    "test": 0.1,
+    "train": 0.8
+  },
+  "rows": {
+    "eval": 315,
+    "test": 316,
+    "train": 2525
+  },
+  "seed": 42,
+  "task": "polarity",
+  "train_batch_size": 8,
+  "warmup_ratio": 0.1,
+  "weight_decay": 0.01
+}

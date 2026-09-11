@@ -1,0 +1,14 @@
+{
+  "aspect": {
+    "best_epoch": 10,
+    "best_score": 0.7923211169284469,
+    "checkpoint": "artifacts/training/roberta-aspect-exp1/best/aspect.pt",
+    "run_dir": "artifacts/training/roberta-aspect-exp1"
+  },
+  "polarity": {
+    "best_epoch": 17,
+    "best_score": 0.849624060150376,
+    "checkpoint": "artifacts/training/roberta-polarity-exp2/best/polarity.pt",
+    "run_dir": "artifacts/training/roberta-polarity-exp2"
+  }
+}

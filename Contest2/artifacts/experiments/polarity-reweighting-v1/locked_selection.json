@@ -1,0 +1,139 @@
+{
+  "aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "baseline_checkpoints": [
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+  ],
+  "multipliers": [
+    1.5,
+    2.0
+  ],
+  "reweighted_checkpoints": [
+    "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-17/best.pt",
+    "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-42/best.pt",
+    "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-73/best.pt"
+  ],
+  "selected_candidate": "weighted-ce-n1.5-c2",
+  "test_accessed": true,
+  "thresholds": [
+    0.55,
+    0.8,
+    0.75,
+    0.85,
+    0.45
+  ],
+  "validation": {
+    "baseline": {
+      "exact_set_accuracy": 0.686046511627907,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4666666666666667,
+          "precision": 0.5,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8219178082191781,
+          "precision": 0.8108108108108109,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7027027027027027,
+          "precision": 0.7647058823529411,
+          "recall": 0.65,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9157894736842106,
+          "precision": 0.9015544041450777,
+          "recall": 0.93048128342246,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5846846846846847,
+      "pair_micro_f1": 0.7658914728682171,
+      "polarity_micro_f1": 0.8308823529411764,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.43388847187543433,
+          "negative": 0.16392928078403202,
+          "neutral": 0.05903551389542372,
+          "positive": 0.3431467347545549
+        },
+        "neutral": {
+          "conflict": 0.0018505652794374328,
+          "negative": 0.16495553739223395,
+          "neutral": 0.669159496256907,
+          "positive": 0.1640344092498708
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.7,
+        0.45
+      ]
+    },
+    "reweighted": {
+      "exact_set_accuracy": 0.6976744186046512,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4375,
+          "precision": 0.4375,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8435374149659863,
+          "precision": 0.8266666666666667,
+          "recall": 0.8611111111111112,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7532467532467533,
+          "precision": 0.7837837837837838,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9197860962566845,
+          "precision": 0.9197860962566845,
+          "recall": 0.9197860962566845,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5953733766233766,
+      "pair_micro_f1": 0.7776049766718507,
+      "polarity_micro_f1": 0.858195211786372,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.43971459286058234,
+          "negative": 0.1856784262072324,
+          "neutral": 0.047761637372786936,
+          "positive": 0.32684535442240303
+        },
+        "neutral": {
+          "conflict": 0.0004358772575869807,
+          "negative": 0.13240986263608648,
+          "neutral": 0.7184142936959688,
+          "positive": 0.14873996606256695
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ]
+    }
+  },
+  "winner": "reweighted"
+}

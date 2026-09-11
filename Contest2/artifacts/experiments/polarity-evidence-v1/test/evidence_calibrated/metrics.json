@@ -1,0 +1,116 @@
+{
+  "coverage": {
+    "covered_expected_ids": 258,
+    "expected_ids": 258,
+    "missing_ids": 0,
+    "predicted_ids": 258,
+    "ratio": 1.0,
+    "unexpected_ids": 0
+  },
+  "official_evaluator": {
+    "report": "artifacts/experiments/polarity-evidence-v1/test/evidence_calibrated/official_evaluation.txt",
+    "script": "scripts/evaluate.py",
+    "source_of_truth": true
+  },
+  "source_of_truth_metrics": {
+    "aspect": {
+      "classes": {
+        "ambience": {
+          "f1": 0.8421052631578947,
+          "precision": 0.8205128205128205,
+          "recall": 0.8648648648648649,
+          "support": 37
+        },
+        "anecdotes/miscellaneous": {
+          "f1": 0.8333333333333334,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "support": 96
+        },
+        "food": {
+          "f1": 0.9289099526066351,
+          "precision": 0.9245283018867925,
+          "recall": 0.9333333333333333,
+          "support": 105
+        },
+        "price": {
+          "f1": 0.8928571428571429,
+          "precision": 0.8928571428571429,
+          "recall": 0.8928571428571429,
+          "support": 28
+        },
+        "service": {
+          "f1": 0.8541666666666666,
+          "precision": 0.8913043478260869,
+          "recall": 0.82,
+          "support": 50
+        }
+      },
+      "macro": {
+        "f1": 0.8702744717243345,
+        "precision": 0.8725071892832352,
+        "recall": 0.8688777348777348,
+        "support": 316
+      },
+      "micro": {
+        "f1": 0.8748019017432646,
+        "precision": 0.8761904761904762,
+        "recall": 0.8734177215189873,
+        "support": 316
+      }
+    },
+    "overall": {
+      "micro": {
+        "f1": 0.7543581616481775,
+        "precision": 0.7555555555555555,
+        "recall": 0.7531645569620253
+      }
+    },
+    "polarity": {
+      "classes": {
+        "conflict": {
+          "f1": 0.48,
+          "precision": 0.75,
+          "recall": 0.35294117647058826,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.7741935483870968,
+          "precision": 0.7741935483870968,
+          "recall": 0.7741935483870968,
+          "support": 62
+        },
+        "neutral": {
+          "f1": 0.6,
+          "precision": 0.6774193548387096,
+          "recall": 0.5384615384615384,
+          "support": 39
+        },
+        "positive": {
+          "f1": 0.9015873015873016,
+          "precision": 0.8765432098765432,
+          "recall": 0.9281045751633987,
+          "support": 153
+        }
+      },
+      "macro": {
+        "f1": 0.6889452124935995,
+        "precision": 0.7695390282755874,
+        "recall": 0.6484252096206555,
+        "support": 271
+      },
+      "micro": {
+        "f1": 0.8127340823970037,
+        "precision": 0.8250950570342205,
+        "recall": 0.8007380073800738,
+        "support": 271
+      }
+    }
+  },
+  "supplemental_exact_match_accuracy": {
+    "aspect": 0.7751937984496124,
+    "definition": "Per-ID exact set match. Overall is correct only when every predicted (aspectCategory, polarity) pair exactly matches the complete gold set.",
+    "overall": 0.6627906976744186,
+    "polarity": 0.7868217054263565
+  }
+}

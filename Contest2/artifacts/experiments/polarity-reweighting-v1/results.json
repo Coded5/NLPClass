@@ -1,0 +1,888 @@
+{
+  "baseline_by_seed": {
+    "17": {
+      "exact_set_accuracy": 0.6976744186046512,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4827586206896552,
+          "precision": 0.5384615384615384,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8157894736842106,
+          "precision": 0.775,
+          "recall": 0.8611111111111112,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.6756756756756757,
+          "precision": 0.7352941176470589,
+          "recall": 0.625,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9119999999999998,
+          "precision": 0.9095744680851063,
+          "recall": 0.9144385026737968,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5792171481826655,
+      "pair_micro_f1": 0.7602523659305993,
+      "polarity_micro_f1": 0.8302583025830259,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.39763557685250817,
+          "negative": 0.187096715309508,
+          "neutral": 0.06298318800099878,
+          "positive": 0.35228448336783913
+        },
+        "neutral": {
+          "conflict": 0.0007083271548253833,
+          "negative": 0.17295921073164208,
+          "neutral": 0.6539900853670588,
+          "positive": 0.17234239097833778
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.7,
+        0.75
+      ]
+    },
+    "42": {
+      "exact_set_accuracy": 0.7170542635658915,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.48484848484848486,
+          "precision": 0.47058823529411764,
+          "recall": 0.5,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8571428571428571,
+          "precision": 0.8823529411764706,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7594936708860761,
+          "precision": 0.7692307692307693,
+          "recall": 0.75,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9259259259259258,
+          "precision": 0.9162303664921466,
+          "recall": 0.9358288770053476,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.6221710778672804,
+      "pair_micro_f1": 0.790625,
+      "polarity_micro_f1": 0.855045871559633,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.4927834038912806,
+          "negative": 0.12390596479463056,
+          "neutral": 0.05036173737255467,
+          "positive": 0.33294888508316944
+        },
+        "neutral": {
+          "conflict": 0.02196576001097128,
+          "negative": 0.0881590272349058,
+          "neutral": 0.7483072247416203,
+          "positive": 0.14156798331787285
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.85,
+        0.45
+      ]
+    },
+    "73": {
+      "exact_set_accuracy": 0.689922480620155,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.47058823529411764,
+          "precision": 0.4444444444444444,
+          "recall": 0.5,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8356164383561645,
+          "precision": 0.8243243243243243,
+          "recall": 0.8472222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7042253521126761,
+          "precision": 0.8064516129032258,
+          "recall": 0.625,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9129287598944591,
+          "precision": 0.9010416666666666,
+          "recall": 0.9251336898395722,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5874067937033969,
+      "pair_micro_f1": 0.7687499999999999,
+      "polarity_micro_f1": 0.8360957642725598,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.48806805770891515,
+          "negative": 0.1269862700273734,
+          "neutral": 0.045247068019307335,
+          "positive": 0.33969860034540034
+        },
+        "neutral": {
+          "conflict": 0.01511658942881695,
+          "negative": 0.17126157871371106,
+          "neutral": 0.6139111095115368,
+          "positive": 0.19971072555908903
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.85,
+        0.45
+      ]
+    }
+  },
+  "confirmation": {
+    "17": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-17/best.pt",
+      "effective_weights": {
+        "conflict": 9.42164134979248,
+        "negative": 1.1055166721343994,
+        "neutral": 2.9775943756103516,
+        "positive": 0.42027297616004944
+      },
+      "eligible": true,
+      "epoch": 35,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 2.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.5
+      },
+      "minimum_pair_f1": 0.7552523659305993,
+      "multipliers": [
+        1.5,
+        2.0
+      ],
+      "seed": 17,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5875,
+      "validation_pair_micro_f1": 0.7558320373250389,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.5,
+          "precision": 0.5,
+          "recall": 0.5,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8053691275167787,
+          "precision": 0.7792207792207793,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.675,
+          "precision": 0.675,
+          "recall": 0.675,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9051490514905149,
+          "precision": 0.9175824175824175,
+          "recall": 0.893048128342246,
+          "support": 187
+        }
+      }
+    },
+    "42": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 9.42164134979248,
+        "negative": 1.1055166721343994,
+        "neutral": 2.9775943756103516,
+        "positive": 0.42027297616004944
+      },
+      "eligible": true,
+      "epoch": 35,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 2.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.5
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        1.5,
+        2.0
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5797468354430381,
+      "validation_pair_micro_f1": 0.786936236391913,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.39999999999999997,
+          "precision": 0.42857142857142855,
+          "recall": 0.375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8472222222222222,
+          "precision": 0.8472222222222222,
+          "recall": 0.8472222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7594936708860761,
+          "precision": 0.7692307692307693,
+          "recall": 0.75,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9336870026525198,
+          "precision": 0.9263157894736842,
+          "recall": 0.9411764705882353,
+          "support": 187
+        }
+      }
+    },
+    "73": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-73/best.pt",
+      "effective_weights": {
+        "conflict": 9.42164134979248,
+        "negative": 1.1055166721343994,
+        "neutral": 2.9775943756103516,
+        "positive": 0.42027297616004944
+      },
+      "eligible": true,
+      "epoch": 35,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 2.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.5
+      },
+      "minimum_pair_f1": 0.7637499999999999,
+      "multipliers": [
+        1.5,
+        2.0
+      ],
+      "seed": 73,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.6106418918918919,
+      "validation_pair_micro_f1": 0.7682737169517885,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.4375,
+          "precision": 0.4375,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8187919463087249,
+          "precision": 0.7922077922077922,
+          "recall": 0.8472222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7837837837837837,
+          "precision": 0.8529411764705882,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9119999999999998,
+          "precision": 0.9095744680851063,
+          "recall": 0.9144385026737968,
+          "support": 187
+        }
+      }
+    }
+  },
+  "runtime_seconds": 3852.646363190004,
+  "screening": {
+    "weighted-ce-n1.25-c1.5": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.25-c1.5/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 7.066230773925781,
+        "negative": 1.1055166721343994,
+        "neutral": 2.4813284873962402,
+        "positive": 0.42027297616004944
+      },
+      "eligible": false,
+      "epoch": 15,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 1.5,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.25
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        1.25,
+        1.5
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5740305522914217,
+      "validation_pair_micro_f1": 0.7558320373250389,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.3913043478260869,
+          "precision": 0.3,
+          "recall": 0.5625,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8333333333333334,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7567567567567567,
+          "precision": 0.8235294117647058,
+          "recall": 0.7,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.912568306010929,
+          "precision": 0.9329608938547486,
+          "recall": 0.893048128342246,
+          "support": 187
+        }
+      }
+    },
+    "weighted-ce-n1.5-c2": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c2/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 9.42164134979248,
+        "negative": 1.1055166721343994,
+        "neutral": 2.9775943756103516,
+        "positive": 0.42027297616004944
+      },
+      "eligible": true,
+      "epoch": 35,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 2.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.5
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        1.5,
+        2.0
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5797468354430381,
+      "validation_pair_micro_f1": 0.786936236391913,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.39999999999999997,
+          "precision": 0.42857142857142855,
+          "recall": 0.375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8472222222222222,
+          "precision": 0.8472222222222222,
+          "recall": 0.8472222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7594936708860761,
+          "precision": 0.7692307692307693,
+          "recall": 0.75,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9336870026525198,
+          "precision": 0.9263157894736842,
+          "recall": 0.9411764705882353,
+          "support": 187
+        }
+      }
+    },
+    "weighted-ce-n1.5-c3": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n1.5-c3/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 14.132461547851562,
+        "negative": 1.1055166721343994,
+        "neutral": 2.9775943756103516,
+        "positive": 0.42027297616004944
+      },
+      "eligible": false,
+      "epoch": 45,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 3.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 1.5
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        1.5,
+        3.0
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5680076628352491,
+      "validation_pair_micro_f1": 0.7713841368584758,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.41379310344827586,
+          "precision": 0.46153846153846156,
+          "recall": 0.375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8456375838926175,
+          "precision": 0.8181818181818182,
+          "recall": 0.875,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7222222222222223,
+          "precision": 0.8125,
+          "recall": 0.65,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9105263157894736,
+          "precision": 0.8963730569948186,
+          "recall": 0.9251336898395722,
+          "support": 187
+        }
+      }
+    },
+    "weighted-ce-n2-c2": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n2-c2/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 9.42164134979248,
+        "negative": 1.1055166721343994,
+        "neutral": 3.970125675201416,
+        "positive": 0.42027297616004944
+      },
+      "eligible": false,
+      "epoch": 40,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 2.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 2.0
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        2.0,
+        2.0
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.5956600361663652,
+      "validation_pair_micro_f1": 0.7781250000000001,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.45714285714285713,
+          "precision": 0.42105263157894735,
+          "recall": 0.5,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8472222222222222,
+          "precision": 0.8472222222222222,
+          "recall": 0.8472222222222222,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7341772151898733,
+          "precision": 0.7435897435897436,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9193548387096774,
+          "precision": 0.9243243243243243,
+          "recall": 0.9144385026737968,
+          "support": 187
+        }
+      }
+    },
+    "weighted-ce-n2-c3": {
+      "architecture": "separate",
+      "checkpoint": "artifacts/experiments/polarity-reweighting-v1/runs/weighted-ce-n2-c3/seed-42/best.pt",
+      "effective_weights": {
+        "conflict": 14.132461547851562,
+        "negative": 1.1055166721343994,
+        "neutral": 3.970125675201416,
+        "positive": 0.42027297616004944
+      },
+      "eligible": false,
+      "epoch": 40,
+      "finished": true,
+      "loss": {
+        "beta": 0.999,
+        "conflict_multiplier": 3.0,
+        "gamma": 0.0,
+        "name": "weighted-ce",
+        "neutral_multiplier": 2.0
+      },
+      "minimum_pair_f1": 0.785625,
+      "multipliers": [
+        2.0,
+        3.0
+      ],
+      "seed": 42,
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ],
+      "validation_minority_f1": 0.546474358974359,
+      "validation_pair_micro_f1": 0.7651632970451012,
+      "validation_polarity_classes": {
+        "conflict": {
+          "f1": 0.375,
+          "precision": 0.375,
+          "recall": 0.375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8,
+          "precision": 0.7945205479452054,
+          "recall": 0.8055555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.717948717948718,
+          "precision": 0.7368421052631579,
+          "recall": 0.7,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9173333333333333,
+          "precision": 0.9148936170212766,
+          "recall": 0.9197860962566845,
+          "support": 187
+        }
+      }
+    }
+  },
+  "selected_candidate": "weighted-ce-n1.5-c2",
+  "test": {
+    "baseline": {
+      "exact_set_accuracy": 0.6627906976744186,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.5,
+          "precision": 0.8571428571428571,
+          "recall": 0.35294117647058826,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.778523489932886,
+          "precision": 0.7532467532467533,
+          "recall": 0.8055555555555556,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.64,
+          "precision": 0.6857142857142857,
+          "recall": 0.6,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9166666666666666,
+          "precision": 0.8934010152284264,
+          "recall": 0.9411764705882353,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5700000000000001,
+      "pair_micro_f1": 0.7543581616481775,
+      "polarity_micro_f1": 0.8111111111111111,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.33789833791096874,
+          "negative": 0.33338575781090185,
+          "neutral": 0.06790726812922752,
+          "positive": 0.2608086332329549
+        },
+        "neutral": {
+          "conflict": 0.025420440671041433,
+          "negative": 0.16419031659934263,
+          "neutral": 0.5976848385847916,
+          "positive": 0.21270439876261663
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.7,
+        0.45
+      ]
+    },
+    "reweighted": {
+      "exact_set_accuracy": 0.6627906976744186,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.3448275862068966,
+          "precision": 0.4166666666666667,
+          "recall": 0.29411764705882354,
+          "support": 17
+        },
+        "negative": {
+          "f1": 0.7671232876712328,
+          "precision": 0.7567567567567568,
+          "recall": 0.7777777777777778,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7105263157894738,
+          "precision": 0.75,
+          "recall": 0.675,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.8976377952755905,
+          "precision": 0.8814432989690721,
+          "recall": 0.9144385026737968,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5276769509981851,
+      "pair_micro_f1": 0.7356687898089173,
+      "polarity_micro_f1": 0.7992633517495396,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.30833012586663244,
+          "negative": 0.34271708437667897,
+          "neutral": 0.06027609060551827,
+          "positive": 0.2886767025321366
+        },
+        "neutral": {
+          "conflict": 0.025324053790882317,
+          "negative": 0.10446500083462525,
+          "neutral": 0.6717669992587616,
+          "positive": 0.19844394535739412
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ]
+    }
+  },
+  "validation": {
+    "baseline": {
+      "exact_set_accuracy": 0.686046511627907,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4666666666666667,
+          "precision": 0.5,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8219178082191781,
+          "precision": 0.8108108108108109,
+          "recall": 0.8333333333333334,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7027027027027027,
+          "precision": 0.7647058823529411,
+          "recall": 0.65,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9157894736842106,
+          "precision": 0.9015544041450777,
+          "recall": 0.93048128342246,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5846846846846847,
+      "pair_micro_f1": 0.7658914728682171,
+      "polarity_micro_f1": 0.8308823529411764,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.43388847187543433,
+          "negative": 0.16392928078403202,
+          "neutral": 0.05903551389542372,
+          "positive": 0.3431467347545549
+        },
+        "neutral": {
+          "conflict": 0.0018505652794374328,
+          "negative": 0.16495553739223395,
+          "neutral": 0.669159496256907,
+          "positive": 0.1640344092498708
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.9,
+        0.7,
+        0.45
+      ]
+    },
+    "reweighted": {
+      "exact_set_accuracy": 0.6976744186046512,
+      "gold_aspect_polarity_classes": {
+        "conflict": {
+          "f1": 0.4375,
+          "precision": 0.4375,
+          "recall": 0.4375,
+          "support": 16
+        },
+        "negative": {
+          "f1": 0.8435374149659863,
+          "precision": 0.8266666666666667,
+          "recall": 0.8611111111111112,
+          "support": 72
+        },
+        "neutral": {
+          "f1": 0.7532467532467533,
+          "precision": 0.7837837837837838,
+          "recall": 0.725,
+          "support": 40
+        },
+        "positive": {
+          "f1": 0.9197860962566845,
+          "precision": 0.9197860962566845,
+          "recall": 0.9197860962566845,
+          "support": 187
+        }
+      },
+      "minority_f1": 0.5953733766233766,
+      "pair_micro_f1": 0.7776049766718507,
+      "polarity_micro_f1": 0.858195211786372,
+      "probability_summary": {
+        "conflict": {
+          "conflict": 0.43971459286058234,
+          "negative": 0.1856784262072324,
+          "neutral": 0.047761637372786936,
+          "positive": 0.32684535442240303
+        },
+        "neutral": {
+          "conflict": 0.0004358772575869807,
+          "negative": 0.13240986263608648,
+          "neutral": 0.7184142936959688,
+          "positive": 0.14873996606256695
+        }
+      },
+      "thresholds": [
+        0.55,
+        0.8,
+        0.75,
+        0.85,
+        0.45
+      ]
+    }
+  },
+  "weights": {
+    "base_inverse_frequency_weights": {
+      "conflict": 4.71082067489624,
+      "negative": 1.1055166721343994,
+      "neutral": 1.985062837600708,
+      "positive": 0.42027297616004944
+    },
+    "counts": {
+      "conflict": 134,
+      "negative": 571,
+      "neutral": 318,
+      "positive": 1502
+    }
+  },
+  "winner": "reweighted"
+}

@@ -1,0 +1,30 @@
+{
+  "benchmark_seconds_per_stage": 300,
+  "candidate_batch_sizes": [
+    8,
+    4,
+    2
+  ],
+  "early_stopping_patience": 3,
+  "effective_batch_size": 16,
+  "epochs": 50,
+  "eval_batch_size": 16,
+  "evaluation_interval": 5,
+  "learning_rate": 2e-05,
+  "max_length": 256,
+  "maximum_projected_minutes": 120.0,
+  "mixed_precision": "auto",
+  "mlflow_experiment": "contest2-deberta-v3-current-best-v1",
+  "mlflow_tracking_uri": "sqlite:////home/kami/Projects/NLP/Contest2/artifacts/mlflow.db",
+  "model": "microsoft/deberta-v3-base",
+  "run_dir": "artifacts/experiments/deberta-v3-current-best-v1",
+  "seed": 42,
+  "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+  "split_sha256": {
+    "eval": "daac2cf0eec81d7b56482caaa24a4843b24ba09f536b93f48344024b2561cab4",
+    "train": "97a4e600b3be55d4b3813c1558494ea6e17133711c4158377c6c6d2aeeb7ff11"
+  },
+  "test_accessed": false,
+  "warmup_ratio": 0.1,
+  "weight_decay": 0.01
+}

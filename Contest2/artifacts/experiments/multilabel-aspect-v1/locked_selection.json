@@ -1,0 +1,56 @@
+{
+  "checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "ensemble_validation_micro_f1": 0.8944881889763779,
+  "seed_selections": [
+    {
+      "epoch": 10,
+      "score": 0.8885448916408668,
+      "thresholds": [
+        0.65,
+        0.85,
+        0.9,
+        0.9,
+        0.5
+      ]
+    },
+    {
+      "epoch": 35,
+      "score": 0.886535552193646,
+      "thresholds": [
+        0.75,
+        0.1,
+        0.25,
+        0.35,
+        0.45
+      ]
+    },
+    {
+      "epoch": 10,
+      "score": 0.8781250000000002,
+      "thresholds": [
+        0.55,
+        0.45,
+        0.65,
+        0.4,
+        0.8
+      ]
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "test_accessed": true,
+  "thresholds": [
+    0.55,
+    0.75,
+    0.75,
+    0.7,
+    0.75
+  ]
+}

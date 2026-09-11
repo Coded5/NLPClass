@@ -1,0 +1,317 @@
+{
+  "confirmation": {
+    "joint": {
+      "ensemble_validation_f1": 0.7850467289719626,
+      "loss": "weighted-focal-g2",
+      "mean": 0.7702266065873814,
+      "scores": [
+        0.766412213740458,
+        0.7835703001579778,
+        0.7606973058637084
+      ],
+      "seeds": [
+        17,
+        42,
+        73
+      ],
+      "std": 0.00971959058086348,
+      "thresholds": [
+        0.5,
+        0.75,
+        0.5,
+        0.3,
+        0.25
+      ]
+    },
+    "separate": {
+      "ensemble_validation_f1": 0.7554179566563468,
+      "loss": "weighted-ce",
+      "mean": 0.7611083784226923,
+      "scores": [
+        0.7523219814241486,
+        0.7739938080495357,
+        0.7570093457943925
+      ],
+      "seeds": [
+        17,
+        42,
+        73
+      ],
+      "std": 0.009310158204388297,
+      "thresholds": [
+        0.65,
+        0.85,
+        0.9,
+        0.9,
+        0.5
+      ]
+    }
+  },
+  "final": {
+    "bootstrap": {
+      "joint_vs_separate": {
+        "lower_95": -0.05128205128205132,
+        "mean": -0.0202708598514408,
+        "upper_95": 0.009860771789362177
+      },
+      "winner_vs_existing": {
+        "lower_95": -0.03151015651015643,
+        "mean": 0.0022852242599657154,
+        "upper_95": 0.03723905004998207
+      }
+    },
+    "locked_winner": "joint",
+    "systems": {
+      "existing_pipeline": {
+        "exact_set_accuracy": 0.6395348837209303,
+        "multi_exact_accuracy": 0.35294117647058826,
+        "overall_pair_micro_f1": 0.7223113964686998,
+        "pair_polarity_classes": {
+          "conflict": {
+            "f1": 0.45161290322580644,
+            "precision": 0.5,
+            "recall": 0.4117647058823529,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.6569343065693432,
+            "precision": 0.6923076923076923,
+            "recall": 0.625,
+            "support": 72
+          },
+          "neutral": {
+            "f1": 0.5,
+            "precision": 0.4772727272727273,
+            "recall": 0.525,
+            "support": 40
+          },
+          "positive": {
+            "f1": 0.8194070080862534,
+            "precision": 0.8260869565217391,
+            "recall": 0.8128342245989305,
+            "support": 187
+          }
+        },
+        "single_exact_accuracy": 0.7101449275362319
+      },
+      "joint": {
+        "exact_set_accuracy": 0.627906976744186,
+        "multi_exact_accuracy": 0.3333333333333333,
+        "overall_pair_micro_f1": 0.7244094488188977,
+        "pair_polarity_classes": {
+          "conflict": {
+            "f1": 0.4827586206896552,
+            "precision": 0.5833333333333334,
+            "recall": 0.4117647058823529,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.6202531645569621,
+            "precision": 0.5697674418604651,
+            "recall": 0.6805555555555556,
+            "support": 72
+          },
+          "neutral": {
+            "f1": 0.5333333333333333,
+            "precision": 0.5714285714285714,
+            "recall": 0.5,
+            "support": 40
+          },
+          "positive": {
+            "f1": 0.8257372654155497,
+            "precision": 0.8279569892473119,
+            "recall": 0.8235294117647058,
+            "support": 187
+          }
+        },
+        "single_exact_accuracy": 0.7004830917874396
+      },
+      "legacy_baseline": {
+        "exact_set_accuracy": 0.5813953488372093,
+        "multi_exact_accuracy": 0.0,
+        "overall_pair_micro_f1": 0.6724738675958187,
+        "pair_polarity_classes": {
+          "conflict": {
+            "f1": 0.30769230769230765,
+            "precision": 0.4444444444444444,
+            "recall": 0.23529411764705882,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.5826771653543307,
+            "precision": 0.6727272727272727,
+            "recall": 0.5138888888888888,
+            "support": 72
+          },
+          "neutral": {
+            "f1": 0.4935064935064935,
+            "precision": 0.5135135135135135,
+            "recall": 0.475,
+            "support": 40
+          },
+          "positive": {
+            "f1": 0.7732558139534883,
+            "precision": 0.8471337579617835,
+            "recall": 0.7112299465240641,
+            "support": 187
+          }
+        },
+        "single_exact_accuracy": 0.7246376811594203
+      },
+      "separate": {
+        "exact_set_accuracy": 0.6550387596899225,
+        "multi_exact_accuracy": 0.4117647058823529,
+        "overall_pair_micro_f1": 0.7447833065810594,
+        "pair_polarity_classes": {
+          "conflict": {
+            "f1": 0.4,
+            "precision": 0.625,
+            "recall": 0.29411764705882354,
+            "support": 17
+          },
+          "negative": {
+            "f1": 0.6938775510204083,
+            "precision": 0.68,
+            "recall": 0.7083333333333334,
+            "support": 72
+          },
+          "neutral": {
+            "f1": 0.5277777777777778,
+            "precision": 0.59375,
+            "recall": 0.475,
+            "support": 40
+          },
+          "positive": {
+            "f1": 0.8284960422163589,
+            "precision": 0.8177083333333334,
+            "recall": 0.839572192513369,
+            "support": 187
+          }
+        },
+        "single_exact_accuracy": 0.714975845410628
+      }
+    }
+  },
+  "runtime_seconds": 5130.892844244001,
+  "screening": {
+    "joint": {
+      "weighted-ce": {
+        "architecture": "joint",
+        "epoch": 40,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 0.0,
+          "name": "weighted-ce"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.5,
+          0.85,
+          0.9,
+          0.5,
+          0.2
+        ],
+        "validation_pair_micro_f1": 0.7757009345794392
+      },
+      "weighted-focal-g2": {
+        "architecture": "joint",
+        "epoch": 35,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 2.0,
+          "name": "weighted-focal"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.9,
+          0.5,
+          0.5,
+          0.5,
+          0.4
+        ],
+        "validation_pair_micro_f1": 0.7835703001579778
+      }
+    },
+    "loss": {
+      "class-balanced-focal-b0.999-g2": {
+        "architecture": "separate",
+        "epoch": 30,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 2.0,
+          "name": "class-balanced-focal"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.65,
+          0.85,
+          0.9,
+          0.9,
+          0.5
+        ],
+        "validation_pair_micro_f1": 0.7554179566563468
+      },
+      "weighted-ce": {
+        "architecture": "separate",
+        "epoch": 30,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 0.0,
+          "name": "weighted-ce"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.65,
+          0.85,
+          0.9,
+          0.9,
+          0.5
+        ],
+        "validation_pair_micro_f1": 0.7739938080495357
+      },
+      "weighted-focal-g1": {
+        "architecture": "separate",
+        "epoch": 45,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 1.0,
+          "name": "weighted-focal"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.65,
+          0.85,
+          0.9,
+          0.9,
+          0.5
+        ],
+        "validation_pair_micro_f1": 0.7616099071207431
+      },
+      "weighted-focal-g2": {
+        "architecture": "separate",
+        "epoch": 40,
+        "finished": true,
+        "loss": {
+          "beta": 0.999,
+          "gamma": 2.0,
+          "name": "weighted-focal"
+        },
+        "seed": 42,
+        "thresholds": [
+          0.65,
+          0.85,
+          0.9,
+          0.9,
+          0.5
+        ],
+        "validation_pair_micro_f1": 0.7678018575851393
+      }
+    },
+    "selected_alternative": "weighted-focal-g2"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "architecture": "separate",
+  "eligible": true,
+  "epoch": 15,
+  "finished": true,
+  "loss": {
+    "beta": 0.999,
+    "gamma": 0.0,
+    "name": "weighted-ce"
+  },
+  "minimum_pair_f1": null,
+  "seed": 73,
+  "thresholds": [
+    0.8,
+    0.45,
+    0.9,
+    0.55,
+    0.4
+  ],
+  "validation_minority_f1": 0.5726574500768049,
+  "validation_pair_micro_f1": 0.75625,
+  "validation_polarity_classes": {
+    "conflict": {
+      "f1": 0.45714285714285713,
+      "precision": 0.42105263157894735,
+      "recall": 0.5,
+      "support": 16
+    },
+    "negative": {
+      "f1": 0.8382352941176471,
+      "precision": 0.890625,
+      "recall": 0.7916666666666666,
+      "support": 72
+    },
+    "neutral": {
+      "f1": 0.6881720430107526,
+      "precision": 0.6037735849056604,
+      "recall": 0.8,
+      "support": 40
+    },
+    "positive": {
+      "f1": 0.901639344262295,
+      "precision": 0.9217877094972067,
+      "recall": 0.8823529411764706,
+      "support": 187
+    }
+  }
+}

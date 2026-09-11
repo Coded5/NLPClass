@@ -1,0 +1,19 @@
+{
+  "architecture": "joint",
+  "epoch": 40,
+  "finished": true,
+  "loss": {
+    "beta": 0.999,
+    "gamma": 0.0,
+    "name": "weighted-ce"
+  },
+  "seed": 42,
+  "thresholds": [
+    0.5,
+    0.85,
+    0.9,
+    0.5,
+    0.2
+  ],
+  "validation_pair_micro_f1": 0.7757009345794392
+}

@@ -1,0 +1,47 @@
+{
+  "checkpoint_sha256": {
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt": "92b051498beb1be990d5d7f0559d9bbcb177a16f4495ce16f32b5fc39e82182f",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt": "2840f51e71f6529fb185a6224261f1218b875367c0f1832f8ee31ceb7ef6c92a",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt": "afbebfe493dfd515ac4033c4eb27954ffa3dcdd5370750e43f81ad87e19e119e",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-17/best.pt": "fd7be287667e65ba9c36974e1393dab4e47a848b3e2dc9da6deb3d30e7e7b523",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-42/best.pt": "5903c5e20381ee33650dc74eb9cb3dd7a7075830d610545bccc36f439fc27e1c",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-73/best.pt": "5b53ba1098508c3ed38c994619d184d401859b3048bc8b006d23bef8121693e0",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt": "4c09aeb874d50e0e8a305266212e5c0dd4b09efacdfa735e18f86a8e6127b337",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt": "ec09296bee16ff570bf6dc4b9f5fa9ff9a04edf654a62682b1a761017512a10c",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt": "085451455c348610fbd89374d87f0f7fef3add7ba766f2b6bff90833e0e77982"
+  },
+  "checkpoints": {
+    "deberta_polarity": [
+      "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-17/best.pt",
+      "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-42/best.pt",
+      "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-73/best.pt"
+    ],
+    "roberta_aspect": [
+      "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+      "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+      "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+    ],
+    "roberta_polarity": [
+      "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+      "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+      "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+    ]
+  },
+  "device": "cuda",
+  "locked_selection": "artifacts/experiments/deberta-v3-three-systems-v1/systems/roberta-aspect-mixed-polarity/locked_selection.json",
+  "original_prediction_count": 300,
+  "pair_micro_f1": 0.762987012987013,
+  "prediction_sets_identical_to_original": true,
+  "predictions_identical_to_original": true,
+  "rerun_prediction_count": 300,
+  "rows": 316,
+  "system": "roberta-aspect-mixed-polarity",
+  "test_split_sha256": "b2490770b816aa0d2e8470d4d64f03ea330032e62e7c592b518cd2e1ac60d29f",
+  "thresholds": [
+    0.55,
+    0.8,
+    0.9,
+    0.75,
+    0.75
+  ]
+}

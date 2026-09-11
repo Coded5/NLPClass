@@ -1,0 +1,30 @@
+{
+  "aspect_backbone": "roberta",
+  "deberta_aspect_checkpoints": [],
+  "deberta_polarity_checkpoints": [
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-17/best.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-42/best.pt",
+    "artifacts/experiments/deberta-v3-three-systems-v1/models/polarity/seed-73/best.pt"
+  ],
+  "polarity_backbone": "mixed",
+  "roberta_aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "roberta_polarity_checkpoints": [
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+  ],
+  "system": "roberta-aspect-mixed-polarity",
+  "test_accessed": true,
+  "thresholds": [
+    0.55,
+    0.8,
+    0.9,
+    0.75,
+    0.75
+  ],
+  "validation_pair_micro_f1": 0.7790143084260732
+}

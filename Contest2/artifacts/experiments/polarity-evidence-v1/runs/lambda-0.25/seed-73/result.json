@@ -1,0 +1,7 @@
+{
+  "epoch": 20,
+  "finished": true,
+  "lambda": 0.25,
+  "minority_f1": 0.6136363636363636,
+  "seed": 73
+}

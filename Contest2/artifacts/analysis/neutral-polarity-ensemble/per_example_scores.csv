@@ -1,0 +1,41 @@
+id,aspectCategory,gold,predicted,positive_probability,negative_probability,neutral_probability,conflict_probability,text
+672,food,neutral,positive,0.9948803186416626,0.0003246593405492604,0.0046730306930840015,0.00012199529010104015,"Dip the ingredients in with your chopsticks, swirl them around, and eat."
+2250,anecdotes/miscellaneous,neutral,negative,0.0018036201363429427,0.9234240055084229,0.07449997961521149,0.0002723386278375983,Suan has challenged this loyalty.
+2636,anecdotes/miscellaneous,neutral,neutral,0.00628250278532505,0.00013946864055469632,0.9934852719306946,9.276634227717295e-05,My girlfiends and I ate at O.G. again last night.
+1746,anecdotes/miscellaneous,neutral,positive,0.6681274175643921,0.0021844778675585985,0.3284987211227417,0.0011894567869603634,So eat fast and order a lot.
+1334,anecdotes/miscellaneous,neutral,neutral,0.0003517506120260805,0.0006564886425621808,0.9989148378372192,7.690343772992492e-05,"By the time we were done, it was past 1:00am."
+653,anecdotes/miscellaneous,neutral,neutral,0.19952884316444397,0.0010572997853159904,0.7902488708496094,0.009164922870695591,"If you venture off the island of Manhattan and can't seem to find a great Italian restaurant, drive to Corona."
+1759,anecdotes/miscellaneous,neutral,neutral,0.00012202843936393037,0.0004534581385087222,0.9993810653686523,4.339993029134348e-05,We got most of it back at home with us.
+520,food,neutral,positive,0.7600464224815369,0.0017397775081917644,0.23751311004161835,0.0007007001549936831,Did I mention the wine?
+123,anecdotes/miscellaneous,neutral,positive,0.9987990856170654,0.0001766407222021371,0.0008999492274597287,0.00012429435446392745,Ciao Bella
+3378,anecdotes/miscellaneous,neutral,neutral,0.1711493879556656,0.21329012513160706,0.6147605180740356,0.0008000095840543509,Tell them Herky sent you and get a free confused look from the waiter.
+1066,food,neutral,neutral,0.17823022603988647,0.0010500237112864852,0.8202158212661743,0.0005039760726504028,Other apetizers and food
+576,anecdotes/miscellaneous,neutral,neutral,0.00012992693518754095,0.00024169092648662627,0.9995742440223694,5.413418330135755e-05,Went here on a friend's reccomendation.
+476,anecdotes/miscellaneous,neutral,neutral,0.001283074845559895,0.0001955191692104563,0.998455286026001,6.603157089557499e-05,Is just the way it was in days gone by.
+1340,ambience,neutral,positive,0.9994897842407227,8.514418004779145e-05,8.155107207130641e-05,0.00034349728957749903,Decor is minimalist and clean - nothing to distract or commend.
+3025,anecdotes/miscellaneous,neutral,neutral,0.0018434423254802823,0.0003679164219647646,0.9976995587348938,8.905641152523458e-05,I'm sure I'll return for a final judgement tho.
+1392,anecdotes/miscellaneous,neutral,positive,0.9682804942131042,0.00019261935085523874,0.03119136579334736,0.0003355156513862312,This Thai restaurant is a couple blocks away from Sripraphai (another delicious Thai restaurant).
+1145,anecdotes/miscellaneous,neutral,neutral,0.0003998719621449709,0.00012246699770912528,0.999402642250061,7.510591967729852e-05,I try my best to give an accurate description of any establishment visited.
+2841,anecdotes/miscellaneous,neutral,neutral,0.00017233581456821412,0.00010461780038895085,0.9996505975723267,7.248674955917522e-05,"I'm no food critic, but I'd like to think I have a tiny bit of experience under my belt having lived in NY for the last 11 years."
+1213,anecdotes/miscellaneous,neutral,negative,0.004172842483967543,0.9933986663818359,0.0022417742293328047,0.00018669456767383963,I am relatively new to the area and tried Pick a bgel on 2nd and was disappointed with the service and I thought the food was overated and on the pricey side.
+2112,anecdotes/miscellaneous,neutral,neutral,6.94498376105912e-05,0.00017062312690541148,0.9997001886367798,5.985939787933603e-05,I went there with my friend last saturday.
+165,food,neutral,neutral,6.39259596937336e-05,0.003423853311687708,0.9963231086730957,0.00018910133803728968,"In terms of the food itself -- nothing special, we limited ourselves to several appetizers."
+1964,food,neutral,neutral,0.0014602099545300007,0.0007389208185486495,0.9977211356163025,7.972608000272885e-05,"$160 for 2 filets, 2 sides, an appetizer and drinks."
+1964,price,neutral,negative,0.0018655310850590467,0.9810845851898193,0.016941841691732407,0.00010797612048918381,"$160 for 2 filets, 2 sides, an appetizer and drinks."
+594,food,neutral,conflict,0.00812124740332365,0.00042652912088669837,0.00022215662465896457,0.9912301301956177,"The food is decent at best, and the ambience, well, it's a matter of opinion, some may consider it to be a sweet thing, I thought it was just annoying."
+3630,anecdotes/miscellaneous,neutral,neutral,0.4933357238769531,0.007216041907668114,0.4942706227302551,0.005177738144993782,So sorry I can't rate this better.
+1243,anecdotes/miscellaneous,neutral,neutral,0.008906693197786808,0.024049103260040283,0.9669299721717834,0.00011426449054852128,"Place should also have a 1,2,3 chili rating to be more authentic..."
+1831,anecdotes/miscellaneous,neutral,negative,0.002047430956736207,0.8495504260063171,0.14805549383163452,0.0003465241170488298,"He always says, I don't have customers."
+2752,anecdotes/miscellaneous,neutral,neutral,0.00015543311019428074,0.00012386655726004392,0.9996678829193115,5.283889186102897e-05,Just moved to the neighborhood and we've been trying all the West Village Sushi restaurants.
+3005,anecdotes/miscellaneous,neutral,neutral,0.00010417104931548238,0.00015760651149321347,0.9996912479400635,4.6930515964049846e-05,we were seated at the sushi bar in front of yasuda.
+2370,anecdotes/miscellaneous,neutral,neutral,0.0002739958872552961,0.0001552350731799379,0.9995212554931641,4.955525218974799e-05,"and i have been around the block, to say the very least."
+589,ambience,neutral,positive,0.9993125200271606,0.00033022643765434623,0.00020031252643093467,0.00015706299745943397,"It's true, you feel like your in a scene from Goodfellas."
+308,anecdotes/miscellaneous,neutral,neutral,0.000435516209108755,0.00013717933325096965,0.9993706345558167,5.666073047905229e-05,"After a seafood craving, i checked citysearch and chose to go to Fish based on a previous review and the citysearch info."
+967,anecdotes/miscellaneous,neutral,neutral,0.0024385759606957436,0.002138292184099555,0.9952801465988159,0.00014294739230535924,"No food snobs allowed, this place is for people who appreciate good food."
+2812,anecdotes/miscellaneous,neutral,neutral,0.00016950364806689322,0.000114050017145928,0.9996664524078369,5.004243575967848e-05,"Same owner as the guy who owns Typhoon, which is just down the street on St. Marks and 1st Ave."
+1640,food,neutral,negative,0.011562918312847614,0.9866331815719604,0.0016320951981469989,0.00017178917187266052,And you're hungry a few hours later.
+3603,anecdotes/miscellaneous,neutral,neutral,0.0001505988766439259,0.00010439282050356269,0.9996960163116455,4.89789126731921e-05,I have eaten a lot of pizza here.
+1771,anecdotes/miscellaneous,neutral,neutral,0.00018285751866642386,0.00011685762001434341,0.9996516704559326,4.857836393057369e-05,"believe us, we've been eating sushi for over 15 yrs."
+1708,anecdotes/miscellaneous,neutral,positive,0.998008668422699,0.00012576751760207117,0.0017475809436291456,0.00011802006338257343,"I had a late dinner at Lucky Stike, a great name for a joint if ever I saw one."
+3450,service,neutral,negative,0.015020118094980717,0.9811722636222839,0.0031964797526597977,0.0006109901005402207,"in an effort to increase turnover, the restaurant offers no desserts beyond the complimentary espresso cup filled with chocolate mousse."
+1857,anecdotes/miscellaneous,neutral,negative,0.009398771449923515,0.5904393196105957,0.39651718735694885,0.0036447476595640182,The space is nice but when we order our drink we were in for a surprise.

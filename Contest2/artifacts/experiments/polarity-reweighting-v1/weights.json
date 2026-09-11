@@ -1,0 +1,14 @@
+{
+  "base_inverse_frequency_weights": {
+    "conflict": 4.71082067489624,
+    "negative": 1.1055166721343994,
+    "neutral": 1.985062837600708,
+    "positive": 0.42027297616004944
+  },
+  "counts": {
+    "conflict": 134,
+    "negative": 571,
+    "neutral": 318,
+    "positive": 1502
+  }
+}

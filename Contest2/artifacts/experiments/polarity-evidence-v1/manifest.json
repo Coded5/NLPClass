@@ -1,0 +1,78 @@
+{
+  "alpha_grid": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "aspect_checkpoints": [
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-42/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-43/best/aspect.pt",
+    "artifacts/experiments/multilabel-aspect-v1/runs/seed-44/best/aspect.pt"
+  ],
+  "aspect_run_dir": "artifacts/experiments/multilabel-aspect-v1",
+  "aspect_thresholds": [
+    0.55,
+    0.8,
+    0.9,
+    0.7,
+    0.45
+  ],
+  "baseline_checkpoints": [
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-17/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/screening/loss/weighted-ce/seed-42/best.pt",
+    "artifacts/experiments/absa-imbalance-joint-v1/confirmation/separate/weighted-ce/seed-73/best.pt"
+  ],
+  "baseline_run_dir": "artifacts/experiments/multilabel-aspect-old-polarity-v1",
+  "bias_grid": [
+    -1.0,
+    -0.75,
+    -0.5,
+    -0.25,
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5
+  ],
+  "bootstrap_pass_rate": 0.75,
+  "bootstrap_samples": 10000,
+  "early_stopping_min_delta": 0.001,
+  "early_stopping_patience": 3,
+  "epochs": 50,
+  "eval_batch_size": 32,
+  "evaluation_interval": 5,
+  "evaluator": "scripts/evaluate.py",
+  "gradient_accumulation_steps": 2,
+  "input": "data/contest2_train.csv",
+  "input_sha256": "60d2ed8e9daaab6551352fc95066d46e653e4062b18fcf55d548b2061f3161d9",
+  "lambda_grid": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "learning_rate": 2e-05,
+  "log_steps": 10,
+  "max_length": 256,
+  "mixed_precision": "auto",
+  "mlflow_experiment": "contest2-polarity-evidence-v1",
+  "mlflow_tracking_uri": "sqlite:////home/kami/Projects/NLP/Contest2/artifacts/mlflow.db",
+  "model": "FacebookAI/roberta-base",
+  "optimizer_dir": "/tmp/contest2-polarity-evidence-v1",
+  "pair_f1_tolerance": 0.005,
+  "run_dir": "artifacts/experiments/polarity-evidence-v1",
+  "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+  "temperature_grid": [
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "train_batch_size": 8,
+  "warmup_ratio": 0.1,
+  "weight_decay": 0.01
+}

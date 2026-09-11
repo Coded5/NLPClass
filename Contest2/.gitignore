@@ -1,4 +1,28 @@
-artifacts/
+# Artifacts are ignored by default because this tree contains checkpoints,
+# downloaded model files, databases, and verbose logs. Keep lightweight
+# experiment evidence needed to review and reproduce reported results.
+artifacts/**
+!artifacts/**/
+!artifacts/**/*.md
+!artifacts/**/metrics.json
+!artifacts/**/result.json
+!artifacts/**/results.json
+!artifacts/**/summary.json
+!artifacts/**/manifest.json
+!artifacts/**/selection.json
+!artifacts/**/locked_selection.json
+!artifacts/**/comparison.json
+!artifacts/**/benchmark.json
+!artifacts/**/screening.json
+!artifacts/**/weights.json
+!artifacts/**/raw_evidence_only.json
+!artifacts/**/mlflow_run.json
+!artifacts/**/ensemble_mlflow_run.json
+!artifacts/**/official_evaluation.txt
+!artifacts/**/completed_at.txt
+!artifacts/**/exit_code.txt
+!artifacts/**/predictions.csv
+!artifacts/**/per_example_scores.csv
 __pycache__/
 *.py[cod]
 *.egg-info/
