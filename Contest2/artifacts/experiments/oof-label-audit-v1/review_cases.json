@@ -1,0 +1,3564 @@
+[
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:3",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "3",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The sentence explicitly adds a restaurant-level judgment beyond service.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "everything else about this place makes up for it",
+    "task": "aspect",
+    "text": "The staff isn't the friendliest or most competent, and I am stickler for service, but everything else about this place makes up for it."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:39",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "39",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Service is explicit. Whether the personal account also receives anecdotes/miscellaneous depends on the annotation convention; absence of an overall judgment alone cannot invalidate that label.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "waitress came by twice",
+    "task": "aspect",
+    "text": "When we were finally seated our waitress came by twice-1 for our order and 2-for our check."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:246",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "246",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The comparison can be read as food-specific or as a broader comparison between restaurants.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "great but not quite as good",
+    "task": "aspect",
+    "text": "Yeah Shanghai is also great but not quite as good -- they use the same amount of salt but without sweetness to balance out."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:259",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "service"
+      ],
+      "sampling-control": [
+        "food",
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "service"
+      ],
+      "targeted-3x": [
+        "food",
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food",
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "259",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Food and service are evaluated, but the first-time-review statement may qualify as an anecdote. A separate overall opinion is not an established requirement for this category.",
+    "reference_prediction": [
+      "food",
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "food and service was excellent",
+    "task": "aspect",
+    "text": "This is my first time writing a review for a restaurant because the food and service was excellent."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:510",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "price"
+      ],
+      "sampling-control": [
+        "price"
+      ],
+      "targeted-2x": [
+        "food",
+        "price"
+      ],
+      "targeted-3x": [
+        "food",
+        "price"
+      ],
+      "targeted-4x": [
+        "price"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "price",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "510",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The overall recommendation clearly supports miscellaneous, and no food evidence appears.",
+    "reference_prediction": [
+      "food",
+      "price"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Overall I was impressed and will return",
+    "task": "aspect",
+    "text": "Overall I was impressed and will return, it's a great QPR (Quality to Price Ratio)."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:512",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "512",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Service is explicit and the Mother's Day visit is an anecdote; the category's scope is needed before removing miscellaneous.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "maitre d' was pretty rude",
+    "task": "aspect",
+    "text": "Took my mom for Mother's Day, and the maitre d' was pretty rude."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:541",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "541",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The return intention is explicit restaurant-level evidence in addition to the named foods.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "plan to come here again and look forward",
+    "task": "aspect",
+    "text": "I plan to come here again and look forward to trying their assortment of bruschetta, panini's....."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:703",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service",
+        "ambience"
+      ],
+      "sampling-control": [
+        "service",
+        "ambience"
+      ],
+      "targeted-2x": [
+        "service",
+        "ambience"
+      ],
+      "targeted-3x": [
+        "service",
+        "ambience"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "703",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The overall recommendation explicitly supports miscellaneous; ambience has no textual support.",
+    "reference_prediction": [
+      "service",
+      "ambience"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "overall the restaurant is a must",
+    "task": "aspect",
+    "text": "The svc can be a bit rude at times, esp if you have big group, but overall the restaurant is a must!"
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:834",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "ambience"
+      ],
+      "sampling-control": [
+        "ambience"
+      ],
+      "targeted-2x": [
+        "ambience"
+      ],
+      "targeted-3x": [
+        "ambience"
+      ],
+      "targeted-4x": [
+        "ambience"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "834",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Ambience is explicit. Whether the situational description also counts as miscellaneous cannot be settled without category guidance.",
+    "reference_prediction": [
+      "ambience"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "breezy up there on the mezzanine",
+    "task": "aspect",
+    "text": "A bit breezy up there on the mezzanine from the wind coming from the tracks."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1071",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "price"
+      ],
+      "sampling-control": [
+        "price"
+      ],
+      "targeted-2x": [
+        "price"
+      ],
+      "targeted-3x": [
+        "price"
+      ],
+      "targeted-4x": [
+        "price"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "price",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1071",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Hits the spot may evaluate food satisfaction or the restaurant overall; the target of it is unresolved.",
+    "reference_prediction": [
+      "price"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "really hits the spot",
+    "task": "aspect",
+    "text": "A little pricey but it really hits the spot on a Sunday morning!"
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1215",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "ambience"
+      ],
+      "sampling-control": [
+        "food",
+        "ambience"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food",
+        "ambience"
+      ],
+      "targeted-4x": [
+        "food",
+        "ambience"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1215",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The phrase can denote ambience or a broad judgment, so both gold and prediction are defensible.",
+    "reference_prediction": [
+      "food",
+      "ambience"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "good place to hang out",
+    "task": "aspect",
+    "text": "Great bagels, spreads and a good place to hang out in."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1346",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1346",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Overall scope and return intent explicitly support miscellaneous alongside food.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Overall ... encouraged enough to return",
+    "task": "aspect",
+    "text": "Overall, the ingredients and technique are there and I am encouraged enough to return at lunch or dinner to see whether the boldness of the flavour palette improves."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1457",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1457",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Portions concern food, while habitual ordering is a personal anecdote. The earlier rationale incorrectly required a broader judgment for miscellaneous.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "large portions",
+    "task": "aspect",
+    "text": "My wife and I will usually only order one primi and one secondi and split them, as they tend to offer large portions."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1459",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1459",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The dishes are evaluated, but the friend's personal history may explain the anecdotes label. Food-only is not an established correction.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "eggplant parmesan ... baked ziti",
+    "task": "aspect",
+    "text": "The eggplant parmesan is also great, and my friend who grew up in Manhattan claims that no one serves a better baked ziti with meatsauce."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1546",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food",
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1546",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Poorly run supports service and awful supplies a broad negative judgment beyond the food reference.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "poorly run and awful",
+    "task": "aspect",
+    "text": "Maybe I say so because it looked promising for people who like artery-clogging jewish deli food, but turns out to be poorly run and awful."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1659",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1659",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Food is evaluated and a novel personal experience is narrated. Whether both categories apply needs annotation guidance.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "40 pieces of relatively good nigiri",
+    "task": "aspect",
+    "text": "I have never before eaten 40 pieces of relatively good nigiri."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:1954",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "ambience"
+      ],
+      "sampling-control": [
+        "ambience"
+      ],
+      "targeted-2x": [
+        "ambience"
+      ],
+      "targeted-3x": [
+        "ambience"
+      ],
+      "targeted-4x": [
+        "ambience"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "1954",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "This is clearly ambience, while the recommendation may or may not count as a separate overall aspect.",
+    "reference_prediction": [
+      "ambience"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "seated upstairs ... cozy",
+    "task": "aspect",
+    "text": "I do suggest to ask to be seated upstairs if you are looking to be a little cozy."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:2018",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 4,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "2018",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Satiety concerns food and personal experience; lack of a separate overall judgment does not establish a wrong miscellaneous label.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "full after our fondue appetizer",
+    "task": "aspect",
+    "text": "I was pretty much full after our fondue appetizer."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:2028",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 4,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "2028",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Food praise is embedded in an account of a visit with friends. The boundary of anecdotes/miscellaneous is unresolved.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "amazing cheese and a delicious ... menu",
+    "task": "aspect",
+    "text": "My friends and I experienced amazing cheese and a delicious, new summer menu at Artisanal last night."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_multi_misc",
+    "case_key": "aspect:2080",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "2080",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Manager attentiveness supports service; the narrated encounter might additionally qualify as an anecdote.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "visit from the Manager ... make sure",
+    "task": "aspect",
+    "text": "We even had a visit from the Manager who wanted to make sure we were enjoying ourselves."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:7",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "service"
+    ],
+    "id": "7",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Service is explicit, while the opening general approval makes an added miscellaneous reading plausible.",
+    "reference_prediction": [
+      "service",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "people who work there are evil and incompetent",
+    "task": "aspect",
+    "text": "I like Cafe Noir dont get me wrong, it is jsut that the people who work there are evil and incompetent!!"
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:35",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "35",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Without context, rudeness could refer to service or a general experience.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "So rude",
+    "task": "aspect",
+    "text": "So rude."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:101",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "ambience"
+    ],
+    "id": "101",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The visual decor and displayed sign directly describe ambience.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pics of Andy Warhol ... sign in the window",
+    "task": "aspect",
+    "text": "i love the pics of andy warhol when he used to frequent the place (he painted the ballato's sign in the window)."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:202",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "ambience"
+    ],
+    "id": "202",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Seating density is direct ambience evidence.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "sitting next to you ... 2 inches away",
+    "task": "aspect",
+    "text": "So, if yo really don't care who is sittingnext to you, which is about 2 inches away, I would say try it."
+  },
+  {
+    "assessment": "suspected annotation error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:240",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "ambience"
+    ],
+    "id": "240",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "anecdotes/miscellaneous",
+    "rationale": "The sentence gives a broad restaurant recommendation and no clear ambience feature.",
+    "reference_prediction": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Authentic Shanghai style ... better Shanghai place",
+    "task": "aspect",
+    "text": "Authentic Shanghai style and I cannot recommend a better Shanghai place in New York."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:324",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "service"
+    ],
+    "id": "324",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Failure to explain specials is a direct service issue.",
+    "reference_prediction": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "had to ask more detailed questions ... specials",
+    "task": "aspect",
+    "text": "Whem asked, we had to ask more detailed questions so that we knew what the specials were."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:337",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "337",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The target can be the food itself or the restaurant's authenticity as a whole.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "worst excuse for Japanese food",
+    "task": "aspect",
+    "text": "The worst excuse for Japanese food I've ever encountered."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:348",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "348",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Sushi is an explicit food target.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Great sushi",
+    "task": "aspect",
+    "text": "Great sushi experience."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:410",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "price"
+      ],
+      "targeted-2x": [
+        "food",
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "food",
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "price",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food",
+      "price"
+    ],
+    "id": "410",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The model misses explicit food evidence and adds an unsupported miscellaneous label.",
+    "reference_prediction": [
+      "price",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "half-price ... inedible squid",
+    "task": "aspect",
+    "text": "We were fans of the half-price Saturday night option until some inedible squid during a recent visit."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:433",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 4,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "433",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The metaphor evaluates pizza but frames a broad comparison, exposing a fuzzy food versus miscellaneous boundary.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pizzas",
+    "task": "aspect",
+    "text": "VT is what baby pizzas hope to be when they grow up."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:439",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "439",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "This fragment depends on prior context and uses a metaphor rather than a direct food evaluation.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "baby pizzas get their wish",
+    "task": "aspect",
+    "text": "Some baby pizzas get their wish."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:656",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "656",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Shabu-Shabu supports food, while 'a must' is also a broad recommendation.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "must for anyone who loves Shabu-Shabu",
+    "task": "aspect",
+    "text": "Thius is a must for anyone who loves Shabu-Shabu."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:685",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "food",
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 4,
+    "gold_aspects": [
+      "food",
+      "ambience"
+    ],
+    "id": "685",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Food and neighbourhood are explicit, but the opening remark about another reviewer may qualify as an anecdote. The extra miscellaneous label is not clearly unjustified.",
+    "reference_prediction": [
+      "food",
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "great neighborhood and ... great food",
+    "task": "aspect",
+    "text": "Not sure where the previous reviewer, lonk, dined, but Saul is in a great neighborhood and has great food!"
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:688",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "price",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "price",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "price"
+    ],
+    "id": "688",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Price is explicit, but 'good spot' and 'overrated' can also express an overall judgment.",
+    "reference_prediction": [
+      "price",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pretty good spot ... overpriced and overrated",
+    "task": "aspect",
+    "text": "I think this would be a pretty good spot if it were not so overpriced and overrated."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_single_misc",
+    "case_key": "aspect:706",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "706",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Waiting suggests service, but this advice may be coded as anecdotal context. The previous proposed relabeling was too certain.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "longer you may have to wait",
+    "task": "aspect",
+    "text": "Just remember, the later you go, the longer you may have to wait."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:61",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "61",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "A recommendation for social occasions can be an overall endorsement without evaluating the physical ambience separately.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "perfect spot for meeting friends ... drinks",
+    "task": "aspect",
+    "text": "This is the perfect spot for meeting friends, having lunch, dinner, pre-theatre or after-theatre drinks!"
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:136",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food",
+        "service"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "service"
+    ],
+    "id": "136",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Takeout handling suggests service, while packaging quality can be treated as part of the food offering.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "takeout ... high quality tupperware",
+    "task": "aspect",
+    "text": "The takeout is great too since they give high quality tupperware as well."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_other",
+    "case_key": "aspect:181",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food",
+      "service"
+    ],
+    "id": "181",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The waiting complaint explicitly supplies service evidence alongside food.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "like to wait for it",
+    "task": "aspect",
+    "text": "The food here is rather good, but only if you like to wait for it."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:211",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "price",
+        "service"
+      ],
+      "sampling-control": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-3x": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "price",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food",
+      "service"
+    ],
+    "id": "211",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Spending is a comparison standard for service and food quality, not necessarily an evaluation of price itself. The added price label is not clearly required.",
+    "reference_prediction": [
+      "food",
+      "price",
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "spending that type of money",
+    "task": "aspect",
+    "text": "Service and food is what any one would expect when spending that type of money."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_other",
+    "case_key": "aspect:238",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "price",
+        "service"
+      ],
+      "sampling-control": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-3x": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "price",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "price",
+      "service"
+    ],
+    "id": "238",
+    "needs_user_adjudication": false,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Cheap evaluates price and nice evaluates the waiters. Food is the object being priced, with no separate food-quality evaluation; the reference adds food based on mention alone.",
+    "reference_prediction": [
+      "food",
+      "price",
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "food is so cheap",
+    "task": "aspect",
+    "text": "The food is so cheap and the waiters are nice."
+  },
+  {
+    "assessment": "suspected annotation error",
+    "bucket": "aspect_other",
+    "case_key": "aspect:267",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "price"
+      ],
+      "sampling-control": [
+        "food",
+        "price"
+      ],
+      "targeted-2x": [
+        "food",
+        "price"
+      ],
+      "targeted-3x": [
+        "food",
+        "price"
+      ],
+      "targeted-4x": [
+        "food",
+        "price",
+        "ambience"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "267",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "food and price",
+    "rationale": "Price is explicit and should plausibly accompany the food label.",
+    "reference_prediction": [
+      "food",
+      "price"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "well priced wines",
+    "task": "aspect",
+    "text": "The bar is very well stocked with interesting beers and well priced wines."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:296",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "service"
+      ],
+      "sampling-control": [
+        "food",
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "service"
+      ],
+      "targeted-3x": [
+        "food",
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 5,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "296",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "These failures can be attributed to food quality or service execution.",
+    "reference_prediction": [
+      "food",
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "forgot our toast, left out ingredients",
+    "task": "aspect",
+    "text": "They did not have mayonnaise, forgot our toast, left out ingredients (ie cheese in an omelet), below hot temperatures and the bacon was so over cooked it crumbled on the plate when you touched it."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:327",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "327",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Taste language may support food, but the rhetorical comparison and restaurant-level criticism make the category boundary uncertain.",
+    "reference_prediction": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "what it should have tasted like",
+    "task": "aspect",
+    "text": "Great idea and base for restaurant, but work on the details, people who think this was good need to go back to the shore towns and rethink what it should have tasted like."
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_other",
+    "case_key": "aspect:365",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "price",
+        "service"
+      ],
+      "sampling-control": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "price"
+      ],
+      "targeted-3x": [
+        "food",
+        "price",
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "price",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "service"
+    ],
+    "id": "365",
+    "needs_user_adjudication": false,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The complaints concern staff attention and delivery. Pasta and hypothetical extra spending supply context, not independent food or price evaluations; the extra predictions overextend those mentions.",
+    "reference_prediction": [
+      "food",
+      "price",
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pasta ... another $20 on wine",
+    "task": "aspect",
+    "text": "(food was delivered by a busboy, not waiter) We got no cheese offered for the pasta, our water and wine glasses remained EMPTY our entire meal, when we would have easily spent another $20 on wine."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:417",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "417",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Running out of rice can concern food availability, service, or overall restaurant adequacy. No single additional category is certain without guidance.",
+    "reference_prediction": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Thai restaurant out of rice",
+    "task": "aspect",
+    "text": "A Thai restaurant out of rice during dinner?"
+  },
+  {
+    "assessment": "clear model error",
+    "bucket": "aspect_other",
+    "case_key": "aspect:563",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 1,
+    "gold_aspects": [
+      "service",
+      "ambience"
+    ],
+    "id": "563",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Crowded table placement directly supports the omitted ambience label.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "back-to-back ... squeezed past us",
+    "task": "aspect",
+    "text": "I was back-to-back with the diner at the table behind me and wait staff had to hoist trays over our heads as they squeezed past us again and again."
+  },
+  {
+    "assessment": "insufficient evidence",
+    "bucket": "aspect_other",
+    "case_key": "aspect:565",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service"
+      ],
+      "sampling-control": [
+        "service"
+      ],
+      "targeted-2x": [
+        "food",
+        "service"
+      ],
+      "targeted-3x": [
+        "service"
+      ],
+      "targeted-4x": [
+        "food",
+        "service"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 2,
+    "gold_aspects": [
+      "food"
+    ],
+    "id": "565",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The isolated beverage request does not identify a service failure. Inferring one requires surrounding text, which is outside this case.",
+    "reference_prediction": [
+      "service"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "asked for seltzer with lime",
+    "task": "aspect",
+    "text": "I asked for seltzer with lime, no ice."
+  },
+  {
+    "assessment": "insufficient evidence",
+    "bucket": "aspect_other",
+    "case_key": "aspect:566",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "food"
+      ],
+      "sampling-control": [
+        "food"
+      ],
+      "targeted-2x": [
+        "food"
+      ],
+      "targeted-3x": [
+        "food"
+      ],
+      "targeted-4x": [
+        "food"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "service"
+    ],
+    "id": "566",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The sentence describes a received drink; calling it the wrong drink relies on a prior order that is absent from this case.",
+    "reference_prediction": [
+      "food"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Got club soda ... no lime",
+    "task": "aspect",
+    "text": "Got club soda, filled with ice, no lime."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:600",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "service",
+        "ambience",
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "service",
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 4,
+    "gold_aspects": [
+      "anecdotes/miscellaneous"
+    ],
+    "id": "600",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Table availability may denote service or popularity, while the model also retains the correct overall recommendation.",
+    "reference_prediction": [
+      "service",
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "nearly impossible to get a table",
+    "task": "aspect",
+    "text": "It is nearly impossible to get a table, so if you ever have the chance to go here for dinner, DO NOT pass it up."
+  },
+  {
+    "assessment": "ambiguous annotation",
+    "bucket": "aspect_other",
+    "case_key": "aspect:630",
+    "configuration_count": 5,
+    "configuration_predictions": {
+      "reference": [
+        "anecdotes/miscellaneous"
+      ],
+      "sampling-control": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-2x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-3x": [
+        "anecdotes/miscellaneous"
+      ],
+      "targeted-4x": [
+        "anecdotes/miscellaneous"
+      ]
+    },
+    "error_persistence": 5,
+    "fold": 3,
+    "gold_aspects": [
+      "food",
+      "anecdotes/miscellaneous"
+    ],
+    "id": "630",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Dinner and drinks are mentioned within a restaurant recommendation. Mention alone does not establish a separate evaluated food aspect.",
+    "reference_prediction": [
+      "anecdotes/miscellaneous"
+    ],
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "having dinner and drinks",
+    "task": "aspect",
+    "text": "I highly recommend visiting this restaurant and having dinner and drinks!"
+  },
+  {
+    "aspect": "service",
+    "assessment": "clear model error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:37:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "conflict",
+    "id": "37",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Only one friendly employee implies positive and negative service evidence, matching conflict.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "only friendly staff member",
+    "task": "polarity",
+    "text": "The only friendly staff member was the guy at the bar."
+  },
+  {
+    "aspect": "service",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:133:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "conflict",
+    "id": "133",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Fast activity could signal efficient service or staff rushing under pressure. The noisy atmosphere is a different target, but the service reading still needs adjudication.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "waiters ... doing things as fast as they can",
+    "task": "polarity",
+    "text": "The atmosphere is noisy and the waiters are literally walking around doing things as fast as they can."
+  },
+  {
+    "aspect": "food",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:438:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "438",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "positive",
+    "rationale": "The comparison praises VT's pizza and contains no negative food evidence about it.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "make them into a good pizza like VT's",
+    "task": "polarity",
+    "text": "They pray to their Food Gods to make them into a good pizza like VT's."
+  },
+  {
+    "aspect": "food",
+    "assessment": "clear model error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:447:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "positive",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "447",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The same food aspect receives explicit positive and negative evaluations.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "great ... eat pizza ... not a good place for take-out pizza",
+    "task": "polarity",
+    "text": "This is one great place to eat pizza more out but not a good place for take-out pizza."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:657:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "657",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Popularity is positive evidence but fullness and waiting can be negative; their aspect attribution is fuzzy.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "popular, full ... a wait",
+    "task": "polarity",
+    "text": "Always popular, always full, always a wait."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:719:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "conflict",
+    "id": "719",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The sentence contrasts an acceptable subset with rejected options. Whether that implied acceptance supplies positive evidence for conflict is uncertain.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "wouldn't dare ordering anything else",
+    "task": "polarity",
+    "text": "Next time, we wouldn't dare ordering anything else other than some simple Asian appetizers and drinks."
+  },
+  {
+    "aspect": "service",
+    "assessment": "clear model error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:763:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "763",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Prompt seating and slow later service are opposite evaluations of service.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "seated promptly ... service was slow",
+    "task": "polarity",
+    "text": "We were seated promptly as we had reservations, however after that the service was slow."
+  },
+  {
+    "aspect": "service",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:779:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "conflict",
+    "id": "779",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The sentence is mostly negative, though eventual seating and an explanation may have prompted conflict.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "reservations ... delayed 15-20 minutes",
+    "task": "polarity",
+    "text": "Make reservations but expect to be delayed 15-20 minutes as the hosting staff was having difficulty seating guests who arrived with a reservation because they probably had a lot of walk ins being so close to Time Square."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:839:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "conflict",
+    "id": "839",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Positive architecture is explicitly outside the restaurant, leaving the restaurant ambience itself negative.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "incredible architecture surrounding it ... no character",
+    "task": "polarity",
+    "text": "Given the incredible architecture surrounding it, this place has no character."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:863:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "863",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Delicious is positive. The empty-stomach warning could concern portions or waiting time; it does not unambiguously provide negative food evidence.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "food was delicious but do not come ... empty stomach",
+    "task": "polarity",
+    "text": "The food was delicious but do not come here on a empty stomach."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:907:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "negative",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "conflict",
+    "id": "907",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Negation scope makes the sentence mean neither unwelcome nor impressed, which mixes neutral, positive, and negative implications.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Never once ... unwelcome or impressed",
+    "task": "polarity",
+    "text": "Never once did I leave feeling unwelcome or impressed."
+  },
+  {
+    "aspect": "food",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1204:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "conflict",
+    "id": "1204",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "negative",
+    "rationale": "The speaker rejects the possible positive view and directly judges the food negatively.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "considered extreme ... simply dull",
+    "task": "polarity",
+    "text": "Perhaps this food is considered extreme to an Upper East Side resident, but for the rest of us who've actually eaten ethnic food, this is simply dull."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1705:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "conflict",
+    "id": "1705",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Excellent is positive. Food not being the point can describe the purpose of the visit rather than criticize food; conflict is not certain.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "certain staples are excellent ... food is not really the point",
+    "task": "polarity",
+    "text": "While certain staples are excellent (the burger, some of the pastas), the food is not really the point."
+  },
+  {
+    "aspect": "service",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1836:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "positive",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "conflict",
+    "id": "1836",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Crappy clearly targets service, while 'great' may refer to the restaurant overall rather than service.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "crappy service ... it's great",
+    "task": "polarity",
+    "text": "Other than the crappy service from two individuals, it's great."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "clear model error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1842:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "conflict",
+    "id": "1842",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The sentence explicitly contrasts positive and negative ambience.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "beautiful on the outside ... bland on the inside",
+    "task": "polarity",
+    "text": "To dine at Thalia can be slightly deceiving because while its beautiful on the outside, its so bland on the inside."
+  },
+  {
+    "aspect": "price",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1854:price",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "1854",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "positive",
+    "rationale": "The only price evaluation is positive; the negative food judgment belongs to a different aspect.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "won't break the bank",
+    "task": "polarity",
+    "text": "It won't break the bank but I also wouldnt come back for the food."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1879:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "conflict",
+    "id": "1879",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The benefit of avoiding a noisy wait and the negative experience being avoided may both contribute to an overall evaluation. The scope of miscellaneous needs guidance.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "saves walking in and waiting",
+    "task": "polarity",
+    "text": "It saves walking in and waiting for a table in the often noisy, crowded bar at dinnertime."
+  },
+  {
+    "aspect": "food",
+    "assessment": "clear model error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:1903:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "1903",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Two servings receive directly opposed food judgments.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "perfect ... well done and dry",
+    "task": "polarity",
+    "text": "My husbands was perfect, my was well done and dry."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:2239:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "conflict",
+    "id": "2239",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "positive",
+    "rationale": "The sentence is positive and supplies no negative ambience evidence; much of it concerns food and price.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "exceeded my expectations",
+    "task": "polarity",
+    "text": "This little place definitely exceeded my expectations and you sure get a lot of food for your money."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_conflict",
+    "case_key": "polarity:2272:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "neutral",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "conflict",
+    "id": "2272",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Creative drinks suggests praise, but loaded with alcohol can be approving or critical. Price is separate; the remaining drink sentiment is not uniquely positive.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "creative drinks ... loaded with alcohol",
+    "task": "polarity",
+    "text": "They offer the same menu but have creative drinks that are loaded with alcohol and cheeky names -- but they do cost you."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:43:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "neutral",
+    "id": "43",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Full with tourists may be descriptive, imply popularity, or express dislike of crowding. None is explicit enough to call the polarity error clear.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "full with tourists",
+    "task": "polarity",
+    "text": "ALWAYS full with tourists (especially because of it's close proximity to Rockefeller Center)."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:195:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "positive",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "neutral",
+    "id": "195",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "This is mainly advice, though recommending the outside seating carries weak positive sentiment.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "If the weather is nice, try to snag an outside table",
+    "task": "polarity",
+    "text": "If the weather is nice, try to snag an outside table."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:404:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "neutral",
+    "id": "404",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The criticism explicitly targets Citysearch's judgment; transferring it to the restaurant requires knowing what Citysearch said.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "didn't call it right",
+    "task": "polarity",
+    "text": "This is the first time Citysearch did't call it right."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "insufficient evidence",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:440:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "neutral",
+    "id": "440",
+    "needs_user_adjudication": true,
+    "previous_assessment": "insufficient evidence",
+    "proposed_label": "",
+    "rationale": "The fragment relies on missing discourse context, so its polarity cannot be judged reliably alone.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "feel sad until they're eaten",
+    "task": "polarity",
+    "text": "Others have to go to other restaurants and feel sad until they're eaten."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:481:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "neutral",
+    "id": "481",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "A gallery of celebrity visitors can be factual or approving. Positive versus neutral depends on pragmatic interpretation.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "gallery of stars that have visited",
+    "task": "polarity",
+    "text": "There is a real gallery of stars that have visited."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:596:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "neutral",
+    "id": "596",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The sentence combines weak praise with a neutralizing or negative qualification, fitting either neutral or conflict conventions.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "good ... but ... nothing special",
+    "task": "polarity",
+    "text": "Rao is a good restaurant, but it's nothing special."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:696:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "neutral",
+    "id": "696",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Outrageously good targets food, while repeated visits may supply neutral anecdotal content. Transferring positive food sentiment to miscellaneous was not justified.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "food is always ... outrageously good",
+    "task": "polarity",
+    "text": "I have eaten at Saul, many times, the food is always consistently, outrageously good."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:710:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "positive",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "neutral",
+    "id": "710",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Not mind-blowing can be neutral or mildly negative. An implausible positive prediction does not by itself establish that neutral is uniquely correct.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "not mind-blowing ... never will be",
+    "task": "polarity",
+    "text": "It's not mind-blowing, but to me, thai food never is and never will be."
+  },
+  {
+    "aspect": "food",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:757:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "neutral",
+    "id": "757",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "negative",
+    "rationale": "Mediocre is an explicit negative judgment of food.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pay a lot for mediocre food",
+    "task": "polarity",
+    "text": "It's a place for people who pay a lot for mediocre food, noise and a chance to be with their fellow bridge and tunnel folks."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:765:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "neutral",
+    "id": "765",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The phrase lies on the neutral versus mildly negative boundary.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "wasn't anything spectacular",
+    "task": "polarity",
+    "text": "Sushi wasn't anything spectacular for the price."
+  },
+  {
+    "aspect": "service",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:792:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "neutral",
+    "id": "792",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The question could be factual or an implied complaint. Question form alone does not establish neutral sentiment.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Has the chef and owner changed?",
+    "task": "polarity",
+    "text": "Has the chef and owner changed???"
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:799:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "neutral",
+    "id": "799",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Food is described neutrally, while the negative return intent may apply to the overall restaurant.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "just OK ... never go back",
+    "task": "polarity",
+    "text": "The food was just OK, I would never go back."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "insufficient evidence",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:800:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "neutral",
+    "id": "800",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Could not believe the food can express praise or dismay. Missing context does not prove a neutral gold label correct.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "couldn't believe the food",
+    "task": "polarity",
+    "text": "My fiance took me to Scopa last week for my birthday and I couldn't believe the food."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "suspected annotation error",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:809:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "conflict"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "neutral",
+    "id": "809",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "negative",
+    "rationale": "Preferring alternatives conveys a negative overall judgment.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "would have rather tried",
+    "task": "polarity",
+    "text": "would have rather tried terrace in the sky or water club for that price"
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:876:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "neutral",
+    "id": "876",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "Packed and noisy may be descriptive or critical and concern ambience. They do not prove that a separately annotated anecdotal statement has negative polarity.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "packed and noisy",
+    "task": "polarity",
+    "text": "When we left at 8:00 PM, it was packed and noisy."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:985:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "neutral",
+    "id": "985",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Weird can be descriptive or mildly negative, creating a neutral-negative boundary case.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "quite a weird selection",
+    "task": "polarity",
+    "text": "also make sure you pay attention to the music being piped in - quite a weird selection."
+  },
+  {
+    "aspect": "ambience",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:990:ambience",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "neutral",
+    "id": "990",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The sentence implies dislike of inside seating but states it indirectly.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "not the same ... sit inside",
+    "task": "polarity",
+    "text": "Its not the same if you have to sit inside."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:1074:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "neutral",
+    "id": "1074",
+    "needs_user_adjudication": true,
+    "previous_assessment": "suspected annotation error",
+    "proposed_label": "",
+    "rationale": "The dissatisfaction covers places in New York generally, not necessarily the reviewed restaurant. Neutral background and negative overall readings are both possible.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "yet to find a place ... satisfy",
+    "task": "polarity",
+    "text": "I grew up eating Dosa and have yet to find a place in NY to satisfy my taste buds."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:1138:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "neutral",
+    "id": "1138",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Moderately enjoyed is weakly positive, while 'only thing' supplies negative context; neutral is plausible under coarse labels.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "only thing I moderately enjoyed",
+    "task": "polarity",
+    "text": "The only thing I moderately enjoyed was their Grilled Chicken special with Edamame Puree."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_neutral",
+    "case_key": "polarity:1154:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "neutral",
+    "id": "1154",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "The phrase expresses regret but may be annotated neutral because it reports closure rather than restaurant quality.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "Too bad ... closed",
+    "task": "polarity",
+    "text": "Too bad Latin Quarters closed."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_other",
+    "case_key": "polarity:28:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "conflict",
+      "oversampling": "conflict",
+      "reference": "conflict",
+      "sampling-corrected": "conflict"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "positive",
+    "id": "28",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "Average and tasty mix neutral and positive evidence; positive and conflict are both defensible conventions.",
+    "reference_prediction": "conflict",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "average but tasty",
+    "task": "polarity",
+    "text": "Food was average but tasty."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_other",
+    "case_key": "polarity:110:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "conflict",
+      "oversampling": "neutral",
+      "reference": "conflict",
+      "sampling-corrected": "conflict"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "positive",
+    "id": "110",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Check their wine list may be a favourable recommendation or informational advice. Conflict appears unsupported, but positive is not uniquely established.",
+    "reference_prediction": "conflict",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "please check their wine list",
+    "task": "polarity",
+    "text": "If anyones has doubt of not knowing enough about wines,please check their wine list."
+  },
+  {
+    "aspect": "service",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_other",
+    "case_key": "polarity:130:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "conflict",
+      "oversampling": "conflict",
+      "reference": "neutral",
+      "sampling-corrected": "conflict"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "negative",
+    "id": "130",
+    "needs_user_adjudication": true,
+    "previous_assessment": "ambiguous annotation",
+    "proposed_label": "",
+    "rationale": "This mixes neutral approval and criticism and could reasonably be neutral, negative, or conflict under different guidelines.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "ok but could be better",
+    "task": "polarity",
+    "text": "The service is ok but could be better."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "clear model error",
+    "bucket": "polarity_other",
+    "case_key": "polarity:187:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "neutral",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 2,
+    "gold_polarity": "negative",
+    "id": "187",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Used to be implies that the restaurant is no longer decent, supporting negative polarity.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "used to be pretty decent",
+    "task": "polarity",
+    "text": "This restaurant used to be pretty decent."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_other",
+    "case_key": "polarity:197:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "neutral",
+      "oversampling": "neutral",
+      "reference": "neutral",
+      "sampling-corrected": "neutral"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "negative",
+    "id": "197",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Odd people may be mildly critical or merely unusual. The previous rationale assumed undesirability without decisive text evidence.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "pretty odd people",
+    "task": "polarity",
+    "text": "I've been there a few times, and I usually end up sitting next to some pretty odd people."
+  },
+  {
+    "aspect": "food",
+    "assessment": "ambiguous annotation",
+    "bucket": "polarity_other",
+    "case_key": "polarity:338:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "neutral",
+      "oversampling": "neutral",
+      "reference": "neutral",
+      "sampling-corrected": "neutral"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "negative",
+    "id": "338",
+    "needs_user_adjudication": true,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Soy sauce and water can be a reductive complaint or an ingredient description; negative intent is inferred rather than explicit.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "soy sauce and water",
+    "task": "polarity",
+    "text": "The soup for the udon was soy sauce and water."
+  },
+  {
+    "aspect": "service",
+    "assessment": "clear model error",
+    "bucket": "polarity_other",
+    "case_key": "polarity:369:service",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "positive",
+      "oversampling": "positive",
+      "reference": "positive",
+      "sampling-corrected": "positive"
+    },
+    "error_persistence": 4,
+    "fold": 4,
+    "gold_polarity": "negative",
+    "id": "369",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The narrative and sarcasm communicate poor service.",
+    "reference_prediction": "positive",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "finally offered ... 10 percent tip ... generous",
+    "task": "polarity",
+    "text": "We laughed when he finally offered us a dessert menu and we left a 10 percent tip, which was generous, I feel."
+  },
+  {
+    "aspect": "anecdotes/miscellaneous",
+    "assessment": "clear model error",
+    "bucket": "polarity_other",
+    "case_key": "polarity:446:anecdotes/miscellaneous",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "neutral",
+      "oversampling": "neutral",
+      "reference": "neutral",
+      "sampling-corrected": "neutral"
+    },
+    "error_persistence": 4,
+    "fold": 5,
+    "gold_polarity": "positive",
+    "id": "446",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Repeatedly bringing guests is a clear positive endorsement.",
+    "reference_prediction": "neutral",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "take all my NYC guests",
+    "task": "polarity",
+    "text": "I take all my NYC guests to VT's."
+  },
+  {
+    "aspect": "food",
+    "assessment": "clear model error",
+    "bucket": "polarity_other",
+    "case_key": "polarity:484:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "conflict",
+      "oversampling": "conflict",
+      "reference": "conflict",
+      "sampling-corrected": "conflict"
+    },
+    "error_persistence": 4,
+    "fold": 1,
+    "gold_polarity": "positive",
+    "id": "484",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "The food evaluation is positive; confusion about ordering concerns service.",
+    "reference_prediction": "conflict",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "once the food is ordered, you are in for a treat",
+    "task": "polarity",
+    "text": "It can be a little confusing as to where one goes to order, but once the food is ordered, you are in for a treat."
+  },
+  {
+    "aspect": "food",
+    "assessment": "clear model error",
+    "bucket": "polarity_other",
+    "case_key": "polarity:488:food",
+    "configuration_count": 4,
+    "configuration_predictions": {
+      "loss-control": "negative",
+      "oversampling": "negative",
+      "reference": "negative",
+      "sampling-corrected": "negative"
+    },
+    "error_persistence": 4,
+    "fold": 3,
+    "gold_polarity": "positive",
+    "id": "488",
+    "needs_user_adjudication": false,
+    "previous_assessment": "clear model error",
+    "proposed_label": "",
+    "rationale": "Wanting additional dishes implies positive food sentiment.",
+    "reference_prediction": "negative",
+    "review_revision": 2,
+    "review_status": "provisional assistant judgment",
+    "supporting_text": "if my stomach had more space",
+    "task": "polarity",
+    "text": "I would have gotten some cole slaw and a knish if my stomach had more space."
+  }
+]

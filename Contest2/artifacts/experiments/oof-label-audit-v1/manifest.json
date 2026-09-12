@@ -1,0 +1,45 @@
+{
+  "aspect_configurations": [
+    "reference",
+    "sampling-control",
+    "targeted-2x",
+    "targeted-3x",
+    "targeted-4x"
+  ],
+  "aspect_run": "artifacts/experiments/aspect-misc-oversampling-cv-v1",
+  "aspect_source_manifest": "artifacts/experiments/aspect-misc-oversampling-cv-v1/manifest.json",
+  "aspect_source_manifest_sha256": "1b1300489832522450ae7e2825277b589bafb3a7943167b20514e32d20142c1c",
+  "assessments": "artifacts/experiments/oof-label-audit-v1/assessments.json",
+  "historical_test_accessed": false,
+  "labels": {
+    "aspects": [
+      "food",
+      "price",
+      "service",
+      "ambience",
+      "anecdotes/miscellaneous"
+    ],
+    "polarities": [
+      "positive",
+      "negative",
+      "neutral",
+      "conflict"
+    ]
+  },
+  "output_dir": "artifacts/experiments/oof-label-audit-v1",
+  "polarity_configurations": [
+    "reference",
+    "loss-control",
+    "oversampling",
+    "sampling-corrected"
+  ],
+  "polarity_run": "artifacts/experiments/polarity-oversampling-cv-v1",
+  "polarity_source_manifest": "artifacts/experiments/polarity-oversampling-cv-v1/manifest.json",
+  "polarity_source_manifest_sha256": "1397685b9c84f2f62c6a6a57bbb49f9cc7d6e507895f9680e077d3a2475bf967",
+  "sample_size": 100,
+  "seed": 42,
+  "selection": "error persistence descending, review ID ascending; unique IDs across tasks",
+  "train": "artifacts/training/roberta-aspect-exp1/splits/train.csv",
+  "train_ids": 2068,
+  "train_sha256": "97a4e600b3be55d4b3813c1558494ea6e17133711c4158377c6c6d2aeeb7ff11"
+}
