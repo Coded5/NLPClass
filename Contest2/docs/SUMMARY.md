@@ -592,6 +592,204 @@ does not establish that synthetic contrastive wording is better than matched
 repetition of real conflict rows. It is a polarity-only training diagnostic and
 does not replace or directly evaluate the complete-system winner.
 
+## 22. SemEval polarity augmentation
+
+Deduplicated SemEval-2014 restaurant annotations were added only to the original
+fitting partition; the existing validation and historical test partitions were
+kept byte-identical. The three-seed RoBERTa aspect ensemble remained frozen.
+The first condition added all 1,021 retained SemEval annotation rows: 654
+positive, 221 negative, 94 neutral, and 52 conflict. DeBERTa-v3 polarity used
+weighted cross-entropy and seeds 17, 42, and 73.
+
+| All-class SemEval system | Validation pair F1 | Historical-test pair F1 | Gold-aspect polarity accuracy | Macro-F1 |
+|---|---:|---:|---:|---:|
+| Original DeBERTa polarity | 0.7769 | 0.7616 | 0.8418 | 0.7187 |
+| SemEval-augmented DeBERTa polarity | 0.7863 | **0.7744** | **0.8544** | 0.7196 |
+| Previous mixed-polarity winner | 0.7790 | 0.7630 | 0.8449 | **0.7215** |
+| SemEval-augmented mixed polarity | **0.7894** | 0.7680 | 0.8449 | 0.7067 |
+
+The augmented DeBERTa-only composition produced the highest observed
+historical-test pair F1, `0.7744`, a `+0.0114` point gain over the previous
+winner. However, validation selected the augmented mixed system, whose test
+pair F1 was `0.7680`. The augmented-DeBERTa minus original-DeBERTa bootstrap
+interval was `[-0.0098, +0.0365]`, and the augmented-mixed minus previous-winner
+interval was `[-0.0150, +0.0264]`; neither establishes a reliable gain. Because
+this historical test partition has been inspected repeatedly, `0.7744` is an
+observed result rather than a new unbiased winner claim.
+
+## 23. Minority-only SemEval augmentation
+
+A controlled follow-up removed every SemEval positive and negative annotation,
+retaining only 94 neutral and 52 conflict rows. The resulting fitting split had
+2,671 rows: 1,502 positive, 571 negative, 412 neutral, and 186 conflict. All
+three DeBERTa seeds were trained fresh; aspect checkpoints and original
+RoBERTa polarity checkpoints were frozen.
+
+| Minority-only system | Validation pair F1 | Historical-test pair F1 | Gold-aspect polarity accuracy | Macro-F1 |
+|---|---:|---:|---:|---:|
+| Original DeBERTa polarity | 0.7769 | 0.7616 | 0.8418 | 0.7187 |
+| Minority-only DeBERTa polarity | 0.7551 | 0.7616 | 0.8418 | **0.7287** |
+| Previous mixed-polarity winner | 0.7790 | 0.7630 | 0.8449 | 0.7215 |
+| Minority-only mixed polarity | **0.7832** | **0.7648** | **0.8481** | 0.7249 |
+
+The intervention shifted performance toward the intended classes. Relative to
+all-class SemEval DeBERTa, neutral F1 rose from `0.6486` to `0.7073` and
+conflict F1 from `0.4828` to `0.5000`, while positive F1 fell from `0.9443` to
+`0.9297` and negative F1 from `0.8026` to `0.7778`. This tradeoff raised
+macro-F1 but erased the overall pair-F1 gain. The minority-only DeBERTa model
+matched the original at `0.7616`; its mixed composition reached `0.7648`, below
+the all-class result. Both bootstrap intervals included zero. Minority-only
+augmentation is therefore useful evidence about class tradeoffs, not a model to
+promote.
+
+## 24. Full-combined joint DeBERTa and decoder tuning
+
+A seed-42 joint DeBERTa-v3-base pilot trained one shared encoder with aspect and
+polarity heads on the original fitting partition plus all four classes from the
+deduplicated SemEval augmentation. It used weighted focal polarity loss with
+gamma 2, selected epoch 20 on validation, and finished in 54.4 minutes. The
+historical test split was not accessed during training or checkpoint selection.
+
+| Decoder evaluation | Pair F1 | Aspect F1 | Polarity F1 | Exact-set accuracy |
+|---|---:|---:|---:|---:|
+| Original, validation | 0.7852 | 0.8934 | 0.8613 | 0.7132 |
+| Tuned, validation | **0.8019** | **0.8947** | **0.8721** | **0.7287** |
+| Original, historical test | **0.7520** | **0.8689** | **0.8214** | **0.6705** |
+| Tuned, historical test | 0.7437 | 0.8608 | 0.8177 | 0.6589 |
+
+The original joint decoder was below the matched separate DeBERTa seed-42
+validation result of `0.7950`, although it slightly exceeded the historical
+original-data joint RoBERTa seed-42 validation result of `0.7836`. On validation,
+its official polarity F1 values were `0.9274` positive, `0.8387` negative,
+`0.7342` neutral, and `0.6286` conflict.
+
+A low-cost decoder search then adjusted five aspect thresholds, polarity-logit
+biases, an aspect-count cap, a confidence gate, and a conflict margin. The
+selected validation decoder lowered the negative and conflict logits, raised
+neutral, and limited predictions to three aspects. Its `+0.0167` validation
+pair-F1 gain did not generalize: historical-test pair F1 fell by `0.0083`, and
+all principal test metrics decreased. Conflict pair F1 was unchanged at
+`0.5806`; positive, negative, and neutral pair F1 all declined slightly.
+
+The tuned decoder is therefore rejected and the original decoder is retained
+for this joint checkpoint. Even the retained test score of `0.7520` is below
+the strongest separate SemEval-augmented systems. This result does not support
+advancing the full-combined joint architecture into expensive grouped CV. The
+next low-cost roadmap experiment is validation-only interpolation of the saved
+all-class and minority-only DeBERTa polarity logits.
+
+## 25. Existing DeBERTa logit interpolation
+
+The roadmap's no-training interpolation pilot combined saved all-class and
+minority-only three-seed DeBERTa polarity logits while freezing the existing
+RoBERTa aspect ensemble. It used only the established validation partition and
+did not access the historical test split. Alpha denotes minority-model weight.
+
+| Alpha | Fixed-threshold pair F1 | Retuned pair F1 | Gold-aspect macro-F1 | Gold-aspect conflict F1 |
+|---:|---:|---:|---:|---:|
+| 0.00 | **0.7863** | **0.7863** | 0.7645 | 0.5455 |
+| 0.25 | **0.7863** | **0.7863** | **0.7771** | **0.5882** |
+| 0.50 | 0.7738 | 0.7738 | 0.7625 | 0.5714 |
+| 0.75 | 0.7613 | 0.7613 | 0.7387 | 0.5000 |
+| 1.00 | 0.7551 | 0.7551 | 0.7274 | 0.4500 |
+
+Threshold retuning selected the same thresholds for every alpha and did not
+change any score. A 25% minority blend improved gold-aspect macro-F1 and
+conflict F1, and raised pair-level conflict F1 from `0.5333` to `0.5806`, but
+it did not improve the primary pair-F1 metric. Under the predefined exact-tie
+rule favoring less minority weight, alpha zero remains selected.
+
+The minority-only ensemble is therefore retained as a class-balance diagnostic,
+not included in the initial grouped-CV recipe. The roadmap proceeds to matched
+seed-42 ModernBERT and ELECTRA polarity pilots; only the stronger useful
+DeBERTa blend should enter the first grouped CV.
+
+## 26. ModernBERT polarity pilot
+
+A seed-42 `answerdotai/ModernBERT-base` polarity model was trained with the
+same all-class SemEval fitting data, weighted cross-entropy, frozen RoBERTa
+aspect ensemble, and validation partition as the DeBERTa comparison. A real
+forward/backward smoke check confirmed finite loss, FP32 trainable parameters,
+an optimizer update, four logits, and compatible text/aspect pair encoding.
+The selected checkpoint was epoch 20, and the complete run took 15.1 minutes.
+The historical test split was not accessed.
+
+| ModernBERT weight | Matched seed-42 pair F1 | Three-seed DeBERTa blend pair F1 |
+|---:|---:|---:|
+| 0.00 | **0.7950** | **0.7863** |
+| 0.25 | 0.7919 | 0.7800 |
+| 0.50 | 0.7888 | 0.7843 |
+| 0.75 | 0.7516 | 0.7488 |
+| 1.00 | 0.7395 | 0.7395 |
+
+ModernBERT was substantially weaker alone, and no nonzero interpolation weight
+improved either DeBERTa baseline. Its standalone gold-aspect polarity macro-F1
+was `0.7001`; neutral F1 was `0.6667` and conflict F1 was `0.4516`. Although
+the 50% matched-seed blend raised conflict F1 relative to standalone, it still
+reduced complete pair F1 from `0.7950` to `0.7888`.
+
+The predefined validation selection therefore chose alpha zero in both the
+matched and practical comparisons. ModernBERT is rejected as an initial CV
+component. The next architecture screen is the matched seed-42 ELECTRA polarity
+pilot; ELECTRA must show standalone or ensemble value before entering CV.
+
+## 27. ELECTRA polarity pilot
+
+A matched seed-42 `google/electra-base-discriminator` polarity pilot used the
+same all-class SemEval fitting data, weighted cross-entropy, frozen RoBERTa
+aspect probabilities, validation partition, and interpolation grid as the
+ModernBERT screen. Its smoke check verified finite loss, an optimizer update,
+FP32 parameters, four output logits, and supported token-type inputs. The best
+standalone checkpoint was epoch 40; the complete run took 15.2 minutes. The
+historical test split was not accessed.
+
+| ELECTRA weight | Matched seed-42 pair F1 | Three-seed DeBERTa blend pair F1 |
+|---:|---:|---:|
+| 0.00 | **0.7950** | 0.7863 |
+| 0.25 | 0.7919 | **0.7919** |
+| 0.50 | 0.7795 | 0.7857 |
+| 0.75 | 0.7869 | 0.7807 |
+| 1.00 | 0.7678 | 0.7678 |
+
+ELECTRA was stronger than ModernBERT alone (`0.7678` versus `0.7395`) and, more
+importantly, supplied complementary errors to the practical three-seed DeBERTa
+ensemble. A 25% ELECTRA blend improved validation pair F1 by `0.0057`, from
+`0.7863` to `0.7919`. Gold-aspect macro-F1 increased from `0.7645` to `0.7884`,
+neutral F1 from `0.7089` to `0.7179`, and conflict F1 from `0.5455` to `0.6250`.
+
+This clears the pilot's minimum pair-gain signal without a minority-class
+regression. ELECTRA is therefore the architecture-diverse challenger for the
+initial grouped CV. The CV comparison should train fold-specific RoBERTa aspect,
+all-class DeBERTa polarity, and all-class ELECTRA polarity models, choosing the
+blend weight and aspect thresholds only on each fold's inner selection data.
+
+## 28. ELECTRA-DeBERTa grouped cross-validation
+
+The selected ELECTRA recipe was tested with five grouped outer folds over the
+original fitting partition. Identical normalized texts remained together; each
+outer training partition had a grouped inner selection split. Fold-specific
+RoBERTa aspect, all-class DeBERTa polarity, and all-class ELECTRA polarity
+models were trained with seed 42. SemEval rows were added only to fitting data,
+and the historical validation and test partitions were not accessed.
+
+| Pooled OOF system | Pair F1 | Aspect F1 | Polarity F1 | Exact-set accuracy |
+|---|---:|---:|---:|---:|
+| DeBERTa baseline | 0.7387 | **0.8828** | 0.8117 | 0.6625 |
+| Inner-selected DeBERTa/ELECTRA blend | **0.7577** | 0.8826 | **0.8354** | **0.6794** |
+
+The blend improved pair F1 by `0.0190` and won all five outer folds. Selected
+ELECTRA weights were `0.50`, `0.50`, `0.50`, `0.25`, and `0.75`. Pair-level
+neutral F1 rose from `0.5493` to `0.5756`, conflict F1 from `0.3596` to
+`0.4621`, negative F1 from `0.6847` to `0.7065`, and positive F1 from `0.8320`
+to `0.8399`. The paired review-bootstrap 95% interval for pair-F1 improvement
+was `[+0.0100, +0.0279]`.
+
+This passes every predefined advancement criterion: gain at least `0.005`, wins
+in at least four folds, and no neutral/conflict regression. ELECTRA therefore
+advances to three-seed confirmation with the same frozen folds and candidate
+grid. The pooled `0.7577` is out-of-fold development evidence, not directly
+comparable to historical-test rankings.
+
 ## Overall conclusion
 
 The meaningful progression in untouched or increasingly rigorous pair-level
@@ -606,11 +804,13 @@ The largest gain came from correcting the task formulation, not changing the los
 Multilabel aspect prediction plus aspect-conditioned polarity was essential. Loss
 weighting and focal loss produced smaller, architecture-dependent effects.
 
-The strongest observed complete system is now the three-seed RoBERTa
-multilabel aspect ensemble composed with an equal blend of the three-seed
-RoBERTa and DeBERTa weighted-CE polarity ensembles. This system also had the
-highest validation pair F1 among the three backbone combinations, so its test
-result follows the experiment's locked selection. The earlier
+The strongest validation-locked complete system from the backbone comparison
+remains the three-seed RoBERTa multilabel aspect ensemble composed with an equal
+blend of the three-seed RoBERTa and DeBERTa weighted-CE polarity ensembles at
+`0.7630` historical-test pair F1. The later all-class SemEval experiment
+produced a higher observed score of `0.7744` from augmented DeBERTa polarity,
+but validation selected its mixed candidate instead (`0.7680` on test), and
+uncertainty intervals included zero. The earlier
 joint-versus-separate protocol still selected the joint focal model; later
 experiments do not retroactively change that earlier locked decision.
 
@@ -636,6 +836,36 @@ synthetic conflict examples improved the three-seed point estimates over matched
 repetition, the uncertainty interval included zero and only one of three seeds
 improved conflict F1. Synthetic clause joining is therefore not an established
 replacement for natural labeled data.
+
+SemEval augmentation provided the clearest recent direction. Including all
+four polarities preserved broad classification quality and reached the highest
+observed pair F1. Keeping only neutral and conflict improved those two classes
+but harmed positive and negative enough to remove the overall gain. Future data
+augmentation should therefore preserve representative majority examples while
+improving minority coverage, rather than changing the training distribution to
+minority-only external data.
+
+The later full-combined joint DeBERTa pilot remained competitive on validation
+but reached only `0.7520` historical-test pair F1. Post-hoc decoder tuning raised
+validation pair F1 to `0.8019` while reducing test pair F1 to `0.7437`, providing
+a direct example of decoder overfitting on the repeatedly used validation split.
+Future composition and calibration choices should be selected inside grouped CV.
+The saved all-class/minority DeBERTa interpolation likewise produced no overall
+pair-F1 gain: 25% minority weight improved conflict and macro-F1 but tied the
+all-class endpoint at `0.7863`. This does not justify carrying the extra
+minority ensemble into the initial CV comparison.
+ModernBERT also failed the architecture-diversity screen: its standalone pair
+F1 was `0.7395`, and its best DeBERTa interpolation selected zero ModernBERT
+weight. It should not be included in grouped CV unless a materially different
+training recipe is justified independently.
+ELECTRA did show useful diversity: 25% ELECTRA weight improved the practical
+DeBERTa validation composition by `0.0057` and improved both neutral and
+conflict gold-aspect F1. It replaces ModernBERT and the minority-only DeBERTa
+as the challenger in the initial grouped-CV comparison.
+The grouped CV then supported that decision: the inner-selected ELECTRA blend
+improved pooled pair F1 by `0.0190`, won all five folds, improved both minority
+classes, and had a bootstrap interval above zero. The next stage is confirmation
+with training seeds 17 and 73 on the same fold assignments.
 
 ## Related reports
 
@@ -663,3 +893,12 @@ replacement for natural labeled data.
 - `artifacts/experiments/oof-label-audit-v1/review_cases.csv`
 - `artifacts/experiments/learning-curve-v1/report.md`
 - `artifacts/experiments/conflict-augmentation-multiseed-v1/report.md`
+- `artifacts/experiments/semeval14-deberta-polarity-3seed-v1/report.md`
+- `artifacts/experiments/semeval14-minority-deberta-polarity-3seed-v1/report.md`
+- `artifacts/experiments/semeval14-full-joint-deberta-seed42-v1/report.md`
+- `artifacts/experiments/semeval14-full-joint-deberta-decoder-v1/report.md`
+- `artifacts/experiments/semeval14-full-joint-deberta-decoder-v1/test/report.md`
+- `artifacts/experiments/deberta-logit-interpolation-v1/report.md`
+- `artifacts/experiments/modernbert-polarity-seed42-v1/report.md`
+- `artifacts/experiments/electra-polarity-seed42-v1/report.md`
+- `artifacts/experiments/electra-deberta-grouped-cv-v1/report.md`
