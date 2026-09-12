@@ -463,6 +463,135 @@ The complete three-system run took `61.4` minutes. Its test partition had
 already been evaluated by earlier experiments, so these remain strongest
 observed results rather than a fresh unbiased benchmark.
 
+## 18. Targeted miscellaneous oversampling
+
+Five-fold training-only CV compared the reference aspect model with sampling
+controls and targeted 2x, 3x, and 4x sampling of reviews where miscellaneous
+co-occurs with another aspect. Targeted 3x won CV: aspect micro-F1 increased
+from `0.8788` to `0.8857`, miscellaneous F1 from `0.8370` to `0.8527`, and the
+target subgroup recall from `0.4000` to `0.4421`.
+
+The gain did not survive three-seed confirmation. Relative to the reference,
+targeted 3x reduced validation pair F1 from `0.7790` to `0.7707` and historical
+test pair F1 from `0.7630` to `0.7448`, although test subgroup recall improved
+from `0.2857` to `0.4286`. The reference therefore remained locked. Increasing
+the frequency of the rare pattern improved its recall but did not add new
+language patterns and harmed the complete system.
+
+## 19. Out-of-fold training-label audit
+
+A deterministic review sampled 100 unique training reviews from persistent
+errors in the saved aspect and polarity CV predictions. It deliberately
+included 20 multi-aspect miscellaneous cases, 20 conflict cases, 20 neutral
+cases, and 40 comparison cases. The historical test split was not read.
+
+Revision 2 classifies 25 cases as clear model errors, 63 as ambiguous, eight
+as suspected annotation errors, and four as lacking enough context. These are
+provisional assistant judgments. The original 37/30/32/1 breakdown and its
+conclusion that label uncertainty explains the plateau were overstated.
+Previous categories are preserved in the review worksheet.
+
+The revised rubric distinguishes an evaluated aspect from an incidental noun
+mention, ties polarity to the correct target, and does not require every
+anecdotes/miscellaneous label to express an overall opinion. Missing context
+does not automatically establish neutral sentiment. No annotation manual was
+located in the repository search; these criteria are not claimed as official
+dataset rules. Ambiguity in this selected sample does not establish dataset-wide
+annotation noise or the cause of the plateau.
+
+Clear failures still include missing secondary aspects and opposing evaluations
+of the same aspect. Because the judgments were not independently adjudicated,
+the supplied labels remain authoritative and proposed alternatives must not be
+used for training. The subsequent learning-curve experiment therefore retained
+the original labels unchanged.
+
+## 20. Grouped learning-curve diagnostic
+
+The learning-curve experiment measured whether the current architecture still
+benefits from additional labeled data. It used only the original training
+partition; the historical validation and test partitions were not read. Five
+fixed outer folds were grouped by review ID. Within each fold, a fixed grouped
+selection split controlled early stopping and threshold tuning, and the
+remaining IDs formed strictly nested, approximately stratified 25%, 50%, 75%,
+and 100% training subsets. Every selected ID retained all of its annotation
+rows.
+
+Each fold and fraction trained one RoBERTa multilabel aspect model and one
+weighted-CE polarity model for each of RoBERTa and DeBERTa-v3. The two polarity
+models were combined by equal-logit averaging. This produced 60 model fits in
+total. Results below are pooled out-of-fold metrics; the displayed variation is
+the mean and standard deviation across the five folds.
+
+| Training data | Aspect micro-F1 | Gold-aspect polarity macro-F1 | Pair micro-F1 | Pooled pair F1 |
+|---|---:|---:|---:|---:|
+| 25% | 0.8607 +/- 0.0091 | 0.6053 +/- 0.0280 | 0.6915 +/- 0.0153 | 0.6916 |
+| 50% | 0.8760 +/- 0.0101 | 0.6810 +/- 0.0143 | 0.7312 +/- 0.0185 | 0.7311 |
+| 75% | 0.8778 +/- 0.0066 | 0.6858 +/- 0.0605 | 0.7248 +/- 0.0392 | 0.7248 |
+| 100% | **0.8818 +/- 0.0178** | **0.6935 +/- 0.0357** | **0.7499 +/- 0.0231** | **0.7499** |
+
+The 50% to 75% pair score decreased by `0.0063`; its paired-bootstrap 95%
+interval, `[-0.0196, +0.0068]`, includes zero and indicates fold-to-fold noise.
+In contrast, the primary 75% to 100% pair-F1 change was `+0.0250`, with a
+10,000-sample paired review bootstrap interval of `[+0.0131, +0.0373]`. Under
+the pre-specified rule requiring at least `+0.01` improvement with the interval
+excluding zero, the complete pipeline is classified as **data-limited**.
+
+The component-level evidence is less decisive. Aspect micro-F1 improved by
+only `+0.0038` from 75% to 100%, with interval `[-0.0038, +0.0113]`. Polarity
+macro-F1 improved by `+0.0118`, with interval `[-0.0119, +0.0351]`. Both are
+classified as inconclusive rather than individually data-limited or plateaued.
+The significant pair gain can arise from their combined predictions and
+validation-tuned decoding even when neither component estimate is sufficiently
+precise alone.
+
+At 100%, gold-aspect polarity accuracy was `0.8321`; positive, negative,
+neutral, and conflict F1 were `0.9170`, `0.7935`, `0.6545`, and `0.4113`.
+Conflict remained the weakest class but rose from `0.2594` at 25%. The 100%
+composed system reached exact-set accuracy `0.6784`, with `0.7223` on
+single-aspect and `0.4897` on multi-aspect reviews.
+
+The pooled 100% pair F1 of `0.7499` is not a new model-selection result and does
+not replace the historical-test winner at `0.7630`: the learning curve uses
+one seed per fold and grouped out-of-fold training data, whereas the current
+winner is a three-seed system evaluated on the historical test partition. The
+learning curve supports collecting more high-quality labels, especially for
+minority polarity cases, but does not itself produce a deployable replacement.
+
+## 21. Multi-seed synthetic-conflict isolation
+
+The synthetic-conflict follow-up tested whether joining same-aspect positive
+and negative clauses teaches more than simply repeating real conflict
+annotations. It used five grouped outer folds and three training seeds. In
+every fold, both RoBERTa polarity-only conditions added exactly 40 conflict
+rows with identical aspect counts. The repetition condition duplicated frozen
+real conflict rows; the synthetic condition used the previously reviewed
+clause combinations. Class weights were calculated from the natural fitting
+rows, and neither the historical validation nor test partition was used. The
+design produced 30 model fits.
+
+| Three-seed OOF ensemble | Accuracy | Macro-F1 | Neutral F1 | Conflict F1 | Conflict FP rate |
+|---|---:|---:|---:|---:|---:|
+| Repeated real conflict rows | 0.8147 | 0.6827 | 0.6489 | 0.4026 | 0.0485 |
+| Synthetic conflict rows | **0.8202** | **0.6941** | 0.6482 | **0.4328** | **0.0439** |
+
+The synthetic condition improved ensemble conflict F1 by `+0.0302`, but the
+paired review-bootstrap 95% interval was `[-0.0325, +0.0931]`. Its macro-F1
+gain was `+0.0114`, with interval `[-0.0093, +0.0321]`. Neutral F1 was
+effectively unchanged (`-0.0007`), and the conflict false-positive rate
+decreased by `0.0046`.
+
+Training-seed behavior was inconsistent. Synthetic-minus-repetition conflict-F1
+deltas were `-0.0055`, `-0.0241`, and `+0.0377` for seeds 42, 1337, and 2024,
+so only one of three seeds improved. The experiment therefore failed its
+pre-specified promotion rule, which required a conflict gain of at least
+`+0.03`, a confidence interval above zero, at least two winning seeds, and
+bounded macro-F1, neutral-F1, and false-positive regressions.
+
+The point estimates are compatible with a possible benefit, but this experiment
+does not establish that synthetic contrastive wording is better than matched
+repetition of real conflict rows. It is a polarity-only training diagnostic and
+does not replace or directly evaluate the complete-system winner.
+
 ## Overall conclusion
 
 The meaningful progression in untouched or increasingly rigorous pair-level
@@ -493,9 +622,20 @@ tested. Neither established a better complete system: calibrated evidence
 matched the baseline's test pair F1 but reduced conflict F1, while evidence-only
 decoding fell to `0.7322` pair F1 and `0.2963` conflict F1.
 
-A future experiment should use grouped cross-validation or repeated validation
-splits to make architecture selection more stable. A genuinely new final test
-partition would be required for another unbiased model-selection claim.
+Future architecture and loss comparisons should continue using grouped
+cross-validation or repeated validation splits to make selection more stable.
+The completed learning curve found a statistically credible 75% to 100% gain
+for complete pair prediction,
+so additional high-quality annotation is now better supported than further
+oversampling of existing examples. Aspect-only and polarity-only gains remain
+inconclusive. A genuinely new final test partition would still be required for
+another unbiased model-selection claim.
+
+The later multi-seed conflict isolation also did not support promotion. Although
+synthetic conflict examples improved the three-seed point estimates over matched
+repetition, the uncertainty interval included zero and only one of three seeds
+improved conflict F1. Synthetic clause joining is therefore not an established
+replacement for natural labeled data.
 
 ## Related reports
 
@@ -518,3 +658,8 @@ partition would be required for another unbiased model-selection claim.
 - `artifacts/experiments/deberta-v3-three-systems-v1/systems/roberta-aspect-mixed-polarity/aspect_error_audit.md`
 - `artifacts/experiments/deberta-v3-three-systems-v1/systems/roberta-aspect-mixed-polarity/misc_conservatism_audit.md`
 - `artifacts/experiments/deberta-v3-three-systems-v1/systems/roberta-aspect-mixed-polarity/polarity_error_audit.md`
+- `artifacts/experiments/aspect-misc-oversampling-cv-v1/report.md`
+- `artifacts/experiments/oof-label-audit-v1/report.md`
+- `artifacts/experiments/oof-label-audit-v1/review_cases.csv`
+- `artifacts/experiments/learning-curve-v1/report.md`
+- `artifacts/experiments/conflict-augmentation-multiseed-v1/report.md`
