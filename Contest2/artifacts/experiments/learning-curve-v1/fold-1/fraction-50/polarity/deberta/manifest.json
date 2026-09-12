@@ -1,0 +1,30 @@
+{
+  "architecture": "separate",
+  "early_stopping_min_delta": 0.001,
+  "early_stopping_patience": 3,
+  "epochs": 50,
+  "eval_batch_size": 32,
+  "evaluation_interval": 5,
+  "gradient_accumulation_steps": 2,
+  "input": "artifacts/training/roberta-aspect-exp1/splits/train.csv",
+  "input_sha256": "97a4e600b3be55d4b3813c1558494ea6e17133711c4158377c6c6d2aeeb7ff11",
+  "learning_rate": 2e-05,
+  "loss": {
+    "beta": 0.999,
+    "gamma": 0.0,
+    "name": "weighted-ce"
+  },
+  "max_length": 256,
+  "mixed_precision": "auto",
+  "model": "microsoft/deberta-v3-base",
+  "seed": 43,
+  "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+  "split_sha256": {
+    "eval": "daac2cf0eec81d7b56482caaa24a4843b24ba09f536b93f48344024b2561cab4",
+    "test": "b2490770b816aa0d2e8470d4d64f03ea330032e62e7c592b518cd2e1ac60d29f",
+    "train": "97a4e600b3be55d4b3813c1558494ea6e17133711c4158377c6c6d2aeeb7ff11"
+  },
+  "train_batch_size": 8,
+  "warmup_ratio": 0.1,
+  "weight_decay": 0.01
+}

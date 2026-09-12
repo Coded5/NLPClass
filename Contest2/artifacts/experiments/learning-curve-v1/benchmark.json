@@ -1,0 +1,35 @@
+{
+  "benchmark_minutes": 10.0,
+  "note": "Projection excludes validation/inference and assumes no early stopping.",
+  "projected_max_epoch_training_hours": 5.9328156335213595,
+  "projected_max_epoch_training_seconds": 21358.136280676896,
+  "stages": [
+    {
+      "batches": 4703,
+      "elapsed_seconds": 200.03280644300685,
+      "examples": 37449,
+      "examples_per_second": 187.2142908251899,
+      "model": "FacebookAI/roberta-base",
+      "peak_reserved_gib": 2.638671875,
+      "task": "aspect"
+    },
+    {
+      "batches": 4493,
+      "elapsed_seconds": 200.03156099600892,
+      "examples": 35830,
+      "examples_per_second": 179.12173369838817,
+      "model": "FacebookAI/roberta-base",
+      "peak_reserved_gib": 2.640625,
+      "task": "polarity"
+    },
+    {
+      "batches": 2835,
+      "elapsed_seconds": 200.10245692399621,
+      "examples": 22608,
+      "examples_per_second": 112.98212099708036,
+      "model": "microsoft/deberta-v3-base",
+      "peak_reserved_gib": 3.787109375,
+      "task": "polarity"
+    }
+  ]
+}
