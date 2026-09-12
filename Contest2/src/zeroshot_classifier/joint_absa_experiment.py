@@ -494,6 +494,7 @@ def train_separate_polarity(
     validation_aspect_probabilities: list[list[float]],
     minimum_pair_f1: float | None = None,
     optimizer_checkpoint: Path | None = None,
+    checkpoint_on_evaluation_only: bool = False,
 ) -> dict[str, Any]:
     manifest = _run_manifest(config, 'separate', spec, seed)
     completed = _prepare_run(run_dir, manifest)
@@ -604,10 +605,11 @@ def train_separate_polarity(
                     )
                 else:
                     stale += 1
-            _save_epoch_checkpoint(
-                torch, latest, model, optimizer, scheduler, scaler, epoch,
-                best_score, stale, global_step,
-            )
+            if not checkpoint_on_evaluation_only or evaluate_now:
+                _save_epoch_checkpoint(
+                    torch, latest, model, optimizer, scheduler, scaler, epoch,
+                    best_score, stale, global_step,
+                )
             if evaluate_now and stale >= config.early_stopping_patience:
                 break
         checkpoint = torch.load(best, map_location='cpu', weights_only=False)

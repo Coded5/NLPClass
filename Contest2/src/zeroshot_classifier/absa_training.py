@@ -314,6 +314,9 @@ def train_stage(
     stage: str,
     train_rows: list[LabeledRow],
     validation_rows: list[LabeledRow],
+    sampling_weights: Sequence[float] | None = None,
+    checkpoint_on_evaluation_only: bool = False,
+    polarity_weight_rows: Sequence[LabeledRow] | None = None,
 ) -> dict[str, Any]:
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     if stage == 'aspect':
@@ -329,9 +332,16 @@ def train_stage(
         train_dataset = _attach_tokenizer(PolarityDataset(train_rows, tokenizer, config.max_length), tokenizer)
         validation_dataset = _attach_tokenizer(PolarityDataset(validation_rows, tokenizer, config.max_length), tokenizer)
         loss_function = torch.nn.CrossEntropyLoss(
-            weight=_polarity_weights(torch, train_rows).to(device)
+            weight=_polarity_weights(
+                torch, train_rows if polarity_weight_rows is None else polarity_weight_rows
+            ).to(device)
         )
         labels = POLARITIES
+    if sampling_weights is not None:
+        if len(sampling_weights) != len(train_dataset):
+            raise ValueError('Sampling weights must match the training dataset')
+        if any(not math.isfinite(value) or value <= 0 for value in sampling_weights):
+            raise ValueError('Sampling weights must be finite and positive')
     label2id = {label: index for index, label in enumerate(labels)}
     id2label = {index: label for label, index in label2id.items()}
     model = transformers.AutoModelForSequenceClassification.from_pretrained(
@@ -380,7 +390,9 @@ def train_stage(
     for epoch in range(completed_epoch + 1, config.epochs + 1):
         model.train()
         generator = torch.Generator().manual_seed(config.seed + epoch + (0 if stage == 'aspect' else 10_000))
-        order = torch.randperm(len(train_dataset), generator=generator).tolist()
+        order = _training_order(
+            torch, len(train_dataset), generator, sampling_weights
+        )
         start_batch = resume_batch if resume_epoch == epoch else 0
         remaining = order[start_batch * config.train_batch_size:]
         subset = torch.utils.data.Subset(train_dataset, remaining)
@@ -420,7 +432,11 @@ def train_stage(
             global_step += 1
             if global_step % config.log_steps == 0:
                 mlflow.log_metric(f'train/{stage}_loss', raw_loss, step=global_step)
-            if config.checkpoint_steps and global_step % config.checkpoint_steps == 0:
+            if (
+                not checkpoint_on_evaluation_only
+                and config.checkpoint_steps
+                and global_step % config.checkpoint_steps == 0
+            ):
                 _atomic_torch_save(torch, _checkpoint_payload(
                     model, optimizer, scheduler, scaler, epoch - 1, epoch,
                     batch_index + 1, global_step, best_score, stale_checks,
@@ -465,10 +481,11 @@ def train_stage(
         finished = epoch == config.epochs or (
             evaluate_now and stale_checks >= config.early_stopping_patience
         )
-        _atomic_torch_save(torch, _checkpoint_payload(
-            model, optimizer, scheduler, scaler, epoch, 0, 0, global_step,
-            best_score, stale_checks, finished=finished,
-        ), latest_path)
+        if not checkpoint_on_evaluation_only or evaluate_now or finished:
+            _atomic_torch_save(torch, _checkpoint_payload(
+                model, optimizer, scheduler, scaler, epoch, 0, 0, global_step,
+                best_score, stale_checks, finished=finished,
+            ), latest_path)
         atomic_write_json(config.run_dir / 'state.json', {
             'active_stage': stage, 'completed_epoch': epoch,
             'best_score': best_score, 'stale_checks': stale_checks,
@@ -482,6 +499,18 @@ def train_stage(
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
     return {'epoch': int(result['epoch']), 'score': float(result['score']), 'thresholds': result.get('thresholds')}
+
+
+def _training_order(
+    torch: Any, size: int, generator: Any,
+    sampling_weights: Sequence[float] | None = None,
+) -> list[int]:
+    if sampling_weights is None:
+        return torch.randperm(size, generator=generator).tolist()
+    return torch.multinomial(
+        torch.tensor(sampling_weights, dtype=torch.double),
+        size, replacement=True, generator=generator,
+    ).tolist()
 
 
 def _pipeline_predictions(
