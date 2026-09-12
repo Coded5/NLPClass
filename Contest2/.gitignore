@@ -14,6 +14,7 @@ artifacts/**
 !artifacts/**/comparison.json
 !artifacts/**/benchmark.json
 !artifacts/**/screening.json
+!artifacts/**/splits.json
 !artifacts/**/weights.json
 !artifacts/**/raw_evidence_only.json
 !artifacts/**/mlflow_run.json
@@ -23,7 +24,16 @@ artifacts/**
 !artifacts/**/exit_code.txt
 !artifacts/**/predictions.csv
 !artifacts/**/per_example_scores.csv
+!artifacts/**/learning_curve.csv
+!artifacts/**/learning_curve.svg
+!artifacts/**/review_cases.csv
+!artifacts/**/review_cases.json
+!artifacts/**/assessments.json
+!artifacts/experiments/annotation-review-pilot-v1/**/*.json
 __pycache__/
+!artifacts/experiments/conflict-augmentation-v1/preparation.json
+!artifacts/experiments/conflict-augmentation-v1/reviews.json
+!artifacts/experiments/conflict-augmentation-multiseed-v1/preparation.json
 *.py[cod]
 *.egg-info/
 .venv/

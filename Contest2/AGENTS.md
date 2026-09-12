@@ -59,7 +59,13 @@ For training, evaluation, benchmarking, or other long-running jobs:
 - Make every tmux window or pane created for a job close automatically after
   the command finishes and its exit status has been written. Do not append an
   interactive shell such as `exec bash` merely to keep a completed pane open.
+- Before the pane exits, use `codex queue --thread <thread> --message <message>`
+  to notify the originating Codex thread that the job finished. Include the
+  job name, exit status, and log or result paths so Codex can inspect the final
+  output and continue automatically. Write the exit status to an artifact
+  before invoking `codex queue` so completion remains discoverable if the
+  notification fails.
 - Do not repeatedly poll the job or read its logs.
 - Return control to me after the experiment is launched.
-- I will tell you when the experiment is finished.
-- When I tell you to continue, inspect the final metrics and resume.
+- When the queued completion message arrives, inspect the final metrics and
+  resume without requiring me to report that the job is finished.
