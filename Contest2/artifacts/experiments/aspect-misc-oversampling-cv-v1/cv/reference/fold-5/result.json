@@ -1,0 +1,15 @@
+{
+  "configuration": "reference",
+  "seed": 47,
+  "selection": {
+    "epoch": 15,
+    "score": 0.9116945107398569,
+    "thresholds": [
+      0.35,
+      0.1,
+      0.15,
+      0.8,
+      0.4
+    ]
+  }
+}

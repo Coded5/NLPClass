@@ -1,0 +1,15 @@
+{
+  "configuration": "targeted-4x",
+  "seed": 43,
+  "selection": {
+    "epoch": 10,
+    "score": 0.9152542372881356,
+    "thresholds": [
+      0.8,
+      0.3,
+      0.85,
+      0.85,
+      0.5
+    ]
+  }
+}

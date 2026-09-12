@@ -1,0 +1,15 @@
+{
+  "configuration": "sampling-control",
+  "seed": 47,
+  "selection": {
+    "epoch": 10,
+    "score": 0.9211822660098522,
+    "thresholds": [
+      0.6,
+      0.25,
+      0.9,
+      0.55,
+      0.8
+    ]
+  }
+}
