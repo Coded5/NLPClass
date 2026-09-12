@@ -1,0 +1,40 @@
+{
+  "conditions": [
+    "repetition",
+    "synthetic"
+  ],
+  "config": {
+    "baseline_aspect_run": "artifacts/training/roberta-aspect-exp1",
+    "baseline_polarity_run": "artifacts/training/roberta-polarity-exp2",
+    "checkpoint_steps": 0,
+    "early_stopping_min_delta": 0.001,
+    "early_stopping_patience": 3,
+    "epochs": 50,
+    "eval_batch_size": 32,
+    "evaluation_interval": 5,
+    "evaluator": "scripts/evaluate.py",
+    "gradient_accumulation_steps": 2,
+    "input": "artifacts/training/roberta-aspect-exp1/splits/train.csv",
+    "learning_rate": 2e-05,
+    "log_steps": 10,
+    "max_length": 256,
+    "mixed_precision": "auto",
+    "mlflow_experiment": "contest2-conflict-augmentation-multiseed-v1",
+    "mlflow_run_name": "multilabel-conditioned-v1",
+    "mlflow_tracking_uri": "sqlite:////home/kami/Projects/NLP/Contest2/artifacts/mlflow.db",
+    "model": "FacebookAI/roberta-base",
+    "run_dir": "artifacts/experiments/conflict-augmentation-multiseed-v1",
+    "seed": 42,
+    "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+    "train_batch_size": 8,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01
+  },
+  "fits": 30,
+  "preparation_sha256": "05bad1c2fdb5028f80f9feb5e4363d31c506a78b63a27e1e82d497d5d8ca97b3",
+  "seeds": [
+    42,
+    1337,
+    2024
+  ]
+}
