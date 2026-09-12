@@ -1,0 +1,47 @@
+{
+  "conditions": [
+    "reference",
+    "repetition",
+    "synthetic"
+  ],
+  "config": {
+    "baseline_aspect_run": "artifacts/training/roberta-aspect-exp1",
+    "baseline_polarity_run": "artifacts/training/roberta-polarity-exp2",
+    "checkpoint_steps": 0,
+    "early_stopping_min_delta": 0.001,
+    "early_stopping_patience": 3,
+    "epochs": 50,
+    "eval_batch_size": 32,
+    "evaluation_interval": 5,
+    "evaluator": "scripts/evaluate.py",
+    "gradient_accumulation_steps": 2,
+    "input": "artifacts/training/roberta-aspect-exp1/splits/train.csv",
+    "learning_rate": 2e-05,
+    "log_steps": 10,
+    "max_length": 256,
+    "mixed_precision": "auto",
+    "mlflow_experiment": "contest2-conflict-augmentation-v1",
+    "mlflow_run_name": "multilabel-conditioned-v1",
+    "mlflow_tracking_uri": "sqlite:////home/kami/Projects/NLP/Contest2/artifacts/mlflow.db",
+    "model": "FacebookAI/roberta-base",
+    "run_dir": "artifacts/experiments/conflict-augmentation-v1",
+    "seed": 42,
+    "split_dir": "artifacts/training/roberta-aspect-exp1/splits",
+    "train_batch_size": 8,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01
+  },
+  "fits": 15,
+  "preparation_sha256": "61a3e9fe0a34c088a90e3d0709263f48d2957ffba6a8d98d3f80d1651912b680",
+  "reviews_sha256": "12ce2ecca978715ca969c298d99c3d2853aab4e6bc53d4d5e43c4fcb98fc0bb1",
+  "rules": {
+    "bootstrap_samples": 10000,
+    "max_clause_uses": 5,
+    "maximum_false_positive_increase": 0.01,
+    "maximum_macro_neutral_drop": 0.01,
+    "minimum_conflicts": 30,
+    "primary_gain": 0.03,
+    "required_positive_folds": 4,
+    "target_conflicts": 40
+  }
+}
