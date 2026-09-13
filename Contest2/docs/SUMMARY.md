@@ -790,6 +790,277 @@ advances to three-seed confirmation with the same frozen folds and candidate
 grid. The pooled `0.7577` is out-of-fold development evidence, not directly
 comparable to historical-test rankings.
 
+## 29. ELECTRA-DeBERTa three-seed confirmation
+
+The CV baseline and ELECTRA recipe were repeated with training seeds 17 and 73
+on the same five folds, then combined with seed 42 into fold-wise three-seed
+ensembles. Checkpoints, alpha, and aspect thresholds were selected using each
+fold's inner partition. The historical validation and test partitions were not
+accessed.
+
+| Three-seed OOF system | Pair F1 | Aspect F1 | Polarity F1 | Exact-set accuracy |
+|---|---:|---:|---:|---:|
+| DeBERTa baseline | **0.7667** | **0.8904** | 0.8356 | **0.6934** |
+| DeBERTa/ELECTRA blend | 0.7637 | 0.8902 | **0.8356** | 0.6920 |
+
+The blend regressed pair F1 by `0.0030` and won only one of five ensemble folds.
+Its paired bootstrap interval was `[-0.0086, +0.0026]`. Conflict pair F1 rose
+slightly from `0.4469` to `0.4532`, while neutral fell from `0.5960` to `0.5906`.
+Individual-seed blend deltas were `+0.0190`, `+0.0054`, and `-0.0011` for seeds
+42, 17, and 73 respectively.
+
+The confirmation gate therefore failed. ELECTRA's apparent one-seed advantage
+was not preserved after seed ensembling, so it is not promoted into the final
+recipe. The fold-matched three-seed DeBERTa baseline remains preferred. The
+roadmap proceeds to controlled external-data sampling rather than further
+ELECTRA expansion.
+
+## 30. External minority sampling status
+
+The controlled `k = 1, 2, 4` external minority-sampling CV was launched after
+the ELECTRA confirmation, then explicitly aborted before any fold completed.
+It has no interpretable result and is excluded from comparisons. Partial
+artifacts are retained only for provenance. At the user's direction, the
+roadmap skips this experiment and proceeds to temperature-scaled interpolation.
+
+## 31. Temperature-scaled interpolation CV
+
+The first loader-heavy attempt was intentionally interrupted with exit status
+`130` after two folds so checkpoint loading could be optimized. The resumed
+implementation preserved those completed folds, finished all five folds with
+exit status `0`, and did not access the historical test partition.
+
+Temperature scaling did not improve the three-seed DeBERTa/ELECTRA
+interpolation. The raw blend scored `0.7637` pooled pair F1 and the scaled blend
+scored `0.7632`, a delta of `-0.0005`; scaling won zero of five folds. The paired
+review bootstrap interval was `[-0.0025, +0.0014]`. Gold-aspect conflict F1 rose
+slightly from `0.5200` to `0.5217`, but neutral F1 fell from `0.6483` to `0.6447`
+and polarity micro-F1 fell from `0.8356` to `0.8344`.
+
+This fails the shared advancement gate and confirms that unequal logit scale was
+not the reason the ELECTRA blend failed three-seed confirmation. Keep the raw
+DeBERTa baseline and proceed to the clause-level aspect-conditioned evidence
+pilot. Full results are in
+`artifacts/experiments/temperature-scaled-interpolation-cv-v1/report.md`.
+
+## 32. Clause-level polarity evidence pilot
+
+The validation-only seed-42 pilot compared the matched all-class standard
+DeBERTa polarity model with whole-sentence and clause-aggregated two-evidence
+heads. The historical test partition was not accessed. A first attempt failed
+only during checkpoint reload because a compact FP16 encoder was paired with an
+FP32 head; the corrected run reused the completed checkpoint and finished with
+exit status `0`.
+
+| System | Pair F1 | Gold-aspect accuracy | Macro F1 | Neutral F1 | Conflict F1 |
+|---|---:|---:|---:|---:|---:|
+| Standard four-class DeBERTa | **0.7950** | **0.8794** | **0.7939** | 0.7317 | **0.6250** |
+| Whole-sentence evidence | 0.7747 | 0.8667 | 0.7387 | **0.7595** | 0.4000 |
+| Clause-level evidence | 0.7702 | 0.8508 | 0.7392 | 0.7381 | 0.4444 |
+
+Clause aggregation regressed pair F1 by `0.0248` and conflict F1 by `0.1806`
+against the standard model. It also failed to outperform the whole-sentence
+evidence control. This rejects the proposed weakly supervised evidence
+architecture at the pilot stage; do not spend five-fold CV or additional seeds
+on it. The roadmap proceeds to the aspect-backbone comparison.
+
+## 33. Aspect-backbone probability blending pilot
+
+The validation-only seed-42 aspect pilot froze the same three-seed all-class
+SemEval DeBERTa polarity predictions for every comparison. Existing RoBERTa and
+DeBERTa aspect checkpoints were reused. One missing ModernBERT aspect model was
+trained before the user clarified a preference for inference-only blending; no
+historical test data was accessed.
+
+| Aspect system | Pair F1 | Aspect micro-F1 | Aspect exact set | Overall exact set |
+|---|---:|---:|---:|---:|
+| RoBERTa | 0.7764 | 0.8882 | 0.8140 | 0.7171 |
+| DeBERTa | 0.7700 | 0.8795 | 0.7907 | 0.6899 |
+| ModernBERT | 0.7578 | 0.8634 | 0.7713 | 0.6860 |
+| 50% RoBERTa + 50% DeBERTa | **0.7923** | **0.9042** | **0.8566** | **0.7481** |
+| 75% RoBERTa + 25% ModernBERT | 0.7829 | 0.8843 | 0.8217 | 0.7326 |
+
+The useful gain came from inference-only blending of the two already available
+RoBERTa and DeBERTa aspect models, not from ModernBERT training. The 50/50 blend
+improved pair F1 by `0.0159` and aspect micro-F1 by `0.0160` over RoBERTa alone.
+It was therefore evaluated once on the historical test using the validation-
+selected weight and thresholds unchanged. Pair F1 fell to `0.7660`, aspect
+micro-F1 to `0.8674`, polarity micro-F1 to `0.8296`, and overall exact-set
+accuracy to `0.6783`. The matched all-class SemEval DeBERTa composition remains
+better at `0.7744` pair F1 and `0.8736` aspect micro-F1. The aspect blend is
+rejected rather than advanced to grouped CV; its validation gain did not
+generalize.
+
+## 34. Roadmap experiments 11 and 12 status
+
+Disagreement-driven data acquisition (Experiment 11) is skipped for now at the
+user's direction because it requires a permitted new review pool and independent
+human annotation. No synthetic or assistant-generated labels substitute for
+that requirement.
+
+Experiment 12 was stopped at the user's request on 2026-09-13 before completion
+to redirect compute toward overall F1. Both launcher and training process were
+verified exited; partial artifacts are retained and cannot establish a result.
+The interrupted setup used grouped-CV ensemble distillation. It reused the
+confirmed fold-specific three-seed DeBERTa teacher checkpoints and trains one
+seed-42 DeBERTa student for each distillation weight `0.25`, `0.50`, and `0.75`
+inside each fold. The hard-label seed-42 fold checkpoints are reused as controls.
+Only fitting-input teacher logits supervise students; inner selections choose
+weights and checkpoints, and outer folds remain held out. Fresh-data evaluation
+will remain marked unavailable, and the repeatedly inspected historical test is
+not treated as fresh data.
+
+## 35. F1-focused overnight roadmap
+
+The new priority is overall complete-pair micro-F1, with an eight-hour compute
+budget. Minority-class regressions are reported but no longer veto a higher-F1
+candidate. Distillation and automatic progression through the old roadmap are
+disabled. The first implementation completed in 4.79 hours but its comparison
+was invalidated: offline mode combined with the inherited
+`fix_mistral_regex=True` option changed DeBERTa tokenization. The reused baseline
+scored 0.5137 instead of 0.7667. Disabling the rewrite restored fold-1 inner
+gold-aspect polarity accuracy from 0.5297 to 0.8960, exactly matching the saved
+checkpoint's class metrics. No apparent gain from this attempt is valid.
+
+The sequence is uncertainty-aware aspect selection using existing fold models,
+weaker polarity class weighting (inverse-frequency exponents 0.5 and 0), an
+optional lower learning rate (1e-5 versus 2e-5), and three-seed confirmation of
+the inner-selected recipe with a small baseline/challenger interpolation grid.
+Confirmation receives priority over the optional learning-rate stage.
+
+The runner preserves the five frozen folds, existing all-class SemEval fitting
+data and exclusions, and baseline seed-matched aspect predictions for training
+checkpoint selection. Final compositions use the frozen three-seed aspects.
+Checkpoint, decoder, and blend choices use inner selection only. The historical
+test is not evaluated. Promotion requires +0.005 pooled pair F1, at least four
+fold wins, and a positive group-bootstrap interval after three-seed evaluation;
+incomplete and seed-42-only results remain screens.
+
+Entry point: `scripts/run_f1_roadmap.py --budget-hours 8`.
+Invalidated artifacts: `artifacts/experiments/f1-roadmap-v1/`, including the
+superseding `INVALIDATED.json`. Original models and raw results are preserved.
+Corrected artifacts use `artifacts/experiments/f1-roadmap-v2/`, an explicitly
+unmodified DeBERTa tokenizer, persisted tokenizer fingerprints, and a mandatory
+five-fold reproduction gate before training. The gate rejects an absolute
+baseline pair-F1 difference above 0.001 or prediction-set disagreement above
+0.005. A corrected attempt is limited to the remaining three hours of compute,
+including the smoke test; incomplete stages are deferred, not called winners.
+The corrected runner was launched in `NLP:5.1`, pane `%49`, launcher PID
+`3204709`, after 174 passing unit tests and shell/whitespace checks. Its log is
+`artifacts/experiments/f1-roadmap-v2/run.log`; it closes automatically and queues
+a completion notification without launching further work.
+
+The corrected run finished successfully after 1.92 hours. It reproduced the
+recorded three-seed baseline exactly on every fold before training. The
+three-seed uncertainty-aware decoder scored `0.7672` pooled OOF pair F1 versus
+`0.7667` for ordinary decoding, a delta of only `+0.0005`; it won three of five
+folds and its normalized-text-group bootstrap interval was
+`[-0.0033, +0.0042]`. This is effectively a tie and fails the advancement gate.
+
+The weaker-weight seed-42 screen was more promising:
+
+| Polarity weighting | Pair F1 | Aspect F1 | Polarity F1 | Exact set | Delta vs seed-42 control | Fold wins | 95% group CI |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Full inverse-frequency control | 0.7419 | 0.8903 | 0.8093 | 0.6683 | — | — | — |
+| Half weighting (`exponent=0.5`) | **0.7646** | 0.8890 | **0.8319** | **0.6876** | **+0.0227** | **5/5** | **[+0.0120, +0.0335]** |
+| No class weighting (`exponent=0`) | 0.7610 | 0.8894 | 0.8300 | 0.6818 | +0.0191 | **5/5** | **[+0.0078, +0.0303]** |
+
+Half weighting improved gold-aspect polarity accuracy from `0.8234` to `0.8475`
+and macro-F1 from `0.6856` to `0.7191`. Its composed-pair class F1 changes were
+`+0.0168` positive, `+0.0170` negative, `+0.0153` neutral, and `+0.0770`
+conflict. Removing weights entirely produced the largest conflict gain
+(`+0.1171`) but lower overall pair F1 than half weighting.
+
+This is not a new winner yet. Both challengers are single-seed screens; the
+half-weight model's `0.7646` remains `0.0021` below the existing three-seed
+baseline at `0.7667`. Inner selection chose no weighting for fold 1 and half
+weighting for folds 2–5. The lower-learning-rate stage was skipped and the ten
+required seed-17/73 confirmation fits were deferred because they could not fit
+inside the remaining budget. The correct next experiment, if resumed, is only
+the preselected three-seed weighting confirmation—not another broad screen.
+Full results are in `artifacts/experiments/f1-roadmap-v2/report.md`.
+
+That confirmation was resumed on 2026-09-13 with the fold recipe frozen above.
+It trains only the missing seeds 17 and 73 for the selected arm on each fold
+(ten fits total), reuses the seed-42 screens, and has no fixed runtime deadline.
+It does not revisit decoder/arm selection, evaluate the historical test, or
+launch another experiment automatically. The job is running in tmux window
+`NLP:5`, pane `%50`, launcher PID `3471803`; its attempt directory is
+`artifacts/experiments/f1-roadmap-v2/attempts/confirmation-ZKT9qXKc/` and its
+live log is `artifacts/experiments/f1-roadmap-v2/confirmation.log`. The pane
+closes and queues this thread after writing the final exit status. Rankings stay
+unchanged until all confirmation metrics are available.
+
+The confirmation finished successfully. The frozen recipe reached **`0.7761`
+pooled OOF pair F1**, compared with `0.7667` for the matched three-seed control:
+`+0.0094`. It improved four of five outer folds and its 10,000-sample
+normalized-text-group bootstrap interval was **`[+0.0008, +0.0179]`**. It
+therefore passes every predeclared advancement condition and becomes the new
+grouped-CV winner. Aspect F1 remained `0.8904`; polarity F1 rose from `0.8356`
+to `0.8418`; exact-set accuracy rose from `0.6934` to `0.6954`.
+
+The pair-class F1 changes were `+0.0066` positive, `+0.0127` negative,
+`-0.0057` neutral, and `+0.0242` conflict. Gold-aspect polarity accuracy rose
+from `0.8499` to `0.8574`, and macro-F1 rose from `0.7275` to `0.7364`. The
+separate interpolation/decoder variant scored `0.7748`, but its bootstrap lower
+bound was slightly negative (`-0.0002`), so the simpler confirmed training
+recipe is retained. This is grouped-CV development evidence; it has not been
+evaluated on the historical test or trained as one full-data deployable model.
+Detailed protocol: `docs/experiments-proposal/F1_OVERNIGHT_ROADMAP.md`.
+
+## 36. DeBERTa-v3-large LoRA polarity pilot
+
+The seed-42 `microsoft/deberta-v3-large` pilot adapted all 48 attention query
+and value projections across 24 layers with rank-16 LoRA, alpha 32, and dropout
+0.05. The pretrained backbone remained frozen; the adapters, pooler, and
+four-class polarity head contributed 2,626,564 trainable parameters. CPU and
+GPU preflights verified finite updates, unchanged frozen weights, checkpoint
+reload equivalence, and all five fold inputs. The successful ten-minute
+benchmark selected microbatch 16 without gradient accumulation.
+
+Each fold trained its polarity model on approximately 1,818 contest annotations
+from the established training partition plus 1,021 external all-class SemEval
+annotations. Inner selection retained no class weighting for fold 1 and
+half-strength inverse-frequency weighting for folds 2–5. Existing three-seed
+RoBERTa aspect outputs remained frozen.
+
+| Evaluation | Pair F1 | Aspect F1 | Polarity F1 | Exact set |
+|---|---:|---:|---:|---:|
+| Pooled grouped-CV OOF | **0.7800** | 0.8893 | 0.8476 | 0.7050 |
+| Locked historical test | 0.7727 | 0.8734 | **0.8561** | 0.6899 |
+
+The OOF result improved the matched original seed-42 system by `+0.0381`, won
+all five folds, and had a normalized-text-group bootstrap interval of
+`[+0.0254, +0.0511]`. Against the original three-seed DeBERTa comparison it
+improved by `+0.0133`, won three folds, and had interval
+`[+0.0013, +0.0250]`. It is also `+0.0039` above the confirmed weaker-weight
+three-seed system's `0.7761`, but that immediate comparison has no dedicated
+paired interval and LoRA remains a single-seed pilot. Treat `0.7800` as the
+highest OOF point estimate, not a multi-seed confirmation.
+
+The earlier live values near `0.81`–`0.85` were inner checkpoint-selection
+scores, not outer-fold generalization. The correct held-out fold pair F1 values
+were `0.7824`, `0.8039`, `0.7948`, `0.7576`, and `0.7612`; the pooled OOF metric
+is the authoritative CV result.
+
+The historical-test protocol froze all five LoRA checkpoints, their inner-
+selected decoders, the existing fold-specific three-seed RoBERTa aspect
+checkpoints, and a 3-of-5 pair-voting rule before reading labels. It performed
+inference only and covered all 258 reviews. The resulting `0.7727` pair F1 was
+`+0.0111` above the confirmed class-weight CV committee at `0.7616`, but
+`-0.0017` below the full-data historical-test leader at `0.7744`. Gold-aspect
+polarity accuracy was `0.8576` with macro-F1 `0.7052`; class F1 was `0.9368`
+positive, `0.8497` negative, `0.6471` neutral, and `0.3871` conflict. The larger
+backbone therefore improved overall polarity strength but did not solve
+conflict recall.
+
+The model generalized with only a `0.0073` pair-F1 drop from pooled OOF to the
+historical test, but it is a five-fold committee rather than one full-data
+deployable checkpoint. The `0.7744` all-class SemEval model remains the
+historical-test and deployable leader. Artifacts are under
+`artifacts/experiments/deberta-v3-large-lora-seed42-v1/`; the locked test report
+is in its `test/` subdirectory.
+
 ## Overall conclusion
 
 The meaningful progression in untouched or increasingly rigorous pair-level
@@ -798,7 +1069,9 @@ evaluation was:
 `0.6234` zero-shot -> `0.6725` single-label baseline -> `0.7223` corrected
 conditioned pipeline -> `0.7448` previous separate ensemble -> `0.7544` new
 aspect ensemble plus existing polarity ensemble -> `0.7630` RoBERTa aspect
-plus mixed RoBERTa/DeBERTa polarity ensemble.
+plus mixed RoBERTa/DeBERTa polarity ensemble -> `0.7744` all-class SemEval
+DeBERTa polarity. The later LoRA CV committee reached `0.7727`, close to but not
+above that historical-test leader.
 
 The largest gain came from correcting the task formulation, not changing the loss.
 Multilabel aspect prediction plus aspect-conditioned polarity was essential. Loss
@@ -813,6 +1086,11 @@ but validation selected its mixed candidate instead (`0.7680` on test), and
 uncertainty intervals included zero. The earlier
 joint-versus-separate protocol still selected the joint focal model; later
 experiments do not retroactively change that earlier locked decision.
+The grouped-CV LoRA pilot later produced the highest OOF point estimate at
+`0.7800` and generalized to `0.7727` on historical test. It establishes
+DeBERTa-v3-large LoRA as a strong polarity direction, but it neither exceeds
+the `0.7744` historical-test point estimate nor supplies a single full-data
+checkpoint.
 
 Additional neutral/conflict reweighting was also selected on validation, but it
 did not improve the strongest observed test result. It traded a large neutral
@@ -866,6 +1144,9 @@ The grouped CV then supported that decision: the inner-selected ELECTRA blend
 improved pooled pair F1 by `0.0190`, won all five folds, improved both minority
 classes, and had a bootstrap interval above zero. The next stage is confirmation
 with training seeds 17 and 73 on the same fold assignments.
+That confirmation reversed the pilot conclusion: the three-seed ELECTRA blend
+scored `0.7637` versus `0.7667` for DeBERTa alone and won only one fold. ELECTRA
+is therefore rejected for promotion despite the strong seed-42 screen.
 
 ## Related reports
 
@@ -902,3 +1183,7 @@ with training seeds 17 and 73 on the same fold assignments.
 - `artifacts/experiments/modernbert-polarity-seed42-v1/report.md`
 - `artifacts/experiments/electra-polarity-seed42-v1/report.md`
 - `artifacts/experiments/electra-deberta-grouped-cv-v1/report.md`
+- `artifacts/experiments/electra-deberta-three-seed-confirmation-v1/report.md`
+- `artifacts/experiments/f1-roadmap-v2/report.md`
+- `artifacts/experiments/deberta-v3-large-lora-seed42-v1/report.md`
+- `artifacts/experiments/deberta-v3-large-lora-seed42-v1/test/report.md`
