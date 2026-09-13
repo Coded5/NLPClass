@@ -1061,6 +1061,49 @@ historical-test and deployable leader. Artifacts are under
 `artifacts/experiments/deberta-v3-large-lora-seed42-v1/`; the locked test report
 is in its `test/` subdirectory.
 
+## 37. UWB-style count and TF-IDF ensemble
+
+The constrained feature-based architecture from UWB's SemEval 2014 system was
+recreated with count and TF-IDF representations, one-vs-rest aspect classifiers,
+and aspect-conditioned polarity classifiers. Count, TF-IDF, and their combined
+representation were evaluated alone and interpolated with the frozen
+DeBERTa-v3-large LoRA transformer outputs. Sparse-model hyperparameters and
+separate aspect/polarity interpolation weights were selected inside each outer
+fold. The experiment used the established five grouped folds and did not read
+the historical or private test labels.
+
+| System | Pair F1 | Aspect micro | Aspect macro | Polarity micro | Polarity macro | Exact set |
+|---|---:|---:|---:|---:|---:|---:|
+| Transformer | **0.7800** | **0.8893** | **0.8882** | 0.8476 | 0.7314 | **0.7050** |
+| Count | 0.5339 | 0.7738 | 0.7450 | 0.6456 | 0.4752 | 0.4434 |
+| TF-IDF | 0.5369 | 0.7784 | 0.7519 | 0.6470 | 0.4786 | 0.4454 |
+| Count plus TF-IDF | 0.5324 | 0.7677 | 0.7418 | 0.6468 | 0.4848 | 0.4458 |
+| Transformer plus count | 0.7787 | 0.8877 | 0.8848 | 0.8484 | 0.7332 | 0.7045 |
+| Transformer plus TF-IDF | 0.7764 | 0.8841 | 0.8803 | **0.8489** | **0.7343** | 0.6992 |
+| Transformer plus combined | 0.7750 | 0.8831 | 0.8798 | 0.8461 | 0.7309 | 0.6987 |
+
+No ensemble passed the promotion rules. Relative to the transformer, count
+changed pair F1 by `-0.0014` with one of five fold wins and bootstrap interval
+`[-0.0057, +0.0031]`; TF-IDF changed it by `-0.0036` with interval
+`[-0.0078, +0.0006]`; the combined representation changed it by `-0.0051` with
+interval `[-0.0098, -0.0005]`. Inner selection usually assigned no weight to
+the sparse polarity outputs. The small polarity improvements from two blends
+were outweighed by weaker aspect prediction, so no historical-test evaluation
+was launched.
+
+The standalone result is much less negative than its end-to-end pair F1 first
+suggests. On metrics comparable to the original UWB constrained ten-fold
+results, this implementation obtained `77.84%` aspect-category F1 versus
+UWB's `77.51%`, and `66.93%` gold-aspect polarity accuracy versus UWB's
+`66.69%`. UWB evaluated aspect detection and supplied-aspect polarity as
+separate subtasks; it did not report the stricter end-to-end pair F1 used here.
+Its stronger unconstrained entry also added LDA topics, word clusters, sentiment
+lexicons, SentiWordNet, and representations learned from a large external review
+corpus. The experiment therefore reproduced the constrained UWB baseline
+reasonably well, but showed that its lexical evidence is not sufficiently
+complementary to the modern transformer. Full results are in
+`artifacts/experiments/uwb-tfidf-ensemble-v1/report.md`.
+
 ## Overall conclusion
 
 The meaningful progression in untouched or increasingly rigorous pair-level
@@ -1147,6 +1190,10 @@ with training seeds 17 and 73 on the same fold assignments.
 That confirmation reversed the pilot conclusion: the three-seed ELECTRA blend
 scored `0.7637` versus `0.7667` for DeBERTa alone and won only one fold. ELECTRA
 is therefore rejected for promotion despite the strong seed-42 screen.
+The later UWB-style sparse experiment reached results close to the original
+constrained system on comparable isolated aspect and gold-aspect polarity
+metrics, but all three transformer blends reduced end-to-end pair F1. It is a
+successful historical-baseline reproduction, not a new ensemble candidate.
 
 ## Related reports
 
@@ -1187,3 +1234,4 @@ is therefore rejected for promotion despite the strong seed-42 screen.
 - `artifacts/experiments/f1-roadmap-v2/report.md`
 - `artifacts/experiments/deberta-v3-large-lora-seed42-v1/report.md`
 - `artifacts/experiments/deberta-v3-large-lora-seed42-v1/test/report.md`
+- `artifacts/experiments/uwb-tfidf-ensemble-v1/report.md`
